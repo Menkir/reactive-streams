@@ -21,3 +21,26 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# ignore all .idea files ...
+*
+# except  ...
+
+# Version Control configuration
+!vcs.xml
+
+# how IDEA should treat the text files
+!encodings.xml
+
+# automatic code formatting
+!codeStyleSettings.xml
+
+# project specific words
+!dictionaries
+
+!copyrights
+!misc.xml
+!sqldialects.xml
+
+# ignore .gradle
+.gradle
