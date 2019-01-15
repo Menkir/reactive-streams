@@ -6,8 +6,6 @@ import rsocket.Coordinate;
 import rsocket.Serialiazer;
 
 import javax.swing.*;
-import java.util.Observable;
-import java.util.Observer;
 
 public class Gui  extends JFrame{
 
@@ -16,8 +14,7 @@ public class Gui  extends JFrame{
     public Gui(Client c){
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(300,300);
-        int ctr = 0;
-        c.serverEndpoint
+        c.getServerEndpoint()
                 .subscribeOn(Schedulers.newSingle("Gui"))
                 .share()
                 .publish()

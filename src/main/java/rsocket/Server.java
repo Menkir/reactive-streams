@@ -1,6 +1,5 @@
 package rsocket;
 
-import io.netty.buffer.Unpooled;
 import io.rsocket.*;
 import io.rsocket.transport.netty.server.CloseableChannel;
 import io.rsocket.transport.netty.server.TcpServerTransport;
@@ -15,7 +14,7 @@ class Server {
     Server(){
         this.channel = RSocketFactory.receive()
                 .acceptor((setupPayload, reactiveSocket) -> Mono.just(new RSocketImpl()))
-                .transport(TcpServerTransport.create("192.168.0.199", 1337))
+                .transport(TcpServerTransport.create("127.0.0.1", 1337))
                 .start()
                 .block();
 
