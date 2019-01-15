@@ -2,7 +2,7 @@ package prototype.view;
 
 import prototype.client.Client;
 import prototype.model.Coordinate;
-import prototype.utility.Serialiazer;
+import prototype.utility.Serializer;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,7 +16,7 @@ public class Gui  extends JFrame{
         this.setPreferredSize(new Dimension(500,1000));
         c.getServerEndpoint()
             .subscribe(next -> {
-                Coordinate data = Serialiazer.deserialize(next.getData().array());
+                Coordinate data = Serializer.deserialize(next.getData().array());
                 String txt = "("+data.get_1() + "|" + data.get_2()+"), "+data.getSignalPower()+"/10\n";
                 txtArea.setText(txtArea.getText() + txt);
             });

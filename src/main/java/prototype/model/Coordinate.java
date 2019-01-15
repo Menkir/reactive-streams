@@ -2,12 +2,12 @@ package prototype.model;
 
 import java.io.Serializable;
 
-public class Coordinate implements Serializable {
+public final class Coordinate implements Serializable {
     private int _1;
     private int _2;
     private int signalPower;
 
-    public Coordinate(int _1, int _2){
+    public Coordinate(int _1, int _2) {
         this._1 = _1;
         this._2 = _2;
         this.signalPower = 0;
@@ -34,7 +34,7 @@ public class Coordinate implements Serializable {
         return signalPower;
     }
 
-    public void setSignalPower(int signalPower) {
+    public void setSignalPower(final int signalPower) {
         this.signalPower = signalPower;
     }
 
@@ -45,7 +45,8 @@ public class Coordinate implements Serializable {
 
     @Override
     public String toString() {
-        return "(" + this._1 + "|" + this._2 + ") Signal [" + signalPower + "/10]";
+        return "(" + this._1 + "|" + this._2 + ") Signal ["
+                + signalPower + "/10]";
     }
 
 }

@@ -8,14 +8,14 @@ import prototype.view.Gui;
 
 class App {
 
-    public static void main(String... args) {
+    public static void main(final String... args) {
         Scanner scanner = new Scanner(System.in);
         Server server = new Server();
         Client client = new Client();
         Gui gui = new Gui(client);
 
         System.out.println("Press CTRL+D to terminate Application");
-        while(scanner.hasNext()){
+        while (scanner.hasNext()) {
 
         }
         server.dispose();
