@@ -11,9 +11,7 @@ import java.awt.*;
 public class ClientGraphic extends JPanel {
 	ClientGraphic(Flux<Payload> flux){
 		setLayout(null);
-		flux.hasElements().subscribe(System.out::println);
 		flux.subscribe(payload -> {
-			System.out.println(Thread.currentThread().getName());
 			Coordinate coordinate = Serializer.deserialize(payload.getData().array());
 			int x = coordinate.get_1();
 			int y = coordinate.get_2();

@@ -6,7 +6,7 @@ public class RoutingFactory {
 	public enum RouteType{
 		RECTANGLE
 	}
-	public IRoute getRoute(RouteType type){
+	public IRoute getRoutingType(RouteType type){
 		switch (type){
 			case RECTANGLE: return new RectangleRoute();
 			default: return new RectangleRoute();

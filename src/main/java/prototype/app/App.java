@@ -5,6 +5,8 @@ import java.util.Scanner;
 import prototype.client.Client;
 import prototype.server.Server;
 import prototype.view.Monitor;
+import routing.RoutingFactory;
+import routing.RoutingFactory.RouteType;
 
 class App {
 
