@@ -48,5 +48,4 @@ public final class Coordinate implements Serializable {
         return "(" + this._1 + "|" + this._2 + ") Signal ["
                 + signalPower + "/10]";
     }
-
 }
