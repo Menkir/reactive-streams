@@ -12,40 +12,52 @@ import reactor.core.publisher.Flux;
 import reactor.core.scheduler.Scheduler;
 import reactor.core.scheduler.Schedulers;
 import routing.RoutingFactory;
+
 import java.time.Duration;
 import java.util.concurrent.Executors;
 
-import static routing.RoutingFactory.RouteType.RECTANGLE;
+public class Client {
+	private final int PORT = 1337;
+	private final String HOST = "127.0.0.1";
 
+	private final RoutingFactory routingFactory = new RoutingFactory();
+    private RSocket client;
+    private Flux<Payload> serverEndpoint;
 
-public final class Client {
-    private final RSocket client;
-    private final Flux<Payload> serverEndpoint;
     public Client() {
-	    RoutingFactory routingFactory = new RoutingFactory();
+		start(new ClientConfiguration());
+    }
 
-        final int port = 1337;
-        Scheduler clientScheduler = Schedulers.fromExecutor(Executors.newFixedThreadPool(8));
-        this.client = RSocketFactory.connect()
-                .transport(TcpClientTransport.create("127.0.0.1", port))
-                .start().subscribeOn(Schedulers.parallel()).block();
-        assert client != null;
-        serverEndpoint = client.requestChannel(
-        		        Flux.interval(Duration.ofMillis(100))
-				        .subscribeOn(clientScheduler)
-		                .take(3)
-		                .map(number -> routingFactory.getRoutingType(RECTANGLE).getRoute())
-				        .flatMap(flux-> flux)
-				        .map(coordinate -> DefaultPayload.create(Serializer.serialize(coordinate)))
-				        .publishOn(clientScheduler)
-				        .share()
-        );
-        serverEndpoint.subscribe(payload -> {
-            Coordinate data = Serializer
-                                .deserialize(payload.getData().array());
-            System.out.println(getTabs() + Thread.currentThread().getName()
-                    + " [LOG] received from Server " + data);
-        });
+    public Client(ClientConfiguration configuration){
+    	start(configuration);
+    }
+
+    private void start(ClientConfiguration configuration){
+    	Scheduler scheduler = Schedulers.fromExecutor(Executors.newFixedThreadPool(4));
+	    this.client = RSocketFactory.connect()
+			    .transport(TcpClientTransport.create(HOST, PORT))
+			    .start()
+			    .subscribeOn(scheduler)
+			    .publishOn(scheduler)
+			    .block();
+	    assert client != null;
+
+	    serverEndpoint = client.requestChannel(
+			    Flux.interval(configuration.DELAY)
+					.subscribeOn(scheduler)
+					.take(configuration.LOOPS)
+					.map(number -> routingFactory.getRoutingType(configuration.ROUTETYPE).getRoute())
+					.flatMap(flux-> flux)
+					.map(coordinate -> DefaultPayload.create(Serializer.serialize(coordinate)))
+					.publishOn(scheduler)
+					.share()
+	    );
+	    serverEndpoint.subscribeOn(scheduler).publishOn(scheduler).subscribe(payload -> {
+		    Coordinate data = Serializer
+				    .deserialize(payload);
+		    System.out.println(getTabs() + Thread.currentThread().getName()
+				    + " [LOG] received from Server " + data);
+	    });
     }
 
     private String getTabs(){

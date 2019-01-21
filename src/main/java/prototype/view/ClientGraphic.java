@@ -12,7 +12,7 @@ public class ClientGraphic extends JPanel {
 	ClientGraphic(Flux<Payload> flux){
 		setLayout(null);
 		flux.subscribe(payload -> {
-			Coordinate coordinate = Serializer.deserialize(payload.getData().array());
+			Coordinate coordinate = Serializer.deserialize(payload);
 			int x = coordinate.get_1();
 			int y = coordinate.get_2();
 			setLocation( x+ 35*x, y + 35*y);

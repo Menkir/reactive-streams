@@ -1,5 +1,6 @@
 package prototype.utility;
 
+import io.rsocket.Payload;
 import prototype.model.Coordinate;
 
 import java.io.ByteArrayOutputStream;
@@ -29,8 +30,8 @@ public final class Serializer {
         return yourBytes;
     }
 
-    public static Coordinate deserialize(final byte[] bytes) {
-        ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
+    public static Coordinate deserialize(final Payload payload) {
+        ByteArrayInputStream bis = new ByteArrayInputStream(payload.getData().array());
         Object o = null;
         try (ObjectInput in = new ObjectInputStream(bis)) {
             o = in.readObject();
