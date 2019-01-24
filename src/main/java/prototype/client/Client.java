@@ -7,13 +7,15 @@ import io.rsocket.transport.netty.client.TcpClientTransport;
 import io.rsocket.util.DefaultPayload;
 import prototype.model.Coordinate;
 import prototype.utility.Serializer;
+import reactor.core.CoreSubscriber;
+import reactor.core.publisher.BufferOverflowStrategy;
 import reactor.core.publisher.Flux;
 
 import reactor.core.scheduler.Scheduler;
 import reactor.core.scheduler.Schedulers;
 import routing.RoutingFactory;
+import routing.routeImpl.RectangleRoute;
 
-import java.time.Duration;
 import java.util.concurrent.Executors;
 
 public class Client {
@@ -43,20 +45,19 @@ public class Client {
 	    assert client != null;
 
 	    serverEndpoint = client.requestChannel(
-			    Flux.interval(configuration.DELAY)
+			    Flux.from(routingFactory.getRoutingType(configuration.ROUTETYPE).getRoute())
 					.subscribeOn(scheduler)
-					.take(configuration.LOOPS)
-					.map(number -> routingFactory.getRoutingType(configuration.ROUTETYPE).getRoute())
-					.flatMap(flux-> flux)
 					.map(coordinate -> DefaultPayload.create(Serializer.serialize(coordinate)))
-					.publishOn(scheduler)
+					.delayElements(configuration.DELAY)
+				    .publishOn(scheduler)
 					.share()
 	    );
+
 	    serverEndpoint.subscribeOn(scheduler).publishOn(scheduler).subscribe(payload -> {
 		    Coordinate data = Serializer
 				    .deserialize(payload);
-		    System.out.println(getTabs() + Thread.currentThread().getName()
-				    + " [LOG] received from Server " + data);
+		    /*System.out.println(getTabs() + Thread.currentThread().getName()
+				    + " [LOG] received from Server " + data);*/
 	    });
     }
 

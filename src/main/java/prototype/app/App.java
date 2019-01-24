@@ -9,6 +9,7 @@ import prototype.view.Monitor;
 
 
 import static routing.RoutingFactory.RouteType.RECTANGLE;
+import static routing.RoutingFactory.RouteType.TRIANGLE;
 
 class App {
 
@@ -17,10 +18,9 @@ class App {
         Server server = new Server();
         new Monitor(server);
 
-        for(int i = 0; i < 100; ++i){
-            new Client(new ClientConfiguration(Duration.ofMillis(10), RECTANGLE, 1));
-            Thread.sleep(50);
-        }
+        new Client(new ClientConfiguration(Duration.ofMillis(100), RECTANGLE));
+        Thread.sleep(100);
+        new Client(new ClientConfiguration(Duration.ofMillis(100), TRIANGLE));
 
         System.out.println("Press CTRL+D to terminate Application");
         while (scanner.hasNext()) {
