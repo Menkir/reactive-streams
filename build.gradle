@@ -18,4 +18,7 @@ dependencies {
     testCompile("io.projectreactor:reactor-test:3.2.5.RELEASE")
     implementation 'io.rsocket:rsocket-core:0.11.14'
     implementation 'io.rsocket:rsocket-transport-netty:0.11.14'
+    compile 'io.reactivex:rxswing:0.27.0'
+    compile 'io.reactivex.rxjava2:rxjava:2.2.0'
+
 }
