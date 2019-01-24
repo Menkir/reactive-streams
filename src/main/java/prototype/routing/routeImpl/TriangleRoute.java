@@ -1,9 +1,9 @@
-package routing.routeImpl;
+package prototype.routing.routeImpl;
 
 import prototype.model.Coordinate;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.FluxSink;
-import routing.IRoute;
+import prototype.routing.IRoute;
 import java.time.Duration;
 
 public class TriangleRoute implements IRoute {
@@ -14,12 +14,25 @@ public class TriangleRoute implements IRoute {
 			while(true){
 				for(int i = maxsize-1; i>= 0; --i)
 					sink.next(new Coordinate(maxsize-1, i));
-
+				try {
+					IRoute.tick();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 				for(int i = 0; i< maxsize; ++i)
 					sink.next(new Coordinate(maxsize-i-1, i));
-
+				try {
+					IRoute.tick();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 				for(int i = 0; i< maxsize; ++i)
 					sink.next(new Coordinate(i, maxsize-1));
+				try {
+					IRoute.tick();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 			}
 		}, FluxSink.OverflowStrategy.DROP).delayElements(Duration.ofMillis(100));
 	}

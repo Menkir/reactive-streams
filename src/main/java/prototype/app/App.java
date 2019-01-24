@@ -8,8 +8,8 @@ import prototype.server.Server;
 import prototype.view.Monitor;
 
 
-import static routing.RoutingFactory.RouteType.RECTANGLE;
-import static routing.RoutingFactory.RouteType.TRIANGLE;
+import static prototype.routing.RoutingFactory.RouteType.RECTANGLE;
+import static prototype.routing.RoutingFactory.RouteType.TRIANGLE;
 
 class App {
 
@@ -18,9 +18,9 @@ class App {
         Server server = new Server();
         new Monitor(server);
 
-        new Client(new ClientConfiguration(Duration.ofMillis(100), RECTANGLE));
+        new Client(new ClientConfiguration(Duration.ofMillis(50), RECTANGLE));
         Thread.sleep(100);
-        new Client(new ClientConfiguration(Duration.ofMillis(100), TRIANGLE));
+        //new Client(new ClientConfiguration(Duration.ofMillis(100), TRIANGLE));
 
         System.out.println("Press CTRL+D to terminate Application");
         while (scanner.hasNext()) {

@@ -1,7 +1,7 @@
-package routing;
+package prototype.routing;
 
-import routing.routeImpl.RectangleRoute;
-import routing.routeImpl.TriangleRoute;
+import prototype.routing.routeImpl.RectangleRoute;
+import prototype.routing.routeImpl.TriangleRoute;
 
 public class RoutingFactory {
 	public enum RouteType{

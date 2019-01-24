@@ -2,14 +2,18 @@ package prototype.view;
 
 import io.rsocket.Payload;
 import prototype.server.Server;
+import prototype.utility.Serializer;
+import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
 import rx.swing.sources.ListSelectionEventSource;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import java.awt.*;
+import java.io.Serializable;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.Map;
+import java.util.Stack;
 
 
 public class Monitor extends JFrame{
@@ -17,7 +21,9 @@ public class Monitor extends JFrame{
     private JLayeredPane coordinateSystem;
     private JPanel inspector;
     private JLabel lblCoordinate;
+    private Stack<Disposable> disposableStack;
     public Monitor(Server server){
+        this.disposableStack = new Stack<>();
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setPreferredSize(new Dimension(750,460));
@@ -31,6 +37,7 @@ public class Monitor extends JFrame{
         ListSelectionEventSource.fromListSelectionEventsOf(clientList.getSelectionModel())
                 .filter(ListSelectionEvent::getValueIsAdjusting)
                 .subscribe(event -> {
+                    disposeAll();
                     DefaultListSelectionModel data = ((DefaultListSelectionModel) event.getSource());
                     Map.Entry<Integer, Flux<Payload>> selectedChannel = listmodel.getElementAt(data.getAnchorSelectionIndex());
                     Flux<Payload> incomingCoordinates = selectedChannel.getValue();
@@ -39,7 +46,9 @@ public class Monitor extends JFrame{
                     clientGraphic.setBorder(BorderFactory.createLineBorder(Color.pink));
                     coordinateSystem.add(clientGraphic);
                     coordinateSystem.setLayer(clientGraphic, 1);
-                    incomingCoordinates.subscribe(payload -> listmodel.getElementAt(selectedChannel.getKey()-1));
+                    disposableStack.push(incomingCoordinates.subscribe(payload -> {
+                        lblCoordinate.setText(Serializer.deserialize(payload).toString());
+                    }));
                 });
         JScrollPane scrollPane = new JScrollPane(clientList);
         scrollPane.setBounds(0,0,300, 300);
@@ -66,7 +75,7 @@ public class Monitor extends JFrame{
         JPanel signalTower = new SignalTowerGraphic();
         signalTower.setBounds(server.signalTower.get_1()*35, server.signalTower.get_2()*35, 35,35);
         coordinateSystem.add(signalTower);
-        coordinateSystem.setLayer(signalTower, 0);
+        coordinateSystem.setLayer(signalTower, 2);
 
         // INSPECTOR
         inspector = new JPanel(new GridLayout(3,1));
@@ -84,5 +93,11 @@ public class Monitor extends JFrame{
         this.add(inspector);
         this.pack();
         this.setVisible(true);
+    }
+
+    private void disposeAll(){
+        while(!disposableStack.empty()){
+            disposableStack.pop().dispose();
+        }
     }
 }

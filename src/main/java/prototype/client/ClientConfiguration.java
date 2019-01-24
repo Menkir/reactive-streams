@@ -1,5 +1,5 @@
 package prototype.client;
-import routing.RoutingFactory.RouteType;
+import prototype.routing.RoutingFactory.RouteType;
 import java.time.Duration;
 
 public class ClientConfiguration {
