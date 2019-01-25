@@ -15,7 +15,7 @@ import prototype.routing.RoutingFactory;
 
 import java.util.concurrent.Executors;
 
-public class Client {
+public class Car {
 	private final int PORT = 1337;
 	private final String HOST = "127.0.0.1";
 
@@ -23,15 +23,15 @@ public class Client {
     private RSocket client;
     private Flux<Payload> serverEndpoint;
 
-    public Client() throws InterruptedException {
-		start(new ClientConfiguration());
+    public Car() throws InterruptedException {
+		start(new CarConfiguration());
     }
 
-    public Client(ClientConfiguration configuration) throws InterruptedException {
+    public Car(CarConfiguration configuration) throws InterruptedException {
     	start(configuration);
     }
 
-    private void start(ClientConfiguration configuration) throws InterruptedException {
+    private void start(CarConfiguration configuration) throws InterruptedException {
     	Scheduler scheduler = Schedulers.fromExecutor(Executors.newFixedThreadPool(4));
 	    this.client = RSocketFactory
 			    .connect()
@@ -75,7 +75,7 @@ public class Client {
     }
 
     public static void main(final String... args) throws InterruptedException {
-    	new Client();
+    	new Car();
     }
 
 }

@@ -50,7 +50,7 @@ public final class Server {
                         .onBackpressureLatest()
                         /*.doOnNext(next -> {
                             System.out.println(Thread.currentThread().getName()
-                                    + " [LOG] received from Client " +payloads.hashCode() + ": " + Serializer.deserialize(next));
+                                    + " [LOG] received from Car " +payloads.hashCode() + ": " + Serializer.deserialize(next));
                             expensiveComputation();
                         })*/
                         .map(payload -> {

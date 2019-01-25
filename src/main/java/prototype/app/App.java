@@ -2,12 +2,12 @@ package prototype.app;
 
 import java.time.Duration;
 import java.util.Scanner;
-import prototype.client.Client;
-import prototype.client.ClientConfiguration;
+
+import prototype.client.Car;
+import prototype.client.CarConfiguration;
 import prototype.server.Server;
 import prototype.view.Monitor;
 import reactor.core.publisher.Flux;
-import reactor.core.scheduler.Schedulers;
 
 
 import static prototype.routing.RoutingFactory.RouteType.CIRCLE;
@@ -21,9 +21,9 @@ class App {
         Server server = new Server();
         new Monitor(server);
         Flux.just(
-            new Client(new ClientConfiguration(Duration.ofMillis(DELAY*300), CIRCLE)),
-            new Client(new ClientConfiguration(Duration.ofMillis(DELAY*500), TRIANGLE)),
-            new Client(new ClientConfiguration(Duration.ofMillis(DELAY*100), RECTANGLE))
+            new Car(new CarConfiguration(Duration.ofMillis(DELAY*300), CIRCLE)),
+            new Car(new CarConfiguration(Duration.ofMillis(DELAY*500), TRIANGLE)),
+            new Car(new CarConfiguration(Duration.ofMillis(DELAY*100), RECTANGLE))
         ).delaySequence(Duration.ofMillis(100)).subscribe();
 
         System.out.println("Press CTRL+D to terminate Application");
