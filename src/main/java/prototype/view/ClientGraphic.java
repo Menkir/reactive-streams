@@ -10,6 +10,18 @@ import javax.swing.*;
 import java.awt.*;
 
 public class ClientGraphic extends JPanel {
+	Color[] colors = {
+			Color.GRAY,
+			Color.PINK,
+			Color.YELLOW,
+			Color.RED,
+			Color.ORANGE,
+			Color.BLUE,
+			Color.GREEN,
+			Color.CYAN,
+			Color.MAGENTA
+	};
+	private Color myColor;
 	private Disposable disposable;
 	ClientGraphic(Flux<Payload> flux){
 		setLayout(null);
@@ -25,7 +37,13 @@ public class ClientGraphic extends JPanel {
 	@Override
 	public void paint(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
-		g2.setColor(Color.yellow);
+		if(myColor == null){
+			g2.setColor(colors[(((int) (Math.random() * colors.length-1)))]);
+			myColor = g2.getColor();
+		} else
+			g2.setColor(myColor);
+
+
 		g2.fillOval(0,0,20,20);
 	}
 

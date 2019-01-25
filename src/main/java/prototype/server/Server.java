@@ -39,6 +39,7 @@ public final class Server {
         return channels;
     }
 
+    // RSocket abstrahieren und austauschbar machen
     private class RSocketImpl extends AbstractRSocket {
         Scheduler server = Schedulers.fromExecutor(Executors.newFixedThreadPool(4));
         @Override
@@ -76,5 +77,9 @@ public final class Server {
                 e.printStackTrace();
             }
         }
+    }
+
+    public static void main(final String... args){
+        new Server();
     }
 }

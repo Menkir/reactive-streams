@@ -23,17 +23,18 @@ public class Client {
     private RSocket client;
     private Flux<Payload> serverEndpoint;
 
-    public Client() {
+    public Client() throws InterruptedException {
 		start(new ClientConfiguration());
     }
 
-    public Client(ClientConfiguration configuration){
+    public Client(ClientConfiguration configuration) throws InterruptedException {
     	start(configuration);
     }
 
-    private void start(ClientConfiguration configuration){
+    private void start(ClientConfiguration configuration) throws InterruptedException {
     	Scheduler scheduler = Schedulers.fromExecutor(Executors.newFixedThreadPool(4));
-	    this.client = RSocketFactory.connect()
+	    this.client = RSocketFactory
+			    .connect()
 			    .transport(TcpClientTransport.create(HOST, PORT))
 			    .start()
 			    .subscribeOn(scheduler)
@@ -42,12 +43,12 @@ public class Client {
 	    assert client != null;
 
 	    serverEndpoint = client.requestChannel(
-			    Flux.from(routingFactory.getRoutingType(configuration.ROUTETYPE).getRoute())
-					.subscribeOn(scheduler)
-					.map(coordinate -> DefaultPayload.create(Serializer.serialize(coordinate)))
-					.delayElements(configuration.DELAY)
-				    .publishOn(scheduler)
-					.share()
+		    Flux.from(routingFactory.getRoutingType(configuration.ROUTETYPE).getRoute())
+				.delayElements(configuration.DELAY)
+				.subscribeOn(scheduler)
+				.map(coordinate -> DefaultPayload.create(Serializer.serialize(coordinate)))
+			    .publishOn(scheduler)
+				.share()
 	    );
 
 	    serverEndpoint.subscribeOn(scheduler).publishOn(scheduler).subscribe(payload -> {
@@ -71,6 +72,10 @@ public class Client {
 
     public Flux<Payload> getServerEndpoint() {
         return this.serverEndpoint;
+    }
+
+    public static void main(final String... args) throws InterruptedException {
+    	new Client();
     }
 
 }

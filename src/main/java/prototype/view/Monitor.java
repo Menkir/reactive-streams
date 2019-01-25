@@ -10,11 +10,9 @@ import rx.swing.sources.ListSelectionEventSource;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import java.awt.*;
-import java.io.Serializable;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.Map;
 import java.util.Stack;
-
 
 public class Monitor extends JFrame{
     private JPanel[][] map = new JPanel[10][10];
@@ -43,7 +41,6 @@ public class Monitor extends JFrame{
                     Flux<Payload> incomingCoordinates = selectedChannel.getValue();
                     ClientGraphic clientGraphic = new ClientGraphic(incomingCoordinates);
                     clientGraphic.setSize(new Dimension(20,20));
-                    clientGraphic.setBorder(BorderFactory.createLineBorder(Color.pink));
                     coordinateSystem.add(clientGraphic);
                     coordinateSystem.setLayer(clientGraphic, 1);
                     disposableStack.push(incomingCoordinates.subscribe(payload -> {
