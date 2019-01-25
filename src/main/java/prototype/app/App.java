@@ -3,9 +3,11 @@ package prototype.app;
 import java.time.Duration;
 import java.util.Scanner;
 
-import prototype.client.Car;
-import prototype.client.CarConfiguration;
-import prototype.server.Server;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+import prototype.endpoints.carImpl.Car;
+import prototype.endpoints.carImpl.CarConfiguration;
+import prototype.endpoints.serverImpl.Server;
 import prototype.view.Monitor;
 import reactor.core.publisher.Flux;
 
@@ -18,18 +20,22 @@ class App {
     public static void main(final String... args) throws InterruptedException {
         final int DELAY = 1; // second
         Scanner scanner = new Scanner(System.in);
-        Server server = new Server();
-        new Monitor(server);
-        Flux.just(
-            new Car(new CarConfiguration(Duration.ofMillis(DELAY*300), CIRCLE)),
-            new Car(new CarConfiguration(Duration.ofMillis(DELAY*500), TRIANGLE)),
-            new Car(new CarConfiguration(Duration.ofMillis(DELAY*100), RECTANGLE))
-        ).delaySequence(Duration.ofMillis(100)).subscribe();
+
+        Injector injector = Guice.createInjector(new EndpointsModule());
+
+        Server server = injector.getInstance(Server.class);
+        server.receive();
+        Car car = injector.getInstance(Car.class);
+        car.connect();
+        car.requestChannel();
+        car.subscribeOnServerEndpoint();
+
 
         System.out.println("Press CTRL+D to terminate Application");
         while (scanner.hasNext()) {
 
         }
-        server.dispose();
+        /*server.dispose();
+        car.dispose();*/
     }
 }

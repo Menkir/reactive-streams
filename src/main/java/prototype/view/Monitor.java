@@ -1,7 +1,7 @@
 package prototype.view;
 
 import io.rsocket.Payload;
-import prototype.server.Server;
+import prototype.endpoints.serverImpl.Server;
 import prototype.utility.Serializer;
 import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
@@ -29,8 +29,8 @@ public class Monitor extends JFrame{
 
         // REACTIVE JLIST
         DefaultListModel<Map.Entry<Integer, Flux<Payload>>> listmodel = new DefaultListModel<>();
-        server.getChannels()
-              .subscribe(channel -> listmodel.addElement(new SimpleEntry<>(listmodel.getSize()+1, channel)));
+        /*server.getChannels()
+              .subscribe(channel -> listmodel.addElement(new SimpleEntry<>(listmodel.getSize()+1, channel)));*/
         JList<Map.Entry<Integer, Flux<Payload>>> clientList = new JList<>(listmodel);
         ListSelectionEventSource.fromListSelectionEventsOf(clientList.getSelectionModel())
                 .filter(ListSelectionEvent::getValueIsAdjusting)
@@ -70,7 +70,7 @@ public class Monitor extends JFrame{
 
         // SIGNAL TOWER
         JPanel signalTower = new SignalTowerGraphic();
-        signalTower.setBounds(server.signalTower.get_1()*35, server.signalTower.get_2()*35, 35,35);
+        signalTower.setBounds(4*35, 4*35, 35,35);
         coordinateSystem.add(signalTower);
         coordinateSystem.setLayer(signalTower, 2);
 
