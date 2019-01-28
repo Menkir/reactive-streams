@@ -1,41 +1,42 @@
 package prototype.app;
 
-import java.time.Duration;
 import java.util.Scanner;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import prototype.endpoints.carImpl.Car;
-import prototype.endpoints.carImpl.CarConfiguration;
 import prototype.endpoints.serverImpl.Server;
 import prototype.view.Monitor;
-import reactor.core.publisher.Flux;
-
-
-import static prototype.routing.RoutingFactory.RouteType.CIRCLE;
-import static prototype.routing.RoutingFactory.RouteType.RECTANGLE;
-import static prototype.routing.RoutingFactory.RouteType.TRIANGLE;
+import reactor.core.Disposable;
+import rx.Subscription;
 
 class App {
     public static void main(final String... args) throws InterruptedException {
-        final int DELAY = 1; // second
         Scanner scanner = new Scanner(System.in);
 
-        Injector injector = Guice.createInjector(new EndpointsModule());
+        Injector injector = Guice.createInjector(new ReactiveModule());
 
         Server server = injector.getInstance(Server.class);
         server.receive();
+
+        Monitor monitor = new Monitor(server);
+        monitor.start();
+        Disposable carsEndpoint = monitor.listeningOnIncomingCars();
+        Subscription coordinateSubscription = monitor.listeningOnIncomingCoordinates();
+
         Car car = injector.getInstance(Car.class);
         car.connect();
         car.requestChannel();
-        car.subscribeOnServerEndpoint();
+        Disposable serverEndpoint = car.subscribeOnServerEndpoint();
 
 
-        System.out.println("Press CTRL+D to terminate Application");
+        //logger.log(Level.INFO, "Type STRG+D to terminate");
         while (scanner.hasNext()) {
 
         }
-        /*server.dispose();
-        car.dispose();*/
+        carsEndpoint.dispose();
+        coordinateSubscription.unsubscribe();
+        server.dispose();
+        serverEndpoint.dispose();
     }
 }

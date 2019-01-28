@@ -8,6 +8,7 @@ import io.rsocket.util.DefaultPayload;
 import prototype.endpoints.ICar;
 import prototype.model.Coordinate;
 import prototype.utility.Serializer;
+import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
 
 import reactor.core.scheduler.Scheduler;
@@ -15,14 +16,11 @@ import reactor.core.scheduler.Schedulers;
 import prototype.routing.RoutingFactory;
 
 import javax.inject.Inject;
-import javax.inject.Named;
-import java.util.concurrent.ExecutorService;
+import java.net.InetSocketAddress;
 import java.util.concurrent.Executors;
 
 public class Car implements ICar {
-	private final int PORT = 1337;
-	private final String HOST = "127.0.0.1";
-
+	private final InetSocketAddress socketAddress;
 	private final RoutingFactory routingFactory = new RoutingFactory();
     private RSocket client;
     private Flux<Payload> serverEndpoint;
@@ -30,21 +28,22 @@ public class Car implements ICar {
     private final Scheduler scheduler = Schedulers.fromExecutor(Executors.newFixedThreadPool(4));
 
 
-    public Car() throws InterruptedException {
+    public Car(InetSocketAddress socketAddress) throws InterruptedException {
 		this.carConfiguration = new CarConfiguration();
+		this.socketAddress =  socketAddress;
     }
 
     @Inject
-    public Car(CarConfiguration configuration) throws InterruptedException {
-    	this.carConfiguration = configuration;
-    	//this.scheduler = Schedulers.parallel(); // needs adaptions on CarConfiguration
+    public Car(InetSocketAddress socketAddress, CarConfiguration configuration) throws InterruptedException {
+	    this.socketAddress = socketAddress;
+	    this.carConfiguration = configuration;
     }
 
 	@Override
 	public void connect() {
 		this.client = RSocketFactory
 				.connect()
-				.transport(TcpClientTransport.create(HOST, PORT))
+				.transport(TcpClientTransport.create(socketAddress.getHostName(), socketAddress.getPort()))
 				.start()
 				.subscribeOn(scheduler)
 				.publishOn(scheduler)
@@ -63,16 +62,12 @@ public class Car implements ICar {
 		);
 	}
 
-	public void subscribeOnServerEndpoint(){
-		serverEndpoint.subscribeOn(scheduler).publishOn(scheduler).subscribe(payload -> {
+	public Disposable subscribeOnServerEndpoint(){
+		return serverEndpoint.subscribeOn(scheduler).publishOn(scheduler).subscribe(payload -> {
 			Coordinate data = Serializer
 					.deserialize(payload);
-		    System.out.println("\t\t\t\t\t\t" + Thread.currentThread().getName()
+		    System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + Thread.currentThread().getName()
 				    + " [LOG] received from Server " + data);
 		});
-	}
-
-	public static void main(final String... args) throws InterruptedException {
-		new Car();
 	}
 }

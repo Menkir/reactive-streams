@@ -5,6 +5,7 @@ import prototype.endpoints.serverImpl.Server;
 import prototype.utility.Serializer;
 import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
+import rx.Subscription;
 import rx.swing.sources.ListSelectionEventSource;
 
 import javax.swing.*;
@@ -15,12 +16,15 @@ import java.util.Map;
 import java.util.Stack;
 
 public class Monitor extends JFrame{
-    private JPanel[][] map = new JPanel[10][10];
-    private JLayeredPane coordinateSystem;
-    private JPanel inspector;
+    private Server server;
     private JLabel lblCoordinate;
+    private JLayeredPane coordinateSystem;
+    private DefaultListModel<Map.Entry<Integer, Flux<Payload>>> listmodel;
+    private JList<Map.Entry<Integer, Flux<Payload>>> clientList;
     private Stack<Disposable> disposableStack;
+
     public Monitor(Server server){
+        this.server = server;
         this.disposableStack = new Stack<>();
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -28,28 +32,12 @@ public class Monitor extends JFrame{
         this.setLayout(null);
 
         // REACTIVE JLIST
-        DefaultListModel<Map.Entry<Integer, Flux<Payload>>> listmodel = new DefaultListModel<>();
-        /*server.getChannels()
-              .subscribe(channel -> listmodel.addElement(new SimpleEntry<>(listmodel.getSize()+1, channel)));*/
-        JList<Map.Entry<Integer, Flux<Payload>>> clientList = new JList<>(listmodel);
-        ListSelectionEventSource.fromListSelectionEventsOf(clientList.getSelectionModel())
-                .filter(ListSelectionEvent::getValueIsAdjusting)
-                .subscribe(event -> {
-                    disposeAll();
-                    DefaultListSelectionModel data = ((DefaultListSelectionModel) event.getSource());
-                    Map.Entry<Integer, Flux<Payload>> selectedChannel = listmodel.getElementAt(data.getAnchorSelectionIndex());
-                    Flux<Payload> incomingCoordinates = selectedChannel.getValue();
-                    ClientGraphic clientGraphic = new ClientGraphic(incomingCoordinates);
-                    clientGraphic.setSize(new Dimension(20,20));
-                    coordinateSystem.add(clientGraphic);
-                    coordinateSystem.setLayer(clientGraphic, 1);
-                    disposableStack.push(incomingCoordinates.subscribe(payload -> {
-                        lblCoordinate.setText(Serializer.deserialize(payload).toString());
-                    }));
-                });
+        listmodel = new DefaultListModel<>();
+        clientList = new JList<>(listmodel);
+
+        // SCROLLPANE
         JScrollPane scrollPane = new JScrollPane(clientList);
         scrollPane.setBounds(0,0,300, 300);
-
 
         // COORDINATESYSTEM
         coordinateSystem = new JLayeredPane();
@@ -58,6 +46,7 @@ public class Monitor extends JFrame{
         coordinateSystem.setBorder(BorderFactory.createLineBorder(Color.YELLOW));
         for(int i = 0; i< 10; ++i){
             for(int j= 0; j< 10; ++j){
+                JPanel[][] map = new JPanel[10][10];
                 map[i][j] = new JPanel();
                 int panelSize = 35;
                 map[i][j].setBackground(Color.BLACK);
@@ -75,7 +64,7 @@ public class Monitor extends JFrame{
         coordinateSystem.setLayer(signalTower, 2);
 
         // INSPECTOR
-        inspector = new JPanel(new GridLayout(3,1));
+        JPanel inspector = new JPanel(new GridLayout(3, 1));
         inspector.setBounds(0, 310, 300,100);
         inspector.setBackground(Color.WHITE);
         inspector.setBorder(BorderFactory.createLineBorder(Color.BLACK));
@@ -89,6 +78,9 @@ public class Monitor extends JFrame{
         this.add(coordinateSystem);
         this.add(inspector);
         this.pack();
+    }
+
+    public void start(){
         this.setVisible(true);
     }
 
@@ -96,5 +88,28 @@ public class Monitor extends JFrame{
         while(!disposableStack.empty()){
             disposableStack.pop().dispose();
         }
+    }
+
+    public Disposable listeningOnIncomingCars(){
+        return server.getChannels()
+                .subscribe(channel -> listmodel.addElement(new SimpleEntry<>(listmodel.getSize()+1, channel)));
+    }
+
+    public Subscription listeningOnIncomingCoordinates(){
+        return ListSelectionEventSource.fromListSelectionEventsOf(clientList.getSelectionModel())
+                .filter(ListSelectionEvent::getValueIsAdjusting)
+                .subscribe(event -> {
+                    disposeAll();
+                    DefaultListSelectionModel data = ((DefaultListSelectionModel) event.getSource());
+                    Map.Entry<Integer, Flux<Payload>> selectedChannel = listmodel.getElementAt(data.getAnchorSelectionIndex());
+                    Flux<Payload> incomingCoordinates = selectedChannel.getValue();
+                    ClientGraphic clientGraphic = new ClientGraphic(incomingCoordinates);
+                    clientGraphic.setSize(new Dimension(20,20));
+                    coordinateSystem.add(clientGraphic);
+                    coordinateSystem.setLayer(clientGraphic, 1);
+                    disposableStack.push(incomingCoordinates.subscribe(payload -> {
+                        lblCoordinate.setText(Serializer.deserialize(payload).toString());
+                    }));
+                });
     }
 }
