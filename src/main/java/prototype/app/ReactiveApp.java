@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import prototype.endpoints.carImpl.Car;
-import prototype.endpoints.serverImpl.Server;
+import prototype.endpoints.reactiveCarImpl.Car;
+import prototype.endpoints.reactiveServerImpl.Server;
 import prototype.view.Monitor;
 import reactor.core.Disposable;
 import rx.Subscription;
 
-class App {
+class ReactiveApp {
     public static void main(final String... args) throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
 

@@ -1,4 +1,4 @@
-package prototype.endpoints.carImpl;
+package prototype.endpoints.reactiveCarImpl;
 import prototype.routing.RoutingFactory.RouteType;
 import java.time.Duration;
 

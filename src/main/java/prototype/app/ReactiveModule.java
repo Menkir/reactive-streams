@@ -3,9 +3,9 @@ package prototype.app;
 import com.google.inject.AbstractModule;
 import prototype.endpoints.ICar;
 import prototype.endpoints.IServer;
-import prototype.endpoints.carImpl.Car;
-import prototype.endpoints.carImpl.CarConfiguration;
-import prototype.endpoints.serverImpl.Server;
+import prototype.endpoints.reactiveCarImpl.Car;
+import prototype.endpoints.reactiveCarImpl.CarConfiguration;
+import prototype.endpoints.reactiveServerImpl.Server;
 import prototype.routing.RoutingFactory;
 
 import java.net.InetSocketAddress;

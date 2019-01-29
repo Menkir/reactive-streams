@@ -1,4 +1,4 @@
-package prototype.endpoints.serverImpl;
+package prototype.endpoints.reactiveServerImpl;
 
 import io.rsocket.Payload;
 import io.rsocket.RSocketFactory;

@@ -1,4 +1,4 @@
-package prototype.endpoints.carImpl;
+package prototype.endpoints.reactiveCarImpl;
 
 import io.rsocket.Payload;
 import io.rsocket.RSocket;

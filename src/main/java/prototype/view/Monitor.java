@@ -1,7 +1,7 @@
 package prototype.view;
 
 import io.rsocket.Payload;
-import prototype.endpoints.serverImpl.Server;
+import prototype.endpoints.reactiveServerImpl.Server;
 import prototype.utility.Serializer;
 import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
