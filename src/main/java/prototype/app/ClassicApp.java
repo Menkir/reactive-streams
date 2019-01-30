@@ -19,7 +19,6 @@ public class ClassicApp {
 		server.receive();
 		ClassicMonitor monitor = new ClassicMonitor(server);
 		monitor.start();
-		//Thread.sleep(300);
 		Car[] cars = new Car[5];
 		for(int i = 0; i< cars.length; ++i){
 			cars[i] = new Car(socketAddress);

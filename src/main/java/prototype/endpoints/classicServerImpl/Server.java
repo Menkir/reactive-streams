@@ -3,9 +3,7 @@ import prototype.endpoints.IServer;
 import prototype.model.Coordinate;
 
 import java.io.*;
-import java.net.InetSocketAddress;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.net.*;
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
 
@@ -75,5 +73,19 @@ public class Server extends Observable implements IServer  {
 
 	public void close() throws IOException {
 		serverSocket.close();
+	}
+
+	public static void main(final String... args){
+		try {
+			new Server(new InetSocketAddress("127.0.0.1", 1337)).receive();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		try {
+			Thread.sleep(100_000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 }

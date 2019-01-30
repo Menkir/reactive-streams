@@ -3,11 +3,14 @@ package prototype.endpoints.classicCarImpl;
 import prototype.endpoints.ICar;
 import prototype.model.Coordinate;
 import prototype.routing.routeImpl.RectangleRoute;
+import prototype.utility.Serializer;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.util.Arrays;
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
 public class Car implements ICar {
@@ -21,7 +24,7 @@ public class Car implements ICar {
 	@Override
 	public void connect() {
 		//System.out.println("[CLIENT] " + hashCode() + " start");
-		CompletableFuture.runAsync(this::run);
+		this.run();
 	}
 
 	public void close() throws IOException, InterruptedException {
@@ -59,6 +62,7 @@ public class Car implements ICar {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		String s = Arrays.toString(Serializer.serialize(new Coordinate(0, 0)));
 	}
 
 	private static void delay() throws InterruptedException {
