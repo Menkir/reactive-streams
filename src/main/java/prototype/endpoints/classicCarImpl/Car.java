@@ -42,7 +42,6 @@ public class Car implements ICar {
 			e.printStackTrace();
 		}
 
-
 		RectangleRoute rectangleRoute = new RectangleRoute();
 		rectangleRoute.getRouteAsStream().forEach(this::sendData);
 
@@ -62,7 +61,6 @@ public class Car implements ICar {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		String s = Arrays.toString(Serializer.serialize(new Coordinate(0, 0)));
 	}
 
 	private static void delay() throws InterruptedException {

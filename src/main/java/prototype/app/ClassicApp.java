@@ -13,7 +13,7 @@ import static prototype.routing.RoutingFactory.RouteType.RECTANGLE;
 public class ClassicApp {
 	public static void main(final String... args) throws IOException, InterruptedException {
 		Scanner sc = new Scanner(System.in);
-		InetSocketAddress socketAddress = new InetSocketAddress("10.168.10.155", 1337);
+		InetSocketAddress socketAddress = new InetSocketAddress("192.168.0.199", 1337);
 
 		Server server = new Server(socketAddress);
 		server.receive();

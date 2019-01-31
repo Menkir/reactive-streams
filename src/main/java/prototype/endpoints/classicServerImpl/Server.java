@@ -36,13 +36,14 @@ public class Server extends Observable implements IServer  {
 							try{
 								assert finalClientSocket != null;
 								ois = new ObjectInputStream(finalClientSocket.getInputStream());
+								Coordinate coordinate = (Coordinate) ois.readObject();
+								System.out.println("[SERVER] "+finalClientSocket.hashCode()+" Receive " + coordinate);
+								//setChanged();
+								//notifyObservers(new Tuple<>(finalClientSocket.getPort(), coordinate));
 							} catch(EOFException e){
 								break;
 							}
-							Coordinate coordinate = (Coordinate) ois.readObject();
-							//System.out.println("[SERVER] "+finalClientSocket.hashCode()+" Receive " + coordinate);
-							setChanged();
-							notifyObservers(new Tuple<>(finalClientSocket.getPort(), coordinate));
+
 						} catch (IOException | ClassNotFoundException e) {
 							e.printStackTrace();
 						}
@@ -77,7 +78,7 @@ public class Server extends Observable implements IServer  {
 
 	public static void main(final String... args){
 		try {
-			new Server(new InetSocketAddress("127.0.0.1", 1337)).receive();
+			new Server(new InetSocketAddress("192.168.0.199", 1337)).receive();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

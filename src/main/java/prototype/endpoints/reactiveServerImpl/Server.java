@@ -12,6 +12,7 @@ import reactor.core.publisher.WorkQueueProcessor;
 
 import javax.inject.Inject;
 import java.net.InetSocketAddress;
+import java.util.Scanner;
 
 public class Server implements IServer {
 	private InetSocketAddress socketAddress;
@@ -40,4 +41,13 @@ public class Server implements IServer {
 	public WorkQueueProcessor<Flux<Payload>> getChannels(){
 		return rSocket.getChannels();
 	}
+
+	public static void main(final String... args){
+	    Server server = new Server(new InetSocketAddress("192.168.0.199", 1337));
+	    server.receive();
+	    Scanner scanner = new Scanner(System.in);
+
+	    while(scanner.hasNext()){}
+	    server.dispose();
+    }
 }
