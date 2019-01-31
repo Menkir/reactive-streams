@@ -6,8 +6,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/de.ds.prototype_main.iml" filepath="$PROJECT_DIR$/.idea/modules/de.ds.prototype_main.iml" group="de.ds.prototype" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/de.ds.prototype_test.iml" filepath="$PROJECT_DIR$/.idea/modules/de.ds.prototype_test.iml" group="de.ds.prototype" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/src/src.iml" filepath="$PROJECT_DIR$/.idea/modules/src/src.iml" group="src" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/src/src_main.iml" filepath="$PROJECT_DIR$/.idea/modules/src/src_main.iml" group="src" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/src/src_test.iml" filepath="$PROJECT_DIR$/.idea/modules/src/src_test.iml" group="src" />
     </modules>
   </component>
 </project>
