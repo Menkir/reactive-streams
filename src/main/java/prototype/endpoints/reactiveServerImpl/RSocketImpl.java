@@ -35,7 +35,7 @@ public class RSocketImpl extends AbstractRSocket {
 							+ " [LOG] received from Car " +payloads.hashCode() + ": " + Serializer.deserialize(next));
 				})
 				.share();
-		channels.onNext(channel);
+		//channels.onNext(channel);
 		return channel;
 	}
 }

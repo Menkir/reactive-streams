@@ -5,7 +5,6 @@ import org.apache.jmeter.protocol.java.sampler.AbstractJavaSamplerClient;
 import org.apache.jmeter.protocol.java.sampler.JavaSamplerContext;
 import org.apache.jmeter.samplers.SampleResult;
 import prototype.model.Coordinate;
-import prototype.routing.routeImpl.RectangleRoute;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -14,7 +13,7 @@ import java.io.Serializable;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 
-public class JavaSocketSampler extends AbstractJavaSamplerClient implements Serializable {
+public class SyncSocketSampler extends AbstractJavaSamplerClient implements Serializable {
     @Override
     public SampleResult runTest(JavaSamplerContext javaSamplerContext) {
         SampleResult result = new SampleResult();
@@ -50,7 +49,7 @@ public class JavaSocketSampler extends AbstractJavaSamplerClient implements Seri
     }
 
     public static void main(final String... args){
-        new JavaSocketSampler().runTest(null);
+        new SyncSocketSampler().runTest(null);
     }
 
     @Override

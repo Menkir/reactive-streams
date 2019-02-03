@@ -6,11 +6,13 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Server extends Observable implements IServer  {
 	private final InetSocketAddress socketAddress;
 	private ServerSocket serverSocket;
-
+    private ExecutorService executorService = Executors.newFixedThreadPool(4);
 	public Server(InetSocketAddress socketAddress){
 		this.socketAddress = socketAddress;
 	}
@@ -31,27 +33,29 @@ public class Server extends Observable implements IServer  {
 				Socket finalClientSocket = clientSocket;
 				CompletableFuture.runAsync(() -> {
 					ObjectInputStream ois = null;
-					while(true){
+					ObjectOutputStream oos = null;
+					while(true) try {
 						try {
-							try{
-								assert finalClientSocket != null;
-								ois = new ObjectInputStream(finalClientSocket.getInputStream());
-								Coordinate coordinate = (Coordinate) ois.readObject();
-								System.out.println("[SERVER] "+finalClientSocket.hashCode()+" Receive " + coordinate);
-								//setChanged();
-								//notifyObservers(new Tuple<>(finalClientSocket.getPort(), coordinate));
-							} catch(EOFException e){
-								break;
-							}
-
-						} catch (IOException | ClassNotFoundException e) {
-							e.printStackTrace();
+							assert finalClientSocket != null;
+							ois = new ObjectInputStream(finalClientSocket.getInputStream());
+							Coordinate coordinate = (Coordinate) ois.readObject();
+							System.out.println("[SERVER] " + finalClientSocket.hashCode() + " Receive " + coordinate);
+							//setChanged();
+							//notifyObservers(new Tuple<>(finalClientSocket.getPort(), coordinate));
+                            oos = new ObjectOutputStream(finalClientSocket.getOutputStream());
+                            oos.writeObject(coordinate);
+                            oos.flush();
+						} catch (EOFException e) {
+							break;
 						}
+
+					} catch (IOException | ClassNotFoundException e) {
+						e.printStackTrace();
 					}
-				});
+				}, executorService);
 			}
 
-		});
+		}, executorService);
 
 	}
 
@@ -77,16 +81,15 @@ public class Server extends Observable implements IServer  {
 	}
 
 	public static void main(final String... args){
+	    Scanner sc = new Scanner(System.in);
 		try {
 			new Server(new InetSocketAddress("192.168.0.199", 1337)).receive();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
-		try {
-			Thread.sleep(100_000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		while(sc.hasNext()){
+
+        }
 	}
 }
