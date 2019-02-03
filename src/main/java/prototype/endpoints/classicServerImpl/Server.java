@@ -13,6 +13,7 @@ public class Server extends Observable implements IServer  {
 	private final InetSocketAddress socketAddress;
 	private ServerSocket serverSocket;
     private ExecutorService executorService = Executors.newFixedThreadPool(4);
+    private static ArrayList<Long> clientServedTimes = new ArrayList<>();
 	public Server(InetSocketAddress socketAddress){
 		this.socketAddress = socketAddress;
 	}
@@ -26,7 +27,7 @@ public class Server extends Observable implements IServer  {
 				Socket clientSocket = null;
 				try {
 					clientSocket = serverSocket.accept();
-					System.out.println("[SERVER] Accept Connection");
+					//System.out.println("[SERVER] Accept Connection");
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -34,6 +35,8 @@ public class Server extends Observable implements IServer  {
 				CompletableFuture.runAsync(() -> {
 					ObjectInputStream ois = null;
 					ObjectOutputStream oos = null;
+					long before, after = 0;
+					before = System.currentTimeMillis();
 					while(true) try {
 						try {
 							assert finalClientSocket != null;
@@ -52,6 +55,8 @@ public class Server extends Observable implements IServer  {
 					} catch (IOException | ClassNotFoundException e) {
 						e.printStackTrace();
 					}
+					after = System.currentTimeMillis();
+                    clientServedTimes.add((after -before));
 				}, executorService);
 			}
 
@@ -91,5 +96,8 @@ public class Server extends Observable implements IServer  {
 		while(sc.hasNext()){
 
         }
+        long times = clientServedTimes.size();
+		long sum = clientServedTimes.stream().reduce(Math::addExact).get();
+        System.out.println("Server Bearbeitungszeit: " + (sum/(double)times));
 	}
 }

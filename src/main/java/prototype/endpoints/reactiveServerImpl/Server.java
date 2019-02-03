@@ -12,12 +12,13 @@ import reactor.core.publisher.WorkQueueProcessor;
 
 import javax.inject.Inject;
 import java.net.InetSocketAddress;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class Server implements IServer {
 	private InetSocketAddress socketAddress;
 	public final Coordinate signalTower = new Coordinate(2,1);
-	private final RSocketImpl rSocket = new RSocketImpl();
+	private static final RSocketImpl rSocket = new RSocketImpl();
 	private Disposable channel;
 
 	@Inject
@@ -49,5 +50,10 @@ public class Server implements IServer {
 
 	    while(scanner.hasNext()){}
 	    server.dispose();
+	    Long sum = rSocket.clientServedTimes.stream()
+                .reduce(Math::addExact)
+                .get();
+        Long times = (long) rSocket.clientServedTimes.size();
+        System.out.println("Durchschnittliche Bearbeitungszeit eines Client: " + (sum/(double)times));
     }
 }

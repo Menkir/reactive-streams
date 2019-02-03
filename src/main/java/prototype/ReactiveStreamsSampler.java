@@ -10,7 +10,6 @@ import org.apache.jmeter.protocol.java.sampler.AbstractJavaSamplerClient;
 import org.apache.jmeter.protocol.java.sampler.JavaSamplerContext;
 import org.apache.jmeter.samplers.SampleResult;
 import prototype.model.Coordinate;
-import prototype.routing.routeImpl.RectangleRoute;
 import prototype.utility.Serializer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -19,12 +18,12 @@ import reactor.core.scheduler.Schedulers;
 
 import java.io.Serializable;
 import java.time.Duration;
-import java.util.Objects;
 import java.util.Scanner;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Executors;
 
 public class ReactiveStreamsSampler extends AbstractJavaSamplerClient implements Serializable {
-    private final Scheduler scheduler = Schedulers.parallel();
+    private final Scheduler scheduler = Schedulers.fromExecutor(Executors.newFixedThreadPool(8));
     private final Payload payload = DefaultPayload.create(Serializer.serialize(new Coordinate(0,0)));
     @Override
     public SampleResult runTest(JavaSamplerContext javaSamplerContext) {
@@ -36,7 +35,6 @@ public class ReactiveStreamsSampler extends AbstractJavaSamplerClient implements
                 .connect()
                 .transport(TcpClientTransport.create("192.168.0.199", 1337))
                 .start();
-
         socket.subscribe(
                 rSocket -> rSocket.requestChannel(Flux.interval(Duration.ZERO)
                         .take(elements)
@@ -44,9 +42,9 @@ public class ReactiveStreamsSampler extends AbstractJavaSamplerClient implements
                         .map(number -> DefaultPayload.create(Serializer.serialize(new Coordinate(number.intValue(),number.intValue()))))
                         .subscribeOn(scheduler)
                         .publishOn(scheduler)
-                        .doOnError(err -> result.setSuccessful(false))
                         .share()
-                ).subscribe()
+                ).doOnError(err -> result.setSuccessful(false))
+                 .subscribe()
         );
 
         result.setSuccessful(true);
@@ -57,9 +55,11 @@ public class ReactiveStreamsSampler extends AbstractJavaSamplerClient implements
 
     public static void main(final String... args) throws InterruptedException {
         Scanner sc = new Scanner(System.in);
-        for(int i = 0; i< 100; ++i){
+        Arguments arguments = new Arguments();
+        arguments.addArgument("ELEMENTS", "1000");
+        for(int i = 0; i< 1000; ++i){
             CompletableFuture.runAsync(() -> {
-                new ReactiveStreamsSampler().runTest(null);
+                new ReactiveStreamsSampler().runTest(new JavaSamplerContext(arguments));
             });
         }
 
@@ -67,6 +67,7 @@ public class ReactiveStreamsSampler extends AbstractJavaSamplerClient implements
         while(sc.hasNext()){
 
         }
+
     }
 
     @Override
