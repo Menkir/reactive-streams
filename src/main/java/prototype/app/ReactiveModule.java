@@ -14,13 +14,13 @@ import java.time.Duration;
 public class ReactiveModule extends AbstractModule {
 	@Override
 	protected void configure() {
-		final int PORT = 1337;
+		final int PORT = 1338;
 		bind(IServer.class).to(Server.class);
 		bind(InetSocketAddress.class).toInstance(new InetSocketAddress(PORT));
 
 		bind(ICar.class).to(Car.class);
 		bind(CarConfiguration.class).toInstance(new CarConfiguration(
-				Duration.ZERO,
+				Duration.ofMillis(23),
 				RoutingFactory.RouteType.CIRCLE
 		));
 	}

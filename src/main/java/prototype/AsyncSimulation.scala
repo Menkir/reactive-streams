@@ -4,6 +4,7 @@ import com.google.inject.Guice
 import prototype.app.ReactiveModule
 import prototype.endpoints.reactiveCarImpl.Car
 import prototype.endpoints.reactiveServerImpl.Server
+import prototype.view.Monitor
 
 object AsyncSimulation{
   def main(args: Array[String]): Unit = {
@@ -19,9 +20,17 @@ object AsyncSimulation{
     car.requestChannel()
     car.subscribeOnServerEndpoint()
 
+    val monitor = new Monitor(server)
+    monitor setVisible true
+
+    val disposable = monitor listeningOnIncomingCars()
+    val subscription = monitor listeningOnIncomingCoordinates()
+
+
     Thread sleep delay
     server.dispose()
     println("Durchsatz " + car.getFlowrate + " beantwortete Requests pro Sekunde")
+    scala.io.StdIn.readLine("Type in: ...")
 
   }
 }

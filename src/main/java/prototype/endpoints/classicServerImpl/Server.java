@@ -46,8 +46,8 @@ public class Server extends Observable implements IServer  {
 							ois = new ObjectInputStream(finalClientSocket.getInputStream());
 							Coordinate coordinate = (Coordinate) ois.readObject();
 							//System.out.println("[SERVER] " + finalClientSocket.hashCode() + " Receive " + coordinate);
-							//setChanged();
-							//notifyObservers(new Tuple<>(finalClientSocket.getPort(), coordinate));
+							setChanged();
+							notifyObservers(new Tuple<>(finalClientSocket.getPort(), coordinate));
                             oos = new ObjectOutputStream(finalClientSocket.getOutputStream());
                             oos.writeObject(coordinate);
                             oos.flush();

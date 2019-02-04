@@ -41,7 +41,7 @@ public class ClassicCarGraphic extends JPanel {
 			while(true){
 				if(queue.isEmpty())
 					continue;
-				delay();
+				//delay();
 				Coordinate coordinate = queue.poll();
 				System.out.println("[MONITOR] "+hashcode+"  receives " + coordinate);
 				int x = coordinate.get_1();
@@ -67,7 +67,7 @@ public class ClassicCarGraphic extends JPanel {
 
 	private void delay(){
 		try {
-			Thread.sleep(200);
+			Thread.sleep(100);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

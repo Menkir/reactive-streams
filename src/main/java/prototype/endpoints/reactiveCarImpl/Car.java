@@ -58,6 +58,7 @@ public class Car implements ICar {
 	public void requestChannel() throws InterruptedException {
 		serverEndpoint = client.requestChannel(
 				Flux.from(routingFactory.getRoutingType(carConfiguration.ROUTETYPE).getRoute())
+                        .onBackpressureBuffer(Integer.MAX_VALUE)
 						.delayElements(carConfiguration.DELAY)
 						.subscribeOn(scheduler)
 						.doOnNext(coordinate -> coordinate.setSignalPower(((int) (Math.random() * 10))))

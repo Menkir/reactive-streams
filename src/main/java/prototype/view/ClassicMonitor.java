@@ -89,11 +89,4 @@ public class ClassicMonitor extends JFrame implements Observer {
 		} else cars.get(tuple.getT()).add(tuple.getE());
 	}
 
-	private void delay(){
-		try {
-			Thread.sleep(200);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
 }

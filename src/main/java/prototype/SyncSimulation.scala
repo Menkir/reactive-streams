@@ -6,6 +6,7 @@ import com.google.inject.Guice
 import prototype.app.SyncModule
 import prototype.endpoints.classicCarImpl.Car
 import prototype.endpoints.classicServerImpl.Server
+import prototype.view.{ClassicMonitor, Monitor}
 
 import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
@@ -17,9 +18,10 @@ object SyncSimulation {
 
     val server: Server = injector getInstance classOf[Server]
     val car: Car = injector getInstance classOf[Car]
-
+    val monitor = new ClassicMonitor(server)
     server receive()
     Future{car connect()}
+    monitor.start()
 
     Thread sleep delay
     println("Durchsatz " + car.getFlowrate + " beantwortete Requests pro Sekunde")
