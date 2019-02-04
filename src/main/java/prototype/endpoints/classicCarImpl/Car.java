@@ -3,27 +3,33 @@ package prototype.endpoints.classicCarImpl;
 import prototype.endpoints.ICar;
 import prototype.model.Coordinate;
 import prototype.routing.routeImpl.RectangleRoute;
-import prototype.utility.Serializer;
 
+import javax.inject.Inject;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
-import java.util.Arrays;
-import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
 public class Car implements ICar {
 	private final InetSocketAddress socketAddress;
 	private Socket clientSocket;
 	private CompletableFuture<Void> clientThread;
+
+	public int getFlowrate() {
+		return flowrate;
+	}
+
+	public int flowrate = 0;
+
+	@Inject
 	public Car(InetSocketAddress socketAddress) {
 		this.socketAddress = socketAddress;
 	}
 
 	@Override
 	public void connect() {
-		//System.out.println("[CLIENT] " + hashCode() + " start");
 		this.run();
 	}
 
@@ -33,18 +39,15 @@ public class Car implements ICar {
 
 	private void run() {
 		clientSocket = new Socket();
-		//System.out.println("[CLIENT] " + hashCode() + " new Socket instaniated");
 		try {
-			//System.out.println("[CLIENT] " + hashCode() + " try connection");
 			clientSocket.connect(socketAddress);
-			//System.out.println("[CLIENT] " + hashCode() + " succssfully connected");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
-		RectangleRoute rectangleRoute = new RectangleRoute();
-		rectangleRoute.getRouteAsStream().forEach(this::sendData);
-
+		for(int i = 0; i< 10_000; ++i){
+			new RectangleRoute().getRouteAsStream().forEach(this::sendData);
+		}
 
 		try {
 			clientSocket.close();
@@ -55,15 +58,20 @@ public class Car implements ICar {
 
 	private void sendData(Coordinate coordinate){
 		try {
+			// SEND
 			ObjectOutputStream oos = new ObjectOutputStream(clientSocket.getOutputStream());
 			oos.writeObject(coordinate);
 			oos.flush();
-		} catch (IOException e) {
+
+			// RECEIVE
+			ObjectInputStream ois = new ObjectInputStream(clientSocket.getInputStream());
+			Coordinate c = (Coordinate) ois.readObject();
+
+			// INCREMENT flowrate for analysis
+			++flowrate;
+
+		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-	}
-
-	private static void delay() throws InterruptedException {
-		Thread.sleep(200);
 	}
 }

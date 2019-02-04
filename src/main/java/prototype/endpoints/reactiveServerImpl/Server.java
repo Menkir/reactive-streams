@@ -17,7 +17,6 @@ import java.util.Scanner;
 
 public class Server implements IServer {
 	private InetSocketAddress socketAddress;
-	public final Coordinate signalTower = new Coordinate(2,1);
 	private static final RSocketImpl rSocket = new RSocketImpl();
 	private Disposable channel;
 
@@ -44,16 +43,11 @@ public class Server implements IServer {
 	}
 
 	public static void main(final String... args){
-	    Server server = new Server(new InetSocketAddress("192.168.0.199", 1337));
+	    Server server = new Server(new InetSocketAddress("127.0.0.1", 1337));
 	    server.receive();
 	    Scanner scanner = new Scanner(System.in);
 
 	    while(scanner.hasNext()){}
 	    server.dispose();
-	    Long sum = rSocket.clientServedTimes.stream()
-                .reduce(Math::addExact)
-                .get();
-        Long times = (long) rSocket.clientServedTimes.size();
-        System.out.println("Durchschnittliche Bearbeitungszeit eines Client: " + (sum/(double)times));
     }
 }

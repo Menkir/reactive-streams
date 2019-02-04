@@ -30,7 +30,6 @@ public class RectangleRoute implements IRoute {
 				}
 
 				coordinates.forEach(sink::next);
-
 			}
 		}, FluxSink.OverflowStrategy.DROP);
 	}

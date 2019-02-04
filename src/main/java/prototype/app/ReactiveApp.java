@@ -26,8 +26,8 @@ class ReactiveApp {
 
         Car car = injector.getInstance(Car.class);
         car.connect();
-        car.requestChannel();
-        Disposable serverEndpoint = car.subscribeOnServerEndpoint();
+        //car.requestChannel();
+        //Disposable serverEndpoint = car.subscribeOnServerEndpoint();
 
 
         //logger.log(Level.INFO, "Type STRG+D to terminate");
@@ -37,6 +37,6 @@ class ReactiveApp {
         carsEndpoint.dispose();
         coordinateSubscription.unsubscribe();
         server.dispose();
-        serverEndpoint.dispose();
+        //serverEndpoint.dispose();
     }
 }

@@ -2,6 +2,7 @@ package prototype.endpoints.classicServerImpl;
 import prototype.endpoints.IServer;
 import prototype.model.Coordinate;
 
+import javax.inject.Inject;
 import java.io.*;
 import java.net.*;
 import java.util.*;
@@ -14,6 +15,8 @@ public class Server extends Observable implements IServer  {
 	private ServerSocket serverSocket;
     private ExecutorService executorService = Executors.newFixedThreadPool(4);
     private static ArrayList<Long> clientServedTimes = new ArrayList<>();
+
+    @Inject
 	public Server(InetSocketAddress socketAddress){
 		this.socketAddress = socketAddress;
 	}
@@ -42,7 +45,7 @@ public class Server extends Observable implements IServer  {
 							assert finalClientSocket != null;
 							ois = new ObjectInputStream(finalClientSocket.getInputStream());
 							Coordinate coordinate = (Coordinate) ois.readObject();
-							System.out.println("[SERVER] " + finalClientSocket.hashCode() + " Receive " + coordinate);
+							//System.out.println("[SERVER] " + finalClientSocket.hashCode() + " Receive " + coordinate);
 							//setChanged();
 							//notifyObservers(new Tuple<>(finalClientSocket.getPort(), coordinate));
                             oos = new ObjectOutputStream(finalClientSocket.getOutputStream());
@@ -88,7 +91,7 @@ public class Server extends Observable implements IServer  {
 	public static void main(final String... args){
 	    Scanner sc = new Scanner(System.in);
 		try {
-			new Server(new InetSocketAddress("192.168.0.199", 1337)).receive();
+			new Server(new InetSocketAddress("10.168.10.155", 1337)).receive();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

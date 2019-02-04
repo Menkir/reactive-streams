@@ -11,11 +11,11 @@ import reactor.core.scheduler.Schedulers;
 
 import java.util.ArrayList;
 import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class RSocketImpl extends AbstractRSocket {
 	private Scheduler server = Schedulers.fromExecutor(Executors.newFixedThreadPool(4));
-    private long before, after = 0;
-    ArrayList<Long> clientServedTimes = new ArrayList<>();
+
 	private final WorkQueueProcessor<Flux<Payload>> channels;
 
 	RSocketImpl(){
@@ -26,24 +26,18 @@ public class RSocketImpl extends AbstractRSocket {
 		return channels;
 	}
 
+	public void shutdownScheduler(){
+		server.dispose();
+	}
 	@Override
 	public Flux<Payload> requestChannel(final Publisher<Payload> payloads) {
-		Flux<Payload> channel = Flux.from(payloads)
+		Flux<Payload> share = Flux.from(payloads)
 				.subscribeOn(server)
 				.publishOn(server)
-				//.onBackpressureLatest()
-				/*.doOnNext(next -> {
-					System.out.println(Thread.currentThread().getName()
-							+ " [LOG] received from Car " +payloads.hashCode() + ": " + Serializer.deserialize(next));
-				})*/
-                .doOnSubscribe(sub -> before = System.currentTimeMillis())
-                .doOnComplete(() -> {
-                    after = System.currentTimeMillis();
-                    System.out.println((after - before));
-                    clientServedTimes.add((after - before));
-                })
+				.onBackpressureLatest()
+				//.doOnNext((e) -> System.out.println("Ping " + Serializer.deserialize(e)))
 				.share();
-		//channels.onNext(channel);
-		return channel;
+		channels.onNext(share);
+		return share;
 	}
 }

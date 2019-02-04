@@ -27,14 +27,19 @@ public class Car implements ICar {
     private final CarConfiguration carConfiguration;
     private final Scheduler scheduler = Schedulers.fromExecutor(Executors.newFixedThreadPool(4));
 
+	public int getFlowrate() {
+		return flowrate;
+	}
 
-    public Car(InetSocketAddress socketAddress) throws InterruptedException {
+	private int flowrate = 0;
+
+    public Car(InetSocketAddress socketAddress) {
 		this.carConfiguration = new CarConfiguration();
 		this.socketAddress =  socketAddress;
     }
 
     @Inject
-    public Car(InetSocketAddress socketAddress, CarConfiguration configuration) throws InterruptedException {
+    public Car(InetSocketAddress socketAddress, CarConfiguration configuration) {
 	    this.socketAddress = socketAddress;
 	    this.carConfiguration = configuration;
     }
@@ -66,8 +71,7 @@ public class Car implements ICar {
 		return serverEndpoint.subscribeOn(scheduler).publishOn(scheduler).subscribe(payload -> {
 			Coordinate data = Serializer
 					.deserialize(payload);
-		    System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" + Thread.currentThread().getName()
-				    + " [LOG] received from Server " + data);
+			++flowrate;
 		});
 	}
 }
