@@ -1,4 +1,4 @@
-package prototype.endpoints;
+package prototype.interfaces;
 
 import java.io.IOException;
 

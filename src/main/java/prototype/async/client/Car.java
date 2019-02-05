@@ -1,11 +1,11 @@
-package prototype.endpoints.reactiveCarImpl;
+package prototype.async.client;
 
 import io.rsocket.Payload;
 import io.rsocket.RSocket;
 import io.rsocket.RSocketFactory;
 import io.rsocket.transport.netty.client.TcpClientTransport;
 import io.rsocket.util.DefaultPayload;
-import prototype.endpoints.ICar;
+import prototype.interfaces.ICar;
 import prototype.model.Coordinate;
 import prototype.utility.Serializer;
 import reactor.core.Disposable;
@@ -58,6 +58,20 @@ public class Car implements ICar {
 	public void requestChannel() throws InterruptedException {
 		serverEndpoint = client.requestChannel(
 				Flux.from(routingFactory.getRoutingType(carConfiguration.ROUTETYPE).getRoute())
+						.buffer(10_000).flatMap(Flux::fromIterable)
+						.delayElements(carConfiguration.DELAY)
+						.subscribeOn(scheduler)
+						.doOnNext(coordinate -> coordinate.setSignalPower(((int) (Math.random() * 10))))
+						.map(coordinate -> DefaultPayload.create(Serializer.serialize(coordinate)))
+						.publishOn(scheduler)
+						.share()
+		);
+	}
+
+	public void requestChannel(int elements) throws InterruptedException {
+		serverEndpoint = client.requestChannel(
+				Flux.from(routingFactory.getRoutingType(carConfiguration.ROUTETYPE).getRoute())
+						.take(elements)
 						.buffer(10_000).flatMap(Flux::fromIterable)
 						.delayElements(carConfiguration.DELAY)
 						.subscribeOn(scheduler)

@@ -1,13 +1,12 @@
-package prototype.routing.routeImpl;
+package prototype.model.routing.routeImpl;
 
 import prototype.model.Coordinate;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.FluxSink;
-import prototype.routing.IRoute;
-import java.time.Duration;
+import prototype.model.routing.IRoute;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class RectangleRoute implements IRoute {
 	@Override

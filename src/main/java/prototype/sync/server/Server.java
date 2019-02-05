@@ -1,5 +1,5 @@
-package prototype.endpoints.classicServerImpl;
-import prototype.endpoints.IServer;
+package prototype.sync.server;
+import prototype.interfaces.IServer;
 import prototype.model.Coordinate;
 import prototype.utility.Tuple2;
 

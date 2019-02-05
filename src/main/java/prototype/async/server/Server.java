@@ -1,10 +1,9 @@
-package prototype.endpoints.reactiveServerImpl;
+package prototype.async.server;
 
 import io.rsocket.Payload;
 import io.rsocket.RSocketFactory;
 import io.rsocket.transport.netty.server.TcpServerTransport;
-import prototype.model.Coordinate;
-import prototype.endpoints.IServer;
+import prototype.interfaces.IServer;
 import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -12,7 +11,6 @@ import reactor.core.publisher.WorkQueueProcessor;
 
 import javax.inject.Inject;
 import java.net.InetSocketAddress;
-import java.util.Optional;
 import java.util.Scanner;
 
 public class Server implements IServer {

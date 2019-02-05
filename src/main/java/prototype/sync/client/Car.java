@@ -1,8 +1,8 @@
-package prototype.endpoints.classicCarImpl;
+package prototype.sync.client;
 
-import prototype.endpoints.ICar;
+import prototype.interfaces.ICar;
 import prototype.model.Coordinate;
-import prototype.routing.routeImpl.RectangleRoute;
+import prototype.model.routing.routeImpl.RectangleRoute;
 
 import javax.inject.Inject;
 import java.io.IOException;
@@ -69,9 +69,9 @@ public class Car implements ICar {
 
 			// INCREMENT flowrate for analysis
 			++flowrate;
-			Thread.sleep(100);
+			//Thread.sleep(100);
 
-		} catch (IOException | ClassNotFoundException | InterruptedException e) {
+		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
     }

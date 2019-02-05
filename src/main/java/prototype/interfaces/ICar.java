@@ -1,4 +1,4 @@
-package prototype.endpoints;
+package prototype.interfaces;
 
 public interface ICar {
 	public void connect();

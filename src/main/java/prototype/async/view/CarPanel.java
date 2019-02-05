@@ -9,7 +9,7 @@ import reactor.core.publisher.Flux;
 import javax.swing.*;
 import java.awt.*;
 
-public class ClientGraphic extends JPanel {
+public class CarPanel extends JPanel {
 	Color[] colors = {
 			Color.GRAY,
 			Color.PINK,
@@ -23,7 +23,7 @@ public class ClientGraphic extends JPanel {
 	};
 	private Color myColor;
 	private Disposable disposable;
-	ClientGraphic(Flux<Payload> flux){
+	CarPanel(Flux<Payload> flux){
 		setLayout(null);
 		disposable = flux.subscribe(payload -> {
 			Coordinate coordinate = Serializer.deserialize(payload);

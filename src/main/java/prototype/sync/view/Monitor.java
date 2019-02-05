@@ -3,7 +3,6 @@ package prototype.sync.view;
 import prototype.sync.server.Server;
 import prototype.model.Coordinate;
 import prototype.utility.Tuple2;
-import prototype.view.SignalTowerGraphic;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,7 +10,7 @@ import java.net.Socket;
 import java.rmi.server.UID;
 import java.util.*;
 
-public class ClassicMonitor extends JFrame implements Observer {
+public class Monitor extends JFrame implements Observer {
 	private Server server;
 	private JLabel lblCoordinate;
 	private JLayeredPane coordinateSystem;
@@ -19,7 +18,7 @@ public class ClassicMonitor extends JFrame implements Observer {
 	private Map<Integer, ArrayDeque<Coordinate>> cars = new TreeMap<>();
 	private CarGraphicController graphicController = new CarGraphicController();
 
-	public ClassicMonitor(Server server){
+	public Monitor(Server server){
 		this.setResizable(false);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setPreferredSize(new Dimension(750,460));
@@ -49,12 +48,6 @@ public class ClassicMonitor extends JFrame implements Observer {
 			}
 		}
 
-		// SIGNAL TOWER
-		JPanel signalTower = new SignalTowerGraphic();
-		signalTower.setBounds(4*35, 4*35, 35,35);
-		coordinateSystem.add(signalTower);
-		coordinateSystem.setLayer(signalTower, 2);
-
 		// INSPECTOR
 		JPanel inspector = new JPanel(new GridLayout(3, 1));
 		inspector.setBounds(0, 310, 300,100);
@@ -79,7 +72,7 @@ public class ClassicMonitor extends JFrame implements Observer {
 	@Override
 	public void update(Observable o, Object arg) {
 		if(arg instanceof UID) {
-			ClassicCarGraphic car = new ClassicCarGraphic((UID) arg);
+			CarPanel car = new CarPanel((UID) arg);
 			car.setSize(new Dimension(20, 20));
 			coordinateSystem.add(car);
 			coordinateSystem.setLayer(car, 1);
@@ -93,7 +86,7 @@ public class ClassicMonitor extends JFrame implements Observer {
 	}
 
 	private class CarGraphicController extends Observable {
-		public void addCar(ClassicCarGraphic car){
+		public void addCar(CarPanel car){
 			this.addObserver(car);
 		}
 

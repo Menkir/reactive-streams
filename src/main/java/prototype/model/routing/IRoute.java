@@ -1,4 +1,4 @@
-package prototype.routing;
+package prototype.model.routing;
 
 import prototype.model.Coordinate;
 import reactor.core.publisher.Flux;

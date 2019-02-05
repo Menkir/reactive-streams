@@ -1,11 +1,10 @@
-package prototype.routing.routeImpl;
+package prototype.model.routing.routeImpl;
 
 import prototype.model.Coordinate;
-import prototype.routing.IRoute;
+import prototype.model.routing.IRoute;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.FluxSink;
 
-import java.time.Duration;
 import java.util.Arrays;
 
 public class CircleRoute implements IRoute {

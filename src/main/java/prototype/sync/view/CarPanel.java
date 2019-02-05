@@ -14,7 +14,7 @@ import java.rmi.server.UID;
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
 
-public class ClassicCarGraphic extends JPanel implements Observer {
+public class CarPanel extends JPanel implements Observer {
 	Color[] colors = {
 			Color.GRAY,
 			Color.PINK,
@@ -29,7 +29,7 @@ public class ClassicCarGraphic extends JPanel implements Observer {
 	private Color myColor;
 	private UID id;
 
-	ClassicCarGraphic(UID id){
+	CarPanel(UID id){
 		setLayout(null);
 		setBounds(0,0,20,20);
 		this.id = id;

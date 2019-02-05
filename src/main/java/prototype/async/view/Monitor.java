@@ -1,7 +1,7 @@
-package prototype.view;
+package prototype.async.view;
 
 import io.rsocket.Payload;
-import prototype.endpoints.reactiveServerImpl.Server;
+import prototype.async.server.Server;
 import prototype.utility.Serializer;
 import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
@@ -57,12 +57,6 @@ public class Monitor extends JFrame{
             }
         }
 
-        // SIGNAL TOWER
-        JPanel signalTower = new SignalTowerGraphic();
-        signalTower.setBounds(4*35, 4*35, 35,35);
-        coordinateSystem.add(signalTower);
-        coordinateSystem.setLayer(signalTower, 2);
-
         // INSPECTOR
         JPanel inspector = new JPanel(new GridLayout(3, 1));
         inspector.setBounds(0, 310, 300,100);
@@ -103,10 +97,10 @@ public class Monitor extends JFrame{
                     DefaultListSelectionModel data = ((DefaultListSelectionModel) event.getSource());
                     Map.Entry<Integer, Flux<Payload>> selectedChannel = listmodel.getElementAt(data.getAnchorSelectionIndex());
                     Flux<Payload> incomingCoordinates = selectedChannel.getValue();
-                    ClientGraphic clientGraphic = new ClientGraphic(incomingCoordinates);
-                    clientGraphic.setSize(new Dimension(20,20));
-                    coordinateSystem.add(clientGraphic);
-                    coordinateSystem.setLayer(clientGraphic, 1);
+                    CarPanel carPanel = new CarPanel(incomingCoordinates);
+                    carPanel.setSize(new Dimension(20,20));
+                    coordinateSystem.add(carPanel);
+                    coordinateSystem.setLayer(carPanel, 1);
                     disposableStack.push(incomingCoordinates.subscribe(payload -> {
                         lblCoordinate.setText(Serializer.deserialize(payload).toString());
                     }));
