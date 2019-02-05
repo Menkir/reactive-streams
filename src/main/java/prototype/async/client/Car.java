@@ -13,7 +13,7 @@ import reactor.core.publisher.Flux;
 
 import reactor.core.scheduler.Scheduler;
 import reactor.core.scheduler.Schedulers;
-import prototype.routing.RoutingFactory;
+import prototype.model.routing.RoutingFactory;
 
 import javax.inject.Inject;
 import java.net.InetSocketAddress;
@@ -58,7 +58,7 @@ public class Car implements ICar {
 	public void requestChannel() throws InterruptedException {
 		serverEndpoint = client.requestChannel(
 				Flux.from(routingFactory.getRoutingType(carConfiguration.ROUTETYPE).getRoute())
-                        .onBackpressureBuffer(Integer.MAX_VALUE)
+						.buffer(10_000).flatMap(Flux::fromIterable)
 						.delayElements(carConfiguration.DELAY)
 						.subscribeOn(scheduler)
 						.doOnNext(coordinate -> coordinate.setSignalPower(((int) (Math.random() * 10))))

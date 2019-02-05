@@ -69,7 +69,7 @@ public class Car implements ICar {
 
 			// INCREMENT flowrate for analysis
 			++flowrate;
-			Thread.sleep(23);
+			Thread.sleep(100);
 
 		} catch (IOException | ClassNotFoundException | InterruptedException e) {
 			e.printStackTrace();

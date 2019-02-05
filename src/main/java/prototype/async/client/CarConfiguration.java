@@ -1,5 +1,5 @@
 package prototype.endpoints.reactiveCarImpl;
-import prototype.routing.RoutingFactory.RouteType;
+import prototype.model.routing.RoutingFactory.RouteType;
 import java.time.Duration;
 
 public class CarConfiguration {

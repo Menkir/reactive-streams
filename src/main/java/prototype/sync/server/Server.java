@@ -1,10 +1,12 @@
 package prototype.endpoints.classicServerImpl;
 import prototype.endpoints.IServer;
 import prototype.model.Coordinate;
+import prototype.utility.Tuple2;
 
 import javax.inject.Inject;
 import java.io.*;
 import java.net.*;
+import java.rmi.server.UID;
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
@@ -26,11 +28,14 @@ public class Server extends Observable implements IServer  {
 		this.serverSocket = new ServerSocket();
 		serverSocket.bind(socketAddress);
 		CompletableFuture.runAsync(() -> {
+			UID carUid = new UID();
 			while(!serverSocket.isClosed()){
 				Socket clientSocket = null;
 				try {
 					clientSocket = serverSocket.accept();
-					//System.out.println("[SERVER] Accept Connection");
+					// update observer and spawn client graphic
+					setChanged();
+					notifyObservers(carUid);
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -45,12 +50,13 @@ public class Server extends Observable implements IServer  {
 							assert finalClientSocket != null;
 							ois = new ObjectInputStream(finalClientSocket.getInputStream());
 							Coordinate coordinate = (Coordinate) ois.readObject();
-							//System.out.println("[SERVER] " + finalClientSocket.hashCode() + " Receive " + coordinate);
-							setChanged();
-							notifyObservers(new Tuple<>(finalClientSocket.getPort(), coordinate));
                             oos = new ObjectOutputStream(finalClientSocket.getOutputStream());
                             oos.writeObject(coordinate);
                             oos.flush();
+
+							// update subobserver and change position of client graphic
+							setChanged();
+							notifyObservers(new Tuple2<>(carUid, coordinate));
 						} catch (EOFException e) {
 							break;
 						}
@@ -65,23 +71,6 @@ public class Server extends Observable implements IServer  {
 
 		}, executorService);
 
-	}
-
-	public class Tuple<T, E>{
-		private T t;
-		private E e;
-		public Tuple(T t, E e){
-			this.t = t;
-			this.e = e;
-		}
-
-		public T getT() {
-			return t;
-		}
-
-		public E getE() {
-			return e;
-		}
 	}
 
 	public void close() throws IOException {

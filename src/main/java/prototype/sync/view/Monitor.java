@@ -1,13 +1,15 @@
-package prototype.view;
+package prototype.sync.view;
 
-import prototype.endpoints.classicServerImpl.Server;
+import prototype.sync.server.Server;
 import prototype.model.Coordinate;
+import prototype.utility.Tuple2;
+import prototype.view.SignalTowerGraphic;
 
 import javax.swing.*;
 import java.awt.*;
 import java.net.Socket;
+import java.rmi.server.UID;
 import java.util.*;
-import java.util.concurrent.CompletableFuture;
 
 public class ClassicMonitor extends JFrame implements Observer {
 	private Server server;
@@ -15,6 +17,7 @@ public class ClassicMonitor extends JFrame implements Observer {
 	private JLayeredPane coordinateSystem;
 	private JList<Map.Entry<Integer, Socket>> clientList;
 	private Map<Integer, ArrayDeque<Coordinate>> cars = new TreeMap<>();
+	private CarGraphicController graphicController = new CarGraphicController();
 
 	public ClassicMonitor(Server server){
 		this.setResizable(false);
@@ -75,18 +78,29 @@ public class ClassicMonitor extends JFrame implements Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
-		Server.Tuple<Integer, Coordinate> tuple = (Server.Tuple<Integer, Coordinate>) arg;
-
-		if(!cars.containsKey(tuple.getT())){
-			cars.put(tuple.getT(), new ArrayDeque<>());
-			cars.get(tuple.getT()).add(tuple.getE());
-
-			// ADD CAR GRAPHIC
-			ClassicCarGraphic car = new ClassicCarGraphic(tuple.getT(), cars);
-			car.setSize(new Dimension(20,20));
+		if(arg instanceof UID) {
+			ClassicCarGraphic car = new ClassicCarGraphic((UID) arg);
+			car.setSize(new Dimension(20, 20));
 			coordinateSystem.add(car);
 			coordinateSystem.setLayer(car, 1);
-		} else cars.get(tuple.getT()).add(tuple.getE());
+			graphicController.addCar(car);
+		} else if(arg instanceof Tuple2){
+			Tuple2 tuple = (Tuple2) arg;
+			UID id = (UID) tuple.getT();
+			Coordinate coordinate = (Coordinate) tuple.getE();
+			graphicController.updateGraphic(coordinate, id);
+		}
+	}
+
+	private class CarGraphicController extends Observable {
+		public void addCar(ClassicCarGraphic car){
+			this.addObserver(car);
+		}
+
+		public void updateGraphic(Coordinate coordinate, UID uid){
+			setChanged();
+			notifyObservers(new Tuple2<>(uid, coordinate));
+		}
 	}
 
 }

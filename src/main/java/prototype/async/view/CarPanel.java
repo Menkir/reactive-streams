@@ -1,4 +1,4 @@
-package prototype.view;
+package prototype.async.view;
 
 import io.rsocket.Payload;
 import prototype.model.Coordinate;

@@ -5,7 +5,4 @@ import reactor.core.publisher.Flux;
 
 public interface IRoute {
 	Flux<Coordinate> getRoute() throws InterruptedException;
-	public static void tick() throws InterruptedException {
-		Thread.sleep(1000);
-	}
 }
