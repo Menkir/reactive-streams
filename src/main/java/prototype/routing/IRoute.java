@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface IRoute {
 
-    int SENDINGTIME = 30 * 1_000;
+    int MAXEMITTED = 1_000_000;
 
     /**
      * Blocking Variant of getRoute()
@@ -24,12 +24,11 @@ public interface IRoute {
      */
     default Flux<Coordinate> getRoute() throws InterruptedException {
         return Flux.<Coordinate>create(sink -> {
-            long before = System.currentTimeMillis();
-            long after = 0;
-            while((after - before) < SENDINGTIME) {
+            int emitted = 0;
+            while(emitted < MAXEMITTED) {
                 getRouteAsList()
                         .forEach(sink::next);
-                after = System.currentTimeMillis();
+                ++emitted;
             }
         }, FluxSink.OverflowStrategy.DROP);
     }

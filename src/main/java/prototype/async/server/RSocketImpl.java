@@ -33,7 +33,6 @@ public class RSocketImpl extends AbstractRSocket {
 		Flux<Payload> share = Flux.from(payloads)
 				.subscribeOn(server)
 				.publishOn(server)
-				//.doOnNext((e) -> System.out.println("Ping " + Serializer.deserialize(e)))
 				.share();
 		channels.onNext(share);
 		return share;

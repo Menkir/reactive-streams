@@ -11,7 +11,7 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 class SyncSimulation extends Simulation {
   val logger = Logger[SyncSimulation]
-  val host = new InetSocketAddress("192.168.0.199", 1338)
+  val host = new InetSocketAddress("127.0.0.1", 1338)
 
   def run(): Unit = {
     logger.info("START SERVER")
@@ -22,16 +22,7 @@ class SyncSimulation extends Simulation {
     warmup()
 
     val list  = List[Int](
-      5000,
-      5000,
-      5000,
-      5000,
-      5000,
-      5000,
-      5000,
-      5000,
-      5000,
-      5000
+      10000
     )
       .map(runtime => (runtime, benchmark(runtime)))
 

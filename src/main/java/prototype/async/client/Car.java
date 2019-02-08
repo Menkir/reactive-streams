@@ -23,7 +23,7 @@ public class Car implements ICar {
     private RSocket client;
     private Flux<Payload> serverEndpoint;
     private final CarConfiguration carConfiguration;
-    private final ExecutorService executors = Executors.newFixedThreadPool(4);
+    private final ExecutorService executors = Executors.newFixedThreadPool(8);
     private final Scheduler scheduler = Schedulers.fromExecutor(executors);
 	private int flowrate = 0;
 
