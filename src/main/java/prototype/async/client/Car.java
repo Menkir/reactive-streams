@@ -10,13 +10,11 @@ import prototype.model.Coordinate;
 import prototype.utility.Serializer;
 import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
-
 import reactor.core.scheduler.Scheduler;
 import reactor.core.scheduler.Schedulers;
-import prototype.model.routing.RoutingFactory;
-
-import javax.inject.Inject;
+import prototype.routing.RoutingFactory;
 import java.net.InetSocketAddress;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Car implements ICar {
@@ -25,12 +23,8 @@ public class Car implements ICar {
     private RSocket client;
     private Flux<Payload> serverEndpoint;
     private final CarConfiguration carConfiguration;
-    private final Scheduler scheduler = Schedulers.fromExecutor(Executors.newFixedThreadPool(4));
-
-	public int getFlowrate() {
-		return flowrate;
-	}
-
+    private final ExecutorService executors = Executors.newFixedThreadPool(4);
+    private final Scheduler scheduler = Schedulers.fromExecutor(executors);
 	private int flowrate = 0;
 
     public Car(InetSocketAddress socketAddress) {
@@ -38,7 +32,6 @@ public class Car implements ICar {
 		this.socketAddress =  socketAddress;
     }
 
-    @Inject
     public Car(InetSocketAddress socketAddress, CarConfiguration configuration) {
 	    this.socketAddress = socketAddress;
 	    this.carConfiguration = configuration;
@@ -58,7 +51,8 @@ public class Car implements ICar {
 	public void requestChannel() throws InterruptedException {
 		serverEndpoint = client.requestChannel(
 				Flux.from(routingFactory.getRoutingType(carConfiguration.ROUTETYPE).getRoute())
-						.buffer(10_000).flatMap(Flux::fromIterable)
+						.buffer(10_000)
+                        .flatMap(Flux::fromIterable)
 						.delayElements(carConfiguration.DELAY)
 						.subscribeOn(scheduler)
 						.doOnNext(coordinate -> coordinate.setSignalPower(((int) (Math.random() * 10))))
@@ -71,22 +65,30 @@ public class Car implements ICar {
 	public void requestChannel(int elements) throws InterruptedException {
 		serverEndpoint = client.requestChannel(
 				Flux.from(routingFactory.getRoutingType(carConfiguration.ROUTETYPE).getRoute())
-						.take(elements)
-						.buffer(10_000).flatMap(Flux::fromIterable)
+                        .take(elements)
+                        .subscribeOn(scheduler)
 						.delayElements(carConfiguration.DELAY)
-						.subscribeOn(scheduler)
 						.doOnNext(coordinate -> coordinate.setSignalPower(((int) (Math.random() * 10))))
 						.map(coordinate -> DefaultPayload.create(Serializer.serialize(coordinate)))
 						.publishOn(scheduler)
-						.share()
+                        .share()
 		);
 	}
 
 	public Disposable subscribeOnServerEndpoint(){
-		return serverEndpoint.subscribeOn(scheduler).publishOn(scheduler).subscribe(payload -> {
+		return serverEndpoint.subscribe(payload -> {
 			Coordinate data = Serializer
 					.deserialize(payload);
 			++flowrate;
 		});
+	}
+
+    public int getFlowrate() {
+        return flowrate;
+    }
+
+	public void shutDown(){
+        executors.shutdown();
+        scheduler.dispose();
 	}
 }

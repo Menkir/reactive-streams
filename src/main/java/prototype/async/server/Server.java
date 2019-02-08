@@ -8,17 +8,13 @@ import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.WorkQueueProcessor;
-
-import javax.inject.Inject;
 import java.net.InetSocketAddress;
-import java.util.Scanner;
 
 public class Server implements IServer {
 	private InetSocketAddress socketAddress;
 	private static final RSocketImpl rSocket = new RSocketImpl();
 	private Disposable channel;
 
-	@Inject
 	public Server(InetSocketAddress socketAddress){
 		this.socketAddress = socketAddress;
 	}
@@ -35,17 +31,9 @@ public class Server implements IServer {
 
 	public void dispose(){
 		channel.dispose();
+		rSocket.dispose();
 	}
 	public WorkQueueProcessor<Flux<Payload>> getChannels(){
 		return rSocket.getChannels();
 	}
-
-	public static void main(final String... args){
-	    Server server = new Server(new InetSocketAddress("127.0.0.1", 1337));
-	    server.receive();
-	    Scanner scanner = new Scanner(System.in);
-
-	    while(scanner.hasNext()){}
-	    server.dispose();
-    }
 }

@@ -1,15 +1,14 @@
-package prototype.model.routing.routeImpl;
+package prototype.routing.routeimpl;
 
 import prototype.model.Coordinate;
-import prototype.model.routing.IRoute;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.FluxSink;
+import prototype.routing.IRoute;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class CircleRoute implements IRoute {
 	@Override
-	public Flux<Coordinate> getRoute() {
+	public List<Coordinate> getRouteAsList() {
 		Coordinate[] circle = {
 				new Coordinate(3,1),
 				new Coordinate(4,1),
@@ -32,13 +31,6 @@ public class CircleRoute implements IRoute {
 				new Coordinate(1,3),
 				new Coordinate(2,2),
 		};
-
-		return Flux.<Coordinate>create(sink -> {
-			while(true){
-				Arrays.stream(circle)
-						.forEach(sink::next);
-			}
-		}, FluxSink.OverflowStrategy.DROP);
-
+		return Arrays.asList(circle);
 	}
 }

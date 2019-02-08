@@ -10,11 +10,13 @@ import reactor.core.scheduler.Scheduler;
 import reactor.core.scheduler.Schedulers;
 
 import java.util.ArrayList;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class RSocketImpl extends AbstractRSocket {
-	private Scheduler server = Schedulers.fromExecutor(Executors.newFixedThreadPool(4));
+	private final ExecutorService executorService = Executors.newFixedThreadPool(1);
+	private final Scheduler server = Schedulers.fromExecutor(executorService);
 
 	private final WorkQueueProcessor<Flux<Payload>> channels;
 
@@ -26,9 +28,6 @@ public class RSocketImpl extends AbstractRSocket {
 		return channels;
 	}
 
-	public void shutdownScheduler(){
-		server.dispose();
-	}
 	@Override
 	public Flux<Payload> requestChannel(final Publisher<Payload> payloads) {
 		Flux<Payload> share = Flux.from(payloads)

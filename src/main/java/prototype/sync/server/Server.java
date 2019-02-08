@@ -2,8 +2,6 @@ package prototype.sync.server;
 import prototype.interfaces.IServer;
 import prototype.model.Coordinate;
 import prototype.utility.Tuple2;
-
-import javax.inject.Inject;
 import java.io.*;
 import java.net.*;
 import java.rmi.server.UID;
@@ -18,7 +16,6 @@ public class Server extends Observable implements IServer  {
     private ExecutorService executorService = Executors.newFixedThreadPool(4);
     private static ArrayList<Long> clientServedTimes = new ArrayList<>();
 
-    @Inject
 	public Server(InetSocketAddress socketAddress){
 		this.socketAddress = socketAddress;
 	}

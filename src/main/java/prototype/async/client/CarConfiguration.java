@@ -1,10 +1,10 @@
 package prototype.async.client;
-import prototype.model.routing.RoutingFactory.RouteType;
+import prototype.routing.RoutingFactory.RouteType;
 import java.time.Duration;
 
 public class CarConfiguration {
-	final Duration DELAY;//with which delay the data is emitted
-	final RouteType ROUTETYPE; // Rectangle, Square etc.
+	public final Duration DELAY;//with which delay the data is emitted
+	public final RouteType ROUTETYPE; // Rectangle, Square etc.
 
 	public CarConfiguration(){
 		this.DELAY = Duration.ZERO;
