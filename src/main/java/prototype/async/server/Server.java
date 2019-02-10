@@ -9,6 +9,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.WorkQueueProcessor;
 import java.net.InetSocketAddress;
+import java.util.Scanner;
 
 public class Server implements IServer {
 	private InetSocketAddress socketAddress;
@@ -36,4 +37,14 @@ public class Server implements IServer {
 	public WorkQueueProcessor<Flux<Payload>> getChannels(){
 		return rSocket.getChannels();
 	}
+
+	public static void main(final String... args){
+	    Server server = new Server(new InetSocketAddress("192.168.0.199", 1338));
+	    server.receive();
+	    Scanner sc = new Scanner(System.in);
+	    while(sc.hasNext()){
+
+        }
+
+    }
 }

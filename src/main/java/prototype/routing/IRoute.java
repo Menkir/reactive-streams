@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface IRoute {
 
-    int MAXEMITTED = 1_000_000;
+    int MAXEMITTED = 100_000_000;
 
     /**
      * Blocking Variant of getRoute()
@@ -20,16 +20,17 @@ public interface IRoute {
      * A Route on a map, represented as infinite reactive Stream of coordinates
      * Because infinite Streams are bad for benchmarking the Streams emitting element for 30 seconds
      * @return Flux with Coordinates
-     * @throws InterruptedException
      */
-    default Flux<Coordinate> getRoute() throws InterruptedException {
+    default Flux<Coordinate> getRoute() {
         return Flux.<Coordinate>create(sink -> {
             int emitted = 0;
             while(emitted < MAXEMITTED) {
-                getRouteAsList()
-                        .forEach(sink::next);
-                ++emitted;
+                for(Coordinate coordinate : getRouteAsList()){
+                    sink.next(coordinate);
+                    emitted++;
+                }
             }
+            sink.complete();
         }, FluxSink.OverflowStrategy.DROP);
     }
 }

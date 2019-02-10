@@ -23,7 +23,7 @@ public class Car implements ICar {
     private RSocket client;
     private Flux<Payload> serverEndpoint;
     private final CarConfiguration carConfiguration;
-    private final ExecutorService executors = Executors.newFixedThreadPool(8);
+    private final ExecutorService executors = Executors.newFixedThreadPool(4);
     private final Scheduler scheduler = Schedulers.fromExecutor(executors);
 	private int flowrate = 0;
 
@@ -48,9 +48,10 @@ public class Car implements ICar {
 				.block();
 	}
 
-	public void requestChannel() throws InterruptedException {
+	public void requestChannel() {
 		serverEndpoint = client.requestChannel(
-				Flux.from(routingFactory.getRoutingType(carConfiguration.ROUTETYPE).getRoute())
+				Flux.fromIterable(routingFactory.getRoutingType(carConfiguration.ROUTETYPE).getRouteAsList())
+                        .repeat(100000)
 						.delayElements(carConfiguration.DELAY)
 						.subscribeOn(scheduler)
 						.doOnNext(coordinate -> coordinate.setSignalPower(((int) (Math.random() * 10))))

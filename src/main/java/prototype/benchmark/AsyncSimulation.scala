@@ -5,6 +5,8 @@ import java.net.InetSocketAddress
 import com.typesafe.scalalogging.Logger
 import prototype.async.client.Car
 import prototype.async.server.Server
+
+import scala.util.Random
 class AsyncSimulation extends Simulation{
   val logger: Logger = Logger[AsyncSimulation]
   val host = new InetSocketAddress("127.0.0.1", 1337)
@@ -15,11 +17,8 @@ class AsyncSimulation extends Simulation{
 
     logger.info("WARMUP")
     warmup()
-    val list  = List[Int](
-      2000,2000,2000,2000,2000, 2000,2000,2000,2000,2000,2000, 2000,
-
-    )
-        .map(runtime => (runtime, benchmark(runtime)))
+    val list  = List.tabulate(10)(n => Random.nextInt(500)+500)
+                    .map(runtime => (runtime, benchmark(runtime)))
 
     logger.info("CLEAN UP")
     server dispose()
@@ -42,25 +41,17 @@ class AsyncSimulation extends Simulation{
   }
 
   def warmup(): Unit={
-    val runtimeMxBean = ManagementFactory.getRuntimeMXBean
-    val listOfArguments = runtimeMxBean.getInputArguments
-    val compilationBean = ManagementFactory.getCompilationMXBean
-
-    var iterations = 0
-    val argumentQuery = "-XX:CompileThreshold="
-    listOfArguments forEach(arg => {
-      if (arg.startsWith(argumentQuery))
-        iterations = Integer.parseInt(arg.slice(argumentQuery.length, arg.length))
-    })
+    val iterations = 3000000
     val car = new Car(host)
     car connect()
     car requestChannel()
     val disposable = car subscribeOnServerEndpoint()
-
     while(car.getFlowrate < iterations){
       Thread.sleep(1)
+      //println(car.getFlowrate)
     }
     disposable.dispose()
+    car.shutDown()
   }
 }
 
