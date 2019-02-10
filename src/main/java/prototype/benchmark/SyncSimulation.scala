@@ -11,7 +11,7 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
 class SyncSimulation extends Simulation {
   val logger = Logger[SyncSimulation]
-  val host = new InetSocketAddress("127.0.0.1", 1338)
+  val host = new InetSocketAddress("192.168.0.199", 1338)
 
   def run(): Unit = {
     logger.info("START SERVER")
@@ -22,12 +22,22 @@ class SyncSimulation extends Simulation {
     warmup()
 
     val list  = List[Int](
-      10000
+      2000,
+      2000,
+      2000,
+      2000,
+      2000,
+      2000,
+      2000,
+      2000,
+      2000,
+      2000,
     )
       .map(runtime => (runtime, benchmark(runtime)))
 
     printResult(list)
     saveResult(classOf[SyncSimulation].getCanonicalName + ".txt", list)
+    server.close()
   }
 
   override def benchmark(runtime: Int): Int ={
@@ -55,7 +65,7 @@ class SyncSimulation extends Simulation {
     })
     val car = new Car(host)
     car.connect()
-    car.send(warmupElements)
+    car.send(1000000)
     car.close()
   }
 }

@@ -54,7 +54,7 @@ public class Server extends Observable implements IServer  {
 							// update subobserver and change position of client graphic
 							setChanged();
 							notifyObservers(new Tuple2<>(carUid, coordinate));
-						} catch (EOFException e) {
+						} catch (EOFException | SocketException e) {
 							break;
 						}
 

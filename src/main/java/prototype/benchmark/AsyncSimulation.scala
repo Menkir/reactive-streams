@@ -1,6 +1,4 @@
 package prototype.benchmark
-
-import java.io.{ByteArrayOutputStream, PrintStream}
 import java.lang.management.ManagementFactory
 import java.net.InetSocketAddress
 

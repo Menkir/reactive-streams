@@ -51,27 +51,12 @@ public class Car implements ICar {
 	public void requestChannel() throws InterruptedException {
 		serverEndpoint = client.requestChannel(
 				Flux.from(routingFactory.getRoutingType(carConfiguration.ROUTETYPE).getRoute())
-						.buffer(10_000)
-                        .flatMap(Flux::fromIterable)
 						.delayElements(carConfiguration.DELAY)
 						.subscribeOn(scheduler)
 						.doOnNext(coordinate -> coordinate.setSignalPower(((int) (Math.random() * 10))))
 						.map(coordinate -> DefaultPayload.create(Serializer.serialize(coordinate)))
 						.publishOn(scheduler)
 						.share()
-		);
-	}
-
-	public void requestChannel(int elements) throws InterruptedException {
-		serverEndpoint = client.requestChannel(
-				Flux.from(routingFactory.getRoutingType(carConfiguration.ROUTETYPE).getRoute())
-                        .take(elements)
-                        .subscribeOn(scheduler)
-						.delayElements(carConfiguration.DELAY)
-						.doOnNext(coordinate -> coordinate.setSignalPower(((int) (Math.random() * 10))))
-						.map(coordinate -> DefaultPayload.create(Serializer.serialize(coordinate)))
-						.publishOn(scheduler)
-                        .share()
 		);
 	}
 

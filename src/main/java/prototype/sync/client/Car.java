@@ -22,6 +22,7 @@ public class Car implements ICar {
     private RoutingFactory routingFactory = new RoutingFactory();
     private List<Coordinate> route;
     private int flowrate = 0;
+    private boolean done = false;
 
 
 	public Car(InetSocketAddress socketAddress) {
@@ -44,14 +45,18 @@ public class Car implements ICar {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 	}
 
     public int getFlowrate() {
         return flowrate;
     }
 
-	public void close() throws IOException, InterruptedException {
-		clientSocket.close();
+	public void close() throws IOException {
+		if(clientSocket != null){
+		    done = true;
+            clientSocket.close();
+        }
 	}
 
     /**
@@ -64,14 +69,7 @@ public class Car implements ICar {
                 sendData(coordinate);
                 deliveredElements ++;
             }
-        }while(deliveredElements < MAXELEMENTS);
-
-
-		try {
-			clientSocket.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+        }while(deliveredElements < MAXELEMENTS && !done);
 	}
 
     /**
@@ -86,12 +84,6 @@ public class Car implements ICar {
                 deliveredElements ++;
             }
         }while(deliveredElements < elements);
-
-        try {
-            clientSocket.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     /**
@@ -114,12 +106,7 @@ public class Car implements ICar {
 
             Thread.sleep(carConfiguration.DELAY.toMillis());
 
-		} catch (IOException | ClassNotFoundException | InterruptedException e) {
-			e.printStackTrace();
-		}
-    }
-
-    public void resetFlowRate(){
-	    flowrate = 0;
+		} catch (InterruptedException | IOException | ClassNotFoundException ignored) {
+        }
     }
 }
