@@ -1,10 +1,8 @@
 package prototype.sync.server;
 import prototype.interfaces.IServer;
 import prototype.model.Coordinate;
-import prototype.utility.Tuple2;
 import java.io.*;
 import java.net.*;
-import java.rmi.server.UID;
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
@@ -13,7 +11,7 @@ import java.util.concurrent.Executors;
 public class Server extends Observable implements IServer  {
 	private final InetSocketAddress socketAddress;
 	private ServerSocket serverSocket;
-    private ExecutorService executorService = Executors.newFixedThreadPool(4);
+    private ExecutorService executorService = Executors.newFixedThreadPool(8);
     private static ArrayList<Long> clientServedTimes = new ArrayList<>();
 
 	public Server(InetSocketAddress socketAddress){
@@ -25,47 +23,37 @@ public class Server extends Observable implements IServer  {
 		this.serverSocket = new ServerSocket();
 		serverSocket.bind(socketAddress);
 		CompletableFuture.runAsync(() -> {
-			UID carUid = new UID();
 			while(!serverSocket.isClosed()){
-				Socket clientSocket = null;
+				Socket clientSocket;
 				try {
 					clientSocket = serverSocket.accept();
-					// update observer and spawn client graphic
-					setChanged();
-					notifyObservers(carUid);
 				} catch (IOException e) {
-					e.printStackTrace();
+					System.err.println("[Server] stopped" + e.getMessage());
+					return;
 				}
+
 				Socket finalClientSocket = clientSocket;
 				CompletableFuture.runAsync(() -> {
-					ObjectInputStream ois = null;
-					ObjectOutputStream oos = null;
-					long before, after = 0;
-					before = System.currentTimeMillis();
-					while(true) try {
+					ObjectInputStream ois;
+					ObjectOutputStream oos;
+					while(true) {
 						try {
 							assert finalClientSocket != null;
-							ois = new ObjectInputStream(finalClientSocket.getInputStream());
+							ois = new ObjectInputStream(new BufferedInputStream(finalClientSocket.getInputStream()));
 							Coordinate coordinate = (Coordinate) ois.readObject();
-                            oos = new ObjectOutputStream(finalClientSocket.getOutputStream());
-                            oos.writeObject(coordinate);
-                            oos.flush();
 
-							// update subobserver and change position of client graphic
-							setChanged();
-							notifyObservers(new Tuple2<>(carUid, coordinate));
-						} catch (EOFException | SocketException e) {
+							oos = new ObjectOutputStream(new BufferedOutputStream(finalClientSocket.getOutputStream()));
+							oos.writeObject(coordinate);
+							oos.flush();
+						} catch (IOException | ClassNotFoundException e) {
+							System.err.println("[Server] Connection to Client was dropped " + e.getMessage());
 							break;
 						}
 
-					} catch (IOException | ClassNotFoundException e) {
-						e.printStackTrace();
 					}
-					after = System.currentTimeMillis();
-                    clientServedTimes.add((after -before));
 				}, executorService);
-			}
 
+			}
 		}, executorService);
 
 	}

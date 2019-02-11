@@ -1,0 +1,1175 @@
+[pool-1-thread-4] INFO prototype.benchmark.AsyncSimulation - START BENCHMARK
+[pool-1-thread-2] INFO prototype.benchmark.AsyncSimulation - START BENCHMARK
+[pool-1-thread-7] INFO prototype.benchmark.AsyncSimulation - START BENCHMARK
+[pool-1-thread-5] INFO prototype.benchmark.AsyncSimulation - START BENCHMARK
+[pool-1-thread-8] INFO prototype.benchmark.AsyncSimulation - START BENCHMARK
+[pool-1-thread-6] INFO prototype.benchmark.AsyncSimulation - START BENCHMARK
+[pool-1-thread-3] INFO prototype.benchmark.AsyncSimulation - START BENCHMARK
+[pool-1-thread-1] INFO prototype.benchmark.AsyncSimulation - START BENCHMARK
+[pool-1-thread-10] INFO prototype.benchmark.AsyncSimulation - START BENCHMARK
+[pool-1-thread-9] INFO prototype.benchmark.AsyncSimulation - START BENCHMARK
+  55126 3269       4       java.util.ArrayList::<init> (12 bytes)
+  55127 3079       4       reactor.core.scheduler.ExecutorServiceWorker::schedule (17 bytes)   made not entrant
+  55127 3078       4       reactor.core.scheduler.DelegateServiceScheduler$UnsupportedScheduledExecutorService::submit (11 bytes)   made not entrant
+  55127 3270       3       java.util.LinkedHashMap$LinkedHashIterator::nextNode (54 bytes)
+  55127 3077   !   4       reactor.core.Disposables$ListCompositeDisposable::add (79 bytes)   made not entrant
+  55128 3271       3       io.netty.util.AbstractConstant::hashCode (5 bytes)
+  55129 2674       4       java.lang.reflect.Constructor::newInstance (87 bytes)   made not entrant
+  55129 3151       4       reactor.core.publisher.Mono::subscribe (12 bytes)   made not entrant
+  55131 2815       4       io.netty.util.concurrent.SingleThreadEventExecutor::runAllTasks (96 bytes)   made not entrant
+  55132 2496       4       io.netty.util.concurrent.DefaultPromise::trySuccess (16 bytes)   made not entrant
+  55132 3272       4       java.util.HashSet::contains (9 bytes)
+  55132 2831       4       io.netty.channel.socket.nio.NioSocketChannel::isActive (25 bytes)   made not entrant
+  55132 2484   !   4       io.netty.util.concurrent.DefaultPromise::notifyListeners (73 bytes)   made not entrant
+  55133 2573   !   4       io.netty.util.concurrent.DefaultPromise::addListener (39 bytes)   made not entrant
+  55133 2590       4       io.netty.util.concurrent.DefaultPromise::addListener0 (59 bytes)   made not entrant
+  55133 3273       1       io.netty.bootstrap.Bootstrap::config (5 bytes)
+  55133 2788   !   4       sun.nio.ch.SocketChannelImpl::isConnected (28 bytes)   made not entrant
+  55133 2806       4       java.nio.channels.spi.AbstractInterruptibleChannel::begin (48 bytes)   made not entrant
+  55134 1947       4       io.netty.channel.AbstractChannelHandlerContext::isNotValidPromise (200 bytes)   made not entrant
+  55135 2578       4       io.netty.channel.DefaultChannelPromise::addListener (8 bytes)   made not entrant
+  55135 3227       3       java.util.concurrent.ScheduledThreadPoolExecutor::delayedExecute (70 bytes)   made zombie
+  55135 1868       4       io.netty.util.concurrent.DefaultPromise::isDone (8 bytes)   made not entrant
+  55135 3043   !   4       io.netty.channel.nio.NioEventLoop::select (307 bytes)   made not entrant
+  55135 3015       4       io.netty.util.internal.DefaultPriorityQueue::peek (5 bytes)   made not entrant
+  55136 3274       1       java.net.InetAddress$InetAddressHolder::getAddress (5 bytes)
+  55136 2999       4       sun.nio.ch.SocketChannelImpl::translateReadyOps (191 bytes)   made not entrant
+  55136 2858       4       io.netty.channel.nio.NioEventLoop::processSelectedKeys (26 bytes)   made not entrant
+  55137 2857       4       io.netty.channel.nio.NioEventLoop::processSelectedKeysOptimized (99 bytes)   made not entrant
+  55137 3130       4       java.util.Collections$SetFromMap::add (22 bytes)   made zombie
+  55137 3275   !   3       io.netty.channel.nio.NioEventLoop::select (307 bytes)
+  55138 3278       4       io.netty.channel.DefaultChannelPromise::<init> (18 bytes)
+  55138 2352       4       io.rsocket.frame.FrameHeaderFlyweight::encodeMetadata (84 bytes)   made not entrant
+  55138 3183       4       reactor.core.publisher.FluxDoFinally$DoFinallySubscriber::request (11 bytes)   made not entrant
+  55138 2215       4       io.netty.channel.AbstractChannelHandlerContext::invokeChannelRead (53 bytes)   made not entrant
+  55138 3021       4       io.netty.buffer.PooledUnsafeDirectByteBuf::setBytes (16 bytes)   made not entrant
+  55138 2384       4       io.netty.buffer.UnsafeByteBufUtil::setBytes (134 bytes)   made not entrant
+  55139 3100       4       reactor.core.publisher.Flux::subscribe (12 bytes)   made not entrant
+  55139 2046   !   4       reactor.netty.channel.FluxReceive::drainReceiver (397 bytes)   made not entrant
+  55139 2981       4       io.netty.channel.DefaultChannelPipeline$HeadContext::channelReadComplete (12 bytes)   made not entrant
+  55139 1774       4       io.netty.channel.AbstractChannelHandlerContext::read (59 bytes)   made not entrant
+  55139 1775   !   4       io.netty.channel.AbstractChannelHandlerContext::invokeRead (38 bytes)   made not entrant
+  55140 3280     n 0       java.lang.Class::getDeclaringClass0 (native)   
+  55140 2998       4       io.netty.channel.ChannelInboundHandlerAdapter::channelReadComplete (8 bytes)   made not entrant
+  55140 3122       4       reactor.core.publisher.StrictSubscriber::request (103 bytes)   made not entrant
+  55140 1539       3       io.netty.channel.DefaultChannelPromise::<init> (18 bytes)   made not entrant
+  55140 2398       4       io.rsocket.internal.UnboundedProcessor::drain (64 bytes)   made not entrant
+  55140 1582       4       io.netty.channel.AbstractChannelHandlerContext::executor (22 bytes)   made not entrant
+  55140 3054       4       reactor.core.publisher.UnicastProcessor::drain (64 bytes)   made not entrant
+  55140 2793   !   4       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::drain (280 bytes)   made not entrant
+  55140 1944       4       reactor.core.publisher.StrictSubscriber::onNext (77 bytes)   made not entrant
+  55141 3282   !   4       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::drain (280 bytes)
+  55141 1948   !   4       io.netty.channel.AbstractChannelHandlerContext::write (50 bytes)   made not entrant
+  55141 2591       4       reactor.netty.channel.ChannelOperationsHandler::write (109 bytes)   made not entrant
+  55142 2609       4       io.netty.channel.ChannelOutboundBuffer::nioBuffers (317 bytes)   made not entrant
+  55142 2495       4       io.netty.channel.ChannelOutboundBuffer::remove (66 bytes)   made not entrant
+  55142 2772       4       io.rsocket.transport.netty.SendPublisher$InnerSubscriber$$Lambda$101/447756505::run (8 bytes)   made not entrant
+  55142 3286       4       java.lang.Number::<init> (5 bytes)
+  55142 2120       4       io.rsocket.transport.netty.SendPublisher::tryComplete (64 bytes)   made not entrant
+  55142 3287       4       java.lang.Integer::numberOfLeadingZeros (76 bytes)
+  55142 2931       4       reactor.core.publisher.Operators$MonoSubscriber::complete (155 bytes)   made not entrant
+  55142 2774   !   4       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::flush (39 bytes)   made not entrant
+  55142  268       3       java.lang.Number::<init> (5 bytes)   made not entrant
+  55142 3098       4       reactor.core.scheduler.Schedulers::directSchedule (52 bytes)   made not entrant
+  55143 2987   !   4       sun.nio.ch.SocketChannelImpl::read (389 bytes)   made not entrant
+  55143 3201   !   4       reactor.core.publisher.FluxGroupBy$GroupByMain::onNext (193 bytes)   made not entrant
+  55143 3298       4       reactor.core.publisher.Mono::subscribe (12 bytes)
+  55143 2543       4       reactor.core.publisher.FluxGroupBy$UnicastGroupedFlux::onNext (68 bytes)   made not entrant
+  55143 2531       4       reactor.core.publisher.FluxGroupBy$UnicastGroupedFlux::drain (41 bytes)   made not entrant
+  55143  689       3       java.lang.Integer::numberOfLeadingZeros (76 bytes)   made not entrant
+  55143 3283       3       io.netty.util.concurrent.DefaultPromise::isDone (8 bytes)
+  55143 3167       4       reactor.core.publisher.Operators$MultiSubscriptionSubscriber::request (119 bytes)   made not entrant
+  55144 3169       4       reactor.core.publisher.Operators$MultiSubscriptionSubscriber::set (132 bytes)   made not entrant
+  55144 3277   !   3       io.netty.util.concurrent.DefaultPromise::addListener (39 bytes)
+  55144 2123       4       reactor.core.publisher.FluxGroupBy$UnicastGroupedFlux::checkTerminated (66 bytes)   made not entrant
+  55144 3231   !   3       io.rsocket.RSocketClient::handleIncomingFrames (49 bytes)   made zombie
+  55144 3301       4       java.util.ArrayList::add (29 bytes)
+  55144 1268       3       java.util.concurrent.atomic.AtomicLongFieldUpdater$CASUpdater::addAndGet (9 bytes)   made zombie
+  55146 3207   !   4       io.rsocket.internal.LimitableRequestPublisher::increaseRequestLimit (33 bytes)   made not entrant
+  55146 2861   !   4       reactor.core.scheduler.SchedulerTask::call (100 bytes)   made not entrant
+  55146 3276       3       io.netty.util.concurrent.DefaultPromise::addListener0 (59 bytes)
+  55146 3208   !   4       io.rsocket.internal.LimitableRequestPublisher::requestN (75 bytes)   made not entrant
+  55146 3137   !   4       reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber::request (52 bytes)   made not entrant
+  55146 3181   !   4       reactor.core.publisher.FluxPeek$PeekSubscriber::request (52 bytes)   made not entrant
+  55146 2834       4       io.netty.channel.AbstractChannelHandlerContext::invokeChannelReadComplete (52 bytes)   made not entrant
+  55147 1555       3       java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask::getDelay (20 bytes)   made zombie
+  55147 1556       3       java.util.concurrent.TimeUnit$1::convert (6 bytes)   made zombie
+  55147 3166       4       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber::request (80 bytes)   made not entrant
+  55147 3305       4       reactor.core.publisher.Flux::subscribe (12 bytes)
+  55147 3228   !   3       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  55147 2822   !   4       sun.nio.ch.WindowsSelectorImpl$SubSelector::processFDSet (374 bytes)   made not entrant
+  55147 3302       3       java.util.concurrent.locks.AbstractQueuedSynchronizer::release (33 bytes)
+  55150 3165   !   4       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber::requestUpstream (83 bytes)   made not entrant
+  55150 3106       4       reactor.core.publisher.FluxRepeat$RepeatSubscriber::resubscribe (60 bytes)   made not entrant
+  55150 3007       4       io.netty.channel.DefaultMaxMessagesRecvByteBufAllocator$MaxMessageHandle::continueReading (9 bytes)   made not entrant
+  55150 1788       3       io.netty.buffer.UnpooledUnsafeHeapByteBuf::allocateArray (5 bytes)   made zombie
+  55150 1931   !   3       java.util.concurrent.LinkedBlockingQueue::take (93 bytes)   made zombie
+  55150 1950       4       java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject::signal (33 bytes)   made zombie
+  55150 1502       3       io.rsocket.RSocketClient::handleFrame (319 bytes)   made zombie
+  55151 2727       4       io.rsocket.RSocketClient$$Lambda$122/373928166::apply (20 bytes)   made not entrant
+  55153 2033       3       java.util.concurrent.ThreadPoolExecutor::ensurePrestart (41 bytes)   made zombie
+  55154 2992       4       io.netty.channel.DefaultMaxMessagesRecvByteBufAllocator$MaxMessageHandle::continueReading (52 bytes)   made not entrant
+  55154 2032   !   3       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::offer (124 bytes)   made zombie
+  55154 3306   !   3       reactor.core.publisher.FluxConcatMap$ConcatMapImmediate::drain (454 bytes)
+  55155 3238       4       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::finishPoll (44 bytes)   made not entrant
+  55155 2532       4       reactor.core.publisher.FluxGroupBy$UnicastGroupedFlux::drainRegular (188 bytes)   made not entrant
+  55157  331       3       java.util.ArrayList::add (29 bytes)   made not entrant
+  55157 2947       4       reactor.core.publisher.MonoJust::subscribe (15 bytes)   made not entrant
+  55157 2534       4       reactor.core.publisher.MonoFlatMapMany$FlatMapManyInner::onNext (11 bytes)   made not entrant
+  55157 2013       3       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::add (9 bytes)   made zombie
+  55157 2953       4       reactor.core.publisher.Operators$ScalarSubscription::request (49 bytes)   made not entrant
+  55157 2413   !   4       reactor.core.publisher.FluxPeek$PeekSubscriber::onNext (95 bytes)   made not entrant
+  55157 2875       4       reactor.core.publisher.FluxConcatMap$ConcatMapInner::onNext (21 bytes)   made not entrant
+  55157 2102       3       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::finishPoll (44 bytes)   made zombie
+  55157 2545       4       io.netty.util.AbstractReferenceCounted::release0 (48 bytes)   made not entrant
+  55158 3313       4       java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject::signal (33 bytes)
+  55159 2438   !   4       reactor.core.publisher.UnicastProcessor::onNext (100 bytes)   made not entrant
+  55162 2602   !   4       sun.nio.ch.IOUtil::write (509 bytes)   made not entrant
+  55168 2323       4       reactor.core.publisher.UnicastProcessor::drainRegular (165 bytes)   made zombie
+  55168 2329   !   4       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  55168 3330       3       java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject::await (98 bytes)
+  55170 3373   !   3       reactor.core.publisher.FluxPublish$PublishSubscriber::drain (496 bytes)
+  55170 2583       2       java.util.concurrent.locks.AbstractQueuedSynchronizer::addWaiter (50 bytes)   made zombie
+  55171 2604       4       java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject::doSignal (43 bytes)   made zombie
+  55171 3367       4       reactor.core.publisher.FluxGroupBy$UnicastGroupedFlux::drainRegular (188 bytes)
+  55173 2575   !   4       io.rsocket.RSocketClient::handleIncomingFrames (49 bytes)   made zombie
+  55173 2687       4       java.util.concurrent.ScheduledThreadPoolExecutor::delayedExecute (70 bytes)   made zombie
+  55174 3377   !   3       reactor.core.scheduler.WorkerTask::call (208 bytes)
+  55177 2907       4       io.netty.channel.AbstractChannel$AbstractUnsafe::flush (23 bytes)   made not entrant
+  55178 3389       2       io.netty.channel.ChannelOutboundBuffer::nioBuffers (317 bytes)
+  55179 2906       4       io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe::flush0 (12 bytes)   made not entrant
+  55179 2720       4       io.netty.buffer.UnpooledByteBufAllocator::incrementHeap (15 bytes)   made not entrant
+  55180 3356   !   2       reactor.netty.channel.FluxReceive::drainReceiver (397 bytes)
+  55184 2904   !   4       io.netty.channel.AbstractChannel$AbstractUnsafe::flush0 (186 bytes)   made not entrant
+  55184 2905       4       io.netty.channel.socket.nio.NioSocketChannel::doWrite (222 bytes)   made not entrant
+  55184 3393   !   4       sun.nio.ch.IOUtil::write (509 bytes)
+  55185 2810       4       io.netty.channel.socket.nio.NioSocketChannel::adjustMaxBytesPerGatheringWrite (56 bytes)   made not entrant
+  55185 3352   !   2       sun.nio.ch.WindowsSelectorImpl$SubSelector::processFDSet (374 bytes)
+  55187 3348       3       io.netty.channel.nio.NioEventLoop::processSelectedKeysOptimized (99 bytes)
+  55187 3328   !   3       sun.nio.ch.SocketChannelImpl::isConnected (28 bytes)
+  55188 3358   !   3       io.netty.channel.AbstractChannelHandlerContext::invokeRead (38 bytes)
+  55188 3357       3       io.netty.channel.AbstractChannelHandlerContext::read (59 bytes)
+  55189 3364   !   2       reactor.core.publisher.FluxGroupBy$GroupByMain::onNext (193 bytes)
+  55195 3321   !   3       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55196 3334       3       reactor.core.publisher.StrictSubscriber::onNext (77 bytes)
+  55197 3343       3       io.netty.channel.socket.nio.NioSocketChannel::isActive (25 bytes)
+  55197 3351       4       io.netty.util.concurrent.SingleThreadEventExecutor::runAllTasks (96 bytes)
+  55198 3371       3       reactor.core.publisher.FluxGroupBy$UnicastGroupedFlux::onNext (68 bytes)
+  55199 3325       2       reactor.core.scheduler.Schedulers::directSchedule (52 bytes)
+  55199 3327       3       reactor.core.publisher.FluxGroupBy$UnicastGroupedFlux::drain (41 bytes)
+  55199 3314       3       io.rsocket.RSocketClient$$Lambda$122/373928166::apply (20 bytes)
+  55200 3354       3       io.netty.channel.ChannelOutboundBuffer::remove (66 bytes)
+  55200 3412       2       io.netty.channel.socket.nio.NioSocketChannel::doWrite (222 bytes)
+  55202 3311   !   3       io.netty.util.concurrent.DefaultPromise::notifyListeners (73 bytes)
+  55204 3417   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55205 3321   !   3       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made not entrant
+  55205 3341       3       reactor.core.publisher.FluxConcatMap$ConcatMapInner::onNext (21 bytes)
+  55205 3335       3       io.netty.util.concurrent.DefaultPromise::trySuccess (16 bytes)
+  55205 3320       3       reactor.core.publisher.Operators$MultiSubscriptionSubscriber::set (132 bytes)
+  55207 3368   !   3       java.util.Collections$SynchronizedMap::get (25 bytes)
+  55207 3395       2       io.netty.buffer.UnpooledByteBufAllocator::incrementHeap (15 bytes)
+  55207 1690       4       io.netty.util.Recycler$DefaultHandle::recycle (54 bytes)   made not entrant
+  55208 3376       3       reactor.netty.channel.ChannelOperationsHandler::write (109 bytes)
+  55208 2876       4       reactor.core.publisher.FluxConcatMap$ConcatMapImmediate::innerNext (68 bytes)   made not entrant
+  55208 3420       2       io.netty.util.Recycler$DefaultHandle::recycle (54 bytes)
+  55209 3370       3       reactor.core.publisher.UnicastProcessor::drain (64 bytes)
+  55210 3344   !   3       io.netty.channel.AbstractChannelHandlerContext::write (50 bytes)
+  55210 3350   !   3       reactor.core.publisher.UnicastProcessor::onNext (100 bytes)
+  55211 3300       3       io.netty.channel.DefaultChannelPromise::addListener (8 bytes)
+  55212 3363       3       io.netty.util.collection.IntObjectHashMap::get (10 bytes)
+  55212 3342       2       io.netty.channel.AbstractChannelHandlerContext::isNotValidPromise (200 bytes)
+  55214 3333       3       reactor.core.publisher.FluxPublish$PublishSubscriber::checkTerminated (182 bytes)
+  55217 3315       3       io.netty.channel.AbstractChannelHandlerContext::invokeChannelRead (53 bytes)
+  55218 3421       2       reactor.core.publisher.FluxConcatMap$ConcatMapImmediate::innerNext (68 bytes)
+  55219 3338       3       io.netty.util.internal.DefaultPriorityQueue::peek (5 bytes)
+  55219 3339       3       io.rsocket.transport.netty.SendPublisher::tryComplete (64 bytes)
+  55220 3383       3       io.rsocket.RSocketClient::handleFrame (319 bytes)
+  55223 3419   !   2       java.util.concurrent.ConcurrentHashMap::replaceNode (416 bytes)
+  55225 3380       3       io.netty.channel.AbstractChannelHandlerContext::invokeChannelReadComplete (52 bytes)
+  55226 3332       3       io.rsocket.transport.netty.SendPublisher$InnerSubscriber$$Lambda$101/447756505::run (8 bytes)
+  55226 3337   !   3       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::flush (39 bytes)
+  55226 3340   !   3       reactor.core.publisher.FluxPeek$PeekSubscriber::onNext (95 bytes)
+  55227 3329   !   3       reactor.core.Disposables$ListCompositeDisposable::remove (68 bytes)
+  55227 3322       3       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::finishPoll (44 bytes)
+  55227 3414       2       io.netty.channel.AbstractChannel$AbstractUnsafe::flush (23 bytes)
+  55228 3353       3       java.nio.channels.spi.AbstractInterruptibleChannel::begin (48 bytes)
+  55228 3410       2       io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe::flush0 (12 bytes)
+  55228 3413   !   2       io.netty.channel.AbstractChannel$AbstractUnsafe::flush0 (186 bytes)
+  55229 3379   !   3       sun.nio.ch.SocketChannelImpl::read (389 bytes)
+  55230 2379       4       io.netty.buffer.PoolArena::free (81 bytes)   made not entrant
+  55231 2420       4       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber::onNext (11 bytes)   made not entrant
+  55231 3408       2       io.netty.channel.DefaultMaxMessagesRecvByteBufAllocator$MaxMessageHandle::continueReading (52 bytes)
+  55232 3409       2       io.netty.channel.socket.nio.NioSocketChannel::adjustMaxBytesPerGatheringWrite (56 bytes)
+  55232 3402       2       sun.nio.ch.SocketChannelImpl::translateReadyOps (191 bytes)
+  55233 3429       2       io.netty.buffer.PoolArena::free (81 bytes)
+  55233 3418   !   4       reactor.netty.channel.FluxReceive::drainReceiver (397 bytes)
+  55234 3403       2       io.netty.channel.ChannelInboundHandlerAdapter::channelReadComplete (8 bytes)
+  55234 3394       2       io.netty.channel.DefaultChannelPipeline$HeadContext::channelReadComplete (12 bytes)
+  55234 3372       3       reactor.core.scheduler.DelegateServiceScheduler$UnsupportedScheduledExecutorService::submit (11 bytes)
+  55235 3312       2       io.netty.channel.AbstractChannelHandlerContext::executor (22 bytes)
+  55235 3382       3       io.netty.channel.nio.NioEventLoop::processSelectedKeys (26 bytes)
+  55235 3374       3       reactor.core.scheduler.ExecutorServiceWorker::schedule (17 bytes)
+  55235 3375   !   3       reactor.core.Disposables$ListCompositeDisposable::add (79 bytes)
+  55236 3430       2       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber::onNext (11 bytes)
+  55236 3422   !   4       sun.nio.ch.WindowsSelectorImpl$SubSelector::processFDSet (374 bytes)
+  55236 3365       3       reactor.core.publisher.FluxGroupBy$UnicastGroupedFlux::checkTerminated (66 bytes)
+  55236 3384       1       reactor.core.publisher.Operators::cancelledSubscription (4 bytes)
+  55236 1332       3       reactor.core.publisher.Operators::cancelledSubscription (4 bytes)   made not entrant
+  55237 3281       1       io.rsocket.transport.netty.SendPublisher::access$1600 (5 bytes)
+  55237 1627       3       io.rsocket.transport.netty.SendPublisher::access$1600 (5 bytes)   made not entrant
+  55237 3425       1       io.netty.util.Recycler$DefaultHandle::access$602 (7 bytes)
+  55237 1717       3       io.netty.util.Recycler$DefaultHandle::access$602 (7 bytes)   made not entrant
+  55237 3404       1       io.netty.channel.ChannelOutboundBuffer::nioBufferSize (5 bytes)
+  55237 2279       3       io.netty.channel.ChannelOutboundBuffer::nioBufferSize (5 bytes)   made not entrant
+  55237 3317       3       java.util.WeakHashMap::get (77 bytes)
+  55238 3284       2       io.netty.util.concurrent.DefaultPromise::isDone0 (17 bytes)
+  55239 3355       3       io.netty.channel.ChannelOutboundBuffer::safeSuccess (20 bytes)
+  55239 3366       3       io.netty.util.collection.IntObjectHashMap::get (25 bytes)
+  55239 3423       2       io.netty.util.Recycler$Stack::pushLater (93 bytes)
+  55241 3424       2       io.netty.util.Recycler::access$400 (4 bytes)
+  55241 3426       2       io.netty.util.Recycler$WeakOrderQueue::add (84 bytes)
+  55242 3427       2       java.util.concurrent.atomic.AtomicInteger::lazySet (12 bytes)
+  55242 3396       2       sun.nio.ch.SelectionKeyImpl::nioReadyOps (6 bytes)
+  55242 3411       2       io.netty.channel.nio.AbstractNioByteChannel::clearOpWrite (34 bytes)
+  55242 3288       3       io.netty.buffer.PoolThreadCache$MemoryRegionCache::<init> (29 bytes)
+  55243 3289       3       io.netty.util.internal.PlatformDependent::newFixedMpscQueue (26 bytes)
+  55243 3290       3       io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueue::<init> (6 bytes)
+  55244 3291       3       io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueL3Pad::<init> (6 bytes)
+  55244 3292       3       io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueConsumerIndexField::<init> (6 bytes)
+  55245 3293       3       io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueL2Pad::<init> (6 bytes)
+  55245 3294       3       io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueProducerLimitField::<init> (12 bytes)
+  55245 3295       3       io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueMidPad::<init> (6 bytes)
+  55246 3296       3       io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueProducerIndexField::<init> (6 bytes)
+  55246 3297       3       io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueL1Pad::<init> (6 bytes)
+  55246 3279       3       java.lang.Class::getEnclosingClass (60 bytes)
+  55247 3398       1       io.netty.util.Recycler::access$000 (5 bytes)
+  55247 3399       1       io.netty.util.Recycler::access$100 (5 bytes)
+  55247 3400       1       io.netty.util.Recycler::access$200 (5 bytes)
+  55248 3401       1       io.netty.util.Recycler::access$300 (5 bytes)
+  55251 3434       2       io.rsocket.internal.UnboundedProcessor::drain (64 bytes)
+  55251 3352   !   2       sun.nio.ch.WindowsSelectorImpl$SubSelector::processFDSet (374 bytes)   made not entrant
+  55252 3432   !   4       reactor.core.publisher.FluxGroupBy$GroupByMain::onNext (193 bytes)
+  55256 2248       4       java.util.concurrent.atomic.LongAdder::add (90 bytes)   made not entrant
+  55256 3435       2       java.util.concurrent.atomic.Striped64::getProbe (13 bytes)
+  55256 3436       2       java.util.concurrent.atomic.Striped64$Cell::cas (13 bytes)
+  55258 3437       2       java.util.concurrent.atomic.LongAdder::add (90 bytes)
+  55260 3438       2       java.util.WeakHashMap::size (18 bytes)
+  55261 2309       4       java.util.Random::next (47 bytes)   made not entrant
+  55262 3439       2       java.util.Random::next (47 bytes)
+  55265 3440   !   2       reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber::request (52 bytes)
+  55267 3442       2       reactor.core.publisher.Operators$MultiSubscriptionSubscriber::request (119 bytes)
+  55277 3364   !   2       reactor.core.publisher.FluxGroupBy$GroupByMain::onNext (193 bytes)   made not entrant
+  55277 3431       4       io.netty.channel.AbstractChannelHandlerContext::isNotValidPromise (200 bytes)
+  55278 3444       2       reactor.core.publisher.FluxConcatMap$ConcatMapInner::onNext (21 bytes)
+  55278 3341       3       reactor.core.publisher.FluxConcatMap$ConcatMapInner::onNext (21 bytes)   made not entrant
+  55280 3342       2       io.netty.channel.AbstractChannelHandlerContext::isNotValidPromise (200 bytes)   made not entrant
+  55280 3443       4       reactor.core.scheduler.Schedulers::directSchedule (52 bytes)
+  55291 3447       2       reactor.core.publisher.StrictSubscriber::request (103 bytes)
+  55312 3356   !   2       reactor.netty.channel.FluxReceive::drainReceiver (397 bytes)   made not entrant
+  55312 3445   !   4       io.netty.channel.AbstractChannelHandlerContext::invokeRead (38 bytes)
+  55335 3452       2       java.lang.invoke.LambdaForm$MH/1270702113::linkToTargetMethod (10 bytes)
+  55336 3453       2       java.lang.invoke.LambdaForm$DMH/131174919::invokeStatic_LJ_L (17 bytes)
+  55336 3454       2       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber$$Lambda$136/929474059::get$Lambda (10 bytes)
+  55336 3455       2       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber$$Lambda$136/929474059::<init> (15 bytes)
+  55338 3362       4       io.netty.util.AbstractReferenceCounted::release0 (48 bytes)
+  55339 3325       2       reactor.core.scheduler.Schedulers::directSchedule (52 bytes)   made not entrant
+  55339 3324       4       reactor.core.publisher.MonoJust::subscribe (15 bytes)
+  55342 3457       1       java.util.concurrent.atomic.AtomicReferenceArray::byteOffset (12 bytes)
+  55342  995       3       java.util.concurrent.atomic.AtomicReferenceArray::byteOffset (12 bytes)   made not entrant
+  55343 3456   !   4       sun.nio.ch.SocketChannelImpl::isConnected (28 bytes)
+  55344 3458       1       java.util.concurrent.atomic.AtomicReferenceArray::getRaw (12 bytes)
+  55344 1013       3       java.util.concurrent.atomic.AtomicReferenceArray::getRaw (12 bytes)   made not entrant
+  55344 3328   !   3       sun.nio.ch.SocketChannelImpl::isConnected (28 bytes)   made not entrant
+  55344 3451       4       io.netty.channel.ChannelInboundHandlerAdapter::channelReadComplete (8 bytes)
+  55349 3403       2       io.netty.channel.ChannelInboundHandlerAdapter::channelReadComplete (8 bytes)   made not entrant
+  55349 3450       4       io.netty.channel.DefaultMaxMessagesRecvByteBufAllocator$MaxMessageHandle::continueReading (52 bytes)
+  55351 3408       2       io.netty.channel.DefaultMaxMessagesRecvByteBufAllocator$MaxMessageHandle::continueReading (52 bytes)   made not entrant
+  55351 3358   !   3       io.netty.channel.AbstractChannelHandlerContext::invokeRead (38 bytes)   made not entrant
+  55351 3433       4       io.netty.channel.DefaultChannelPipeline$HeadContext::channelReadComplete (12 bytes)
+  55352 3446       4       io.netty.channel.AbstractChannelHandlerContext::read (59 bytes)
+  55355 3357       3       io.netty.channel.AbstractChannelHandlerContext::read (59 bytes)   made not entrant
+  55355 3459   !   4       java.util.WeakHashMap::expungeStaleEntries (139 bytes)
+  55357 3394       2       io.netty.channel.DefaultChannelPipeline$HeadContext::channelReadComplete (12 bytes)   made not entrant
+  55357 3448       4       io.netty.util.Recycler$Stack::pushNow (104 bytes)
+  55360 1253       3       io.netty.util.Recycler$Stack::pushNow (104 bytes)   made not entrant
+  55360 3387       4       io.netty.channel.socket.nio.NioSocketChannel::javaChannel (8 bytes)
+  55360 1488       3       io.netty.channel.socket.nio.NioSocketChannel::javaChannel (8 bytes)   made not entrant
+  55360 3385       4       java.util.concurrent.atomic.AtomicIntegerFieldUpdater$AtomicIntegerFieldUpdaterImpl::get (17 bytes)
+  55362 1121       3       java.util.concurrent.atomic.AtomicIntegerFieldUpdater$AtomicIntegerFieldUpdaterImpl::get (17 bytes)   made not entrant
+  55362 3460   !   4       io.netty.channel.AbstractChannelHandlerContext::write (50 bytes)
+  55362 3462       2       reactor.core.publisher.FluxRepeat$RepeatSubscriber::resubscribe (60 bytes)
+  55367  177   !   3       java.util.WeakHashMap::expungeStaleEntries (139 bytes)   made not entrant
+  55367 3463       4       reactor.core.publisher.StrictSubscriber::onNext (77 bytes)
+  55388 3466 %     3       io.netty.channel.ChannelOutboundBuffer::nioBuffers @ 68 (317 bytes)
+  55391 3334       3       reactor.core.publisher.StrictSubscriber::onNext (77 bytes)   made not entrant
+  55392 3464       4       reactor.core.publisher.FluxPublish$PublishSubscriber::checkTerminated (182 bytes)
+  55393 3333       3       reactor.core.publisher.FluxPublish$PublishSubscriber::checkTerminated (182 bytes)   made not entrant
+  55393 3465       4       io.netty.channel.AbstractChannelHandlerContext::invokeChannelRead (53 bytes)
+  55398 3315       3       io.netty.channel.AbstractChannelHandlerContext::invokeChannelRead (53 bytes)   made not entrant
+  55399 3467       4       java.util.WeakHashMap::get (77 bytes)
+  55402 3317       3       java.util.WeakHashMap::get (77 bytes)   made not entrant
+  55403 3470       4       io.netty.channel.socket.nio.NioSocketChannel::isActive (25 bytes)
+  55405 3472       3       io.netty.channel.ChannelOutboundBuffer::nioBuffers (317 bytes)
+  55405 3343       3       io.netty.channel.socket.nio.NioSocketChannel::isActive (25 bytes)   made not entrant
+  55405 3378       4       reactor.util.Loggers$Slf4JLogger::isDebugEnabled (10 bytes)
+  55405 1351       3       reactor.util.Loggers$Slf4JLogger::isDebugEnabled (10 bytes)   made not entrant
+  55405 3449   !   4       io.netty.channel.AbstractChannelHandlerContext::invokeChannelRead (40 bytes)
+  55407 1550   !   3       io.netty.channel.AbstractChannelHandlerContext::invokeChannelRead (40 bytes)   made not entrant
+  55407 3349       4       reactor.netty.channel.FluxReceive::isCancelled (16 bytes)
+  55407 1242       3       reactor.netty.channel.FluxReceive::isCancelled (16 bytes)   made not entrant
+  55407 3441       4       io.netty.util.collection.IntObjectHashMap::toExternal (33 bytes)
+  55408 1851       3       io.netty.util.collection.IntObjectHashMap::toExternal (33 bytes)   made not entrant
+  55408 3405       4       io.netty.channel.ChannelOutboundBuffer::decrementPendingOutboundBytes (50 bytes)
+  55408 3389       2       io.netty.channel.ChannelOutboundBuffer::nioBuffers (317 bytes)   made not entrant
+  55411 3473   !   3       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55411 1811       3       io.netty.channel.ChannelOutboundBuffer::decrementPendingOutboundBytes (50 bytes)   made not entrant
+  55411 3407       4       io.netty.channel.ChannelOutboundBuffer::removeEntry (49 bytes)
+  55412 1815       3       io.netty.channel.ChannelOutboundBuffer::removeEntry (49 bytes)   made not entrant
+  55412 3417   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made not entrant
+  55412 3406       4       io.netty.channel.ChannelOutboundBuffer$Entry::recycle (61 bytes)
+  55413 3474       3       reactor.core.publisher.FluxConcatMap$ConcatMapInner::onNext (21 bytes)
+  55413 3444       2       reactor.core.publisher.FluxConcatMap$ConcatMapInner::onNext (21 bytes)   made not entrant
+  55416 3478   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55417 3473   !   3       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made not entrant
+  55427 3344   !   3       io.netty.channel.AbstractChannelHandlerContext::write (50 bytes)   made not entrant
+  55428 3475       4       io.netty.util.internal.DefaultPriorityQueue::peek (5 bytes)
+  55429 3338       3       io.netty.util.internal.DefaultPriorityQueue::peek (5 bytes)   made not entrant
+  55429 3477       4       io.rsocket.transport.netty.SendPublisher::tryComplete (64 bytes)
+  55431 3339       3       io.rsocket.transport.netty.SendPublisher::tryComplete (64 bytes)   made not entrant
+  55431 3476       4       java.util.concurrent.locks.AbstractQueuedSynchronizer::release (33 bytes)
+  55432 3484       2       reactor.core.publisher.FluxConcatMap$ConcatMapInner::onNext (21 bytes)
+  55432 3474       3       reactor.core.publisher.FluxConcatMap$ConcatMapInner::onNext (21 bytes)   made not entrant
+  55436 3302       3       java.util.concurrent.locks.AbstractQueuedSynchronizer::release (33 bytes)   made not entrant
+  55436 3386       4       io.netty.util.concurrent.DefaultPromise::setSuccess0 (16 bytes)
+  55439 1687       3       io.netty.util.concurrent.DefaultPromise::setSuccess0 (16 bytes)   made not entrant
+  55439 3428       4       io.netty.util.concurrent.DefaultPromise::setValue0 (34 bytes)
+  55441 1790       3       io.netty.util.concurrent.DefaultPromise::setValue0 (34 bytes)   made not entrant
+  55441 3468   !   4       io.netty.util.DefaultAttributeMap::attr (224 bytes)
+  55451 1589   !   3       io.netty.util.DefaultAttributeMap::attr (224 bytes)   made not entrant
+  55451 3487       4       io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueue::offer (101 bytes)
+  55454 1684       3       io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueue::offer (101 bytes)   made not entrant
+  55454 3486       4       io.netty.buffer.PoolThreadCache$MemoryRegionCache::add (33 bytes)
+  55457 3482       4       reactor.netty.channel.ChannelOperations::as (16 bytes)
+  55457 1621       3       io.netty.buffer.PoolThreadCache$MemoryRegionCache::add (33 bytes)   made not entrant
+  55457 3483   !   4       reactor.netty.channel.FluxReceive::onInboundNext (248 bytes)
+  55457 3282   !   4       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::drain (280 bytes)   made not entrant
+  55457 1797       3       reactor.netty.channel.ChannelOperations::as (16 bytes)   made not entrant
+  55457 3469   !   4       io.netty.util.DefaultAttributeMap::hasAttr (110 bytes)
+  55457 1813       3       io.netty.channel.ChannelOutboundBuffer$Entry::recycle (61 bytes)   made not entrant
+  55458 3488       4       io.netty.channel.ChannelOutboundBuffer::remove (66 bytes)
+  55458 3491   !   3       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55459 3478   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made not entrant
+  55460 1704   !   3       io.netty.util.DefaultAttributeMap::hasAttr (110 bytes)   made not entrant
+  55460 3490   !   4       reactor.core.publisher.FluxPublish$PublishSubscriber::drain (496 bytes)
+  55461 3494   !   2       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::drain (280 bytes)
+  55463 1799   !   3       reactor.netty.channel.FluxReceive::onInboundNext (248 bytes)   made not entrant
+  55463 3493   !   4       reactor.core.publisher.FluxConcatMap$ConcatMapImmediate::drain (454 bytes)
+  55465 3496   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55466 3491   !   3       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made not entrant
+  55485 3164       4       io.rsocket.internal.UnboundedProcessor::poll (10 bytes)   made not entrant
+  55486 3499       2       io.rsocket.internal.UnboundedProcessor::poll (10 bytes)
+  55510 3463       4       reactor.core.publisher.StrictSubscriber::onNext (77 bytes)   made not entrant
+  55510 3504       2       reactor.core.publisher.StrictSubscriber::onNext (77 bytes)
+  55512 3354       3       io.netty.channel.ChannelOutboundBuffer::remove (66 bytes)   made not entrant
+  55512 3501   !   4       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55553 3510       2       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber::request (80 bytes)
+  55556 3511 %     3       io.netty.channel.socket.nio.NioSocketChannel::doWrite @ 15 (222 bytes)
+  55559 3512   !   2       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber::requestUpstream (83 bytes)
+  55559 3373   !   3       reactor.core.publisher.FluxPublish$PublishSubscriber::drain (496 bytes)   made not entrant
+  55560 3507       4       io.netty.channel.nio.NioEventLoop::processSelectedKeysOptimized (99 bytes)
+  55560 3513       2       java.util.concurrent.ThreadPoolExecutor::runStateAtLeast (11 bytes)
+  55572 3515 %     3       java.util.Random::next @ 6 (47 bytes)
+  55592 3516       3       io.netty.channel.socket.nio.NioSocketChannel::doWrite (222 bytes)
+  55594 3412       2       io.netty.channel.socket.nio.NioSocketChannel::doWrite (222 bytes)   made not entrant
+  55598 3348       3       io.netty.channel.nio.NioEventLoop::processSelectedKeysOptimized (99 bytes)   made not entrant
+  55598 3505   !   4       io.netty.channel.nio.NioEventLoop::select (307 bytes)
+  55601 3519       3       java.util.Random::next (47 bytes)
+  55601 3439       2       java.util.Random::next (47 bytes)   made not entrant
+  55602 3306   !   3       reactor.core.publisher.FluxConcatMap$ConcatMapImmediate::drain (454 bytes)   made not entrant
+  55604 3508   !   4       java.util.Collections$SynchronizedMap::get (25 bytes)
+  55604 3520       2       io.netty.channel.DefaultMaxMessagesRecvByteBufAllocator$MaxMessageHandle::continueReading (9 bytes)
+  55609 3368   !   3       java.util.Collections$SynchronizedMap::get (25 bytes)   made not entrant
+  55609 3502       4       reactor.core.publisher.UnicastProcessor::drain (64 bytes)
+  55611 3370       3       reactor.core.publisher.UnicastProcessor::drain (64 bytes)   made not entrant
+  55611 3500   !   4       reactor.core.publisher.UnicastProcessor::onNext (100 bytes)
+  55617 3350   !   3       reactor.core.publisher.UnicastProcessor::onNext (100 bytes)   made not entrant
+  55617 3506   !   4       reactor.core.publisher.FluxPeek$PeekSubscriber::onNext (95 bytes)
+  55622 3340   !   3       reactor.core.publisher.FluxPeek$PeekSubscriber::onNext (95 bytes)   made not entrant
+  55622 3523       4       io.netty.channel.DefaultChannelPromise::addListener (8 bytes)
+  55625 3275   !   3       io.netty.channel.nio.NioEventLoop::select (307 bytes)   made not entrant
+  55625 3517       4       io.netty.util.concurrent.DefaultPromise::addListener0 (59 bytes)
+  55628 3300       3       io.netty.channel.DefaultChannelPromise::addListener (8 bytes)   made not entrant
+  55628 3498       4       io.netty.util.collection.IntObjectHashMap::get (10 bytes)
+  55629 3276       3       io.netty.util.concurrent.DefaultPromise::addListener0 (59 bytes)   made not entrant
+  55629 3518   !   4       io.netty.util.concurrent.DefaultPromise::addListener (39 bytes)
+  55631 3363       3       io.netty.util.collection.IntObjectHashMap::get (10 bytes)   made not entrant
+  55631 3509       4       io.netty.channel.nio.NioEventLoop::processSelectedKeys (26 bytes)
+  55632 3382       3       io.netty.channel.nio.NioEventLoop::processSelectedKeys (26 bytes)   made not entrant
+  55633 3522   !   4       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::take (203 bytes)
+  55636 3277   !   3       io.netty.util.concurrent.DefaultPromise::addListener (39 bytes)   made not entrant
+  55636 3485       4       java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask::compareTo (101 bytes)
+  55637 3526       3       reactor.core.publisher.FluxConcatMap$ConcatMapInner::onNext (21 bytes)
+  55637 3484       2       reactor.core.publisher.FluxConcatMap$ConcatMapInner::onNext (21 bytes)   made not entrant
+  55637 2254       3       java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask::compareTo (101 bytes)   made not entrant
+  55637 3525       4       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::siftDown (121 bytes)
+  55637 2696   !   4       io.netty.util.concurrent.SingleThreadEventExecutor::execute (85 bytes)   made not entrant
+  55637 3527   !   3       io.netty.util.concurrent.SingleThreadEventExecutor::execute (85 bytes)
+  55641 3529   !   3       io.rsocket.internal.LimitableRequestPublisher::requestN (75 bytes)
+  55647 2255       3       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::siftDown (121 bytes)   made not entrant
+  55647 3528       4       io.netty.channel.AbstractChannelHandlerContext::invokeChannelReadComplete (52 bytes)
+  55652 3380       3       io.netty.channel.AbstractChannelHandlerContext::invokeChannelReadComplete (52 bytes)   made not entrant
+  55652 3530       4       reactor.util.concurrent.MpscLinkedQueue::poll (76 bytes)
+  55655 2972       3       reactor.util.concurrent.MpscLinkedQueue::poll (76 bytes)   made not entrant
+  55655 3532       4       io.rsocket.RSocketClient$$Lambda$122/373928166::apply (20 bytes)
+  55655 3496   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made not entrant
+  55657 3471       4       reactor.netty.Connection::from (42 bytes)
+  55660 3536   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55661 3501   !   4       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made not entrant
+  55666 3537   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55667 3314       3       io.rsocket.RSocketClient$$Lambda$122/373928166::apply (20 bytes)   made not entrant
+  55667 3536   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made not entrant
+  55667 3533       4       io.rsocket.RSocketClient::handleFrame (319 bytes)
+  55670 1796       3       reactor.netty.Connection::from (42 bytes)   made not entrant
+  55670 3481   !   4       reactor.netty.channel.ChannelOperationsHandler::channelRead (236 bytes)
+  55672 3538   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55673 3537   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made not entrant
+  55679 3542   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55680 1795   !   3       reactor.netty.channel.ChannelOperationsHandler::channelRead (236 bytes)   made not entrant
+  55680 3541       4       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::finishPoll (44 bytes)
+  55680 3538   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made not entrant
+  55694 3322       3       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::finishPoll (44 bytes)   made not entrant
+  55694 3543   !   4       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55705 3505   !   4       io.netty.channel.nio.NioEventLoop::select (307 bytes)   made not entrant
+  55705 3546   !   3       io.netty.channel.nio.NioEventLoop::select (307 bytes)
+  55718 3547 % !   3       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::drain @ 22 (280 bytes)
+  55757 1974   !   3       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::take (203 bytes)   made not entrant
+  55757 3545   !   4       io.rsocket.RSocketServer::handleFrame (475 bytes)
+  55763 3551   !   3       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::drain (280 bytes)
+  55767 3494   !   2       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::drain (280 bytes)   made not entrant
+  55772 3542   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made not entrant
+  55772 3544       4       io.netty.channel.DefaultMaxMessagesRecvByteBufAllocator$MaxMessageHandle::continueReading (9 bytes)
+  55774 3552   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55775 3520       2       io.netty.channel.DefaultMaxMessagesRecvByteBufAllocator$MaxMessageHandle::continueReading (9 bytes)   made not entrant
+  55775 3347       4       java.util.concurrent.atomic.AtomicBoolean::set (14 bytes)
+  55775 1584       3       java.util.concurrent.atomic.AtomicBoolean::set (14 bytes)   made not entrant
+  55775 3543   !   4       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made not entrant
+  55775 3548   !   4       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::tryDrain (83 bytes)
+  55784 3553   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55785 3552   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made not entrant
+  55793 3554   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55794 3553   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made not entrant
+  55795 3257   !   3       io.rsocket.RSocketServer::handleFrame (475 bytes)   made not entrant
+  55795 3555       4       java.nio.channels.spi.AbstractInterruptibleChannel::begin (48 bytes)
+  55799 3353       3       java.nio.channels.spi.AbstractInterruptibleChannel::begin (48 bytes)   made not entrant
+  55799 3557   !   4       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55803 3554   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made not entrant
+  55803 3558       4       io.rsocket.transport.netty.SendPublisher$InnerSubscriber$$Lambda$101/447756505::run (8 bytes)
+  55807 3560       2       reactor.core.publisher.FluxDoFinally$DoFinallySubscriber::request (11 bytes)
+  55809 3561   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55811 3557   !   4       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made not entrant
+  55814 3332       3       io.rsocket.transport.netty.SendPublisher$InnerSubscriber$$Lambda$101/447756505::run (8 bytes)   made not entrant
+  55814 3559   !   4       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::flush (39 bytes)
+  55819 3562   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55820 3561   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made not entrant
+  55824 3337   !   3       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::flush (39 bytes)   made not entrant
+  55824 3556   !   4       sun.nio.ch.SocketChannelImpl::read (389 bytes)
+  55828 3563   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55829 3562   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made not entrant
+  55836 3564   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55837 3563   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made not entrant
+  55844 3565   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55845 3379   !   3       sun.nio.ch.SocketChannelImpl::read (389 bytes)   made not entrant
+  55845 3564   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made not entrant
+  55845 3549       4       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::onNext (51 bytes)
+  55854 3567   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55855 3565   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made not entrant
+  55862 3568   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55862 3567   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made not entrant
+  55871 3571   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55872 3568   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made not entrant
+  55879 3522   !   4       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::take (203 bytes)   made not entrant
+  55880 1611   !   3       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::tryDrain (83 bytes)   made not entrant
+  55880 3245       2       java.util.Collections$SetFromMap::add (22 bytes)   made zombie
+  55881 3570       4       io.netty.channel.ChannelOutboundBuffer::nioBuffers (317 bytes)
+  55882 3573   !   3       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::take (203 bytes)
+  55885 3113   !   4       reactor.core.Disposables$ListCompositeDisposable::remove (68 bytes)   made zombie
+  55901 3575       3       io.netty.buffer.UnsafeByteBufUtil::setBytes (134 bytes)
+  55908 3383       3       io.rsocket.RSocketClient::handleFrame (319 bytes)   made not entrant
+  55909 3131   !   4       java.util.concurrent.ConcurrentHashMap::replaceNode (416 bytes)   made zombie
+  55909 3111   !   4       reactor.core.scheduler.WorkerTask::call (208 bytes)   made zombie
+  55910 3566   !   4       reactor.core.scheduler.WorkerTask::call (208 bytes)
+  55921 3377   !   3       reactor.core.scheduler.WorkerTask::call (208 bytes)   made not entrant
+  55921 3576       4       reactor.core.publisher.FluxConcatMap$ConcatMapInner::onNext (21 bytes)
+  55927 3472       3       io.netty.channel.ChannelOutboundBuffer::nioBuffers (317 bytes)   made not entrant
+  55927 3569   !   4       reactor.core.Disposables$ListCompositeDisposable::remove (68 bytes)
+  55932 3329   !   3       reactor.core.Disposables$ListCompositeDisposable::remove (68 bytes)   made not entrant
+  55932 3581   !   2       reactor.core.publisher.FluxPeek$PeekSubscriber::request (52 bytes)
+  55932 3572   !   4       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)
+  55947 1646       3       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::onNext (51 bytes)   made not entrant
+  55948 3578       4       reactor.core.scheduler.DelegateServiceScheduler$UnsupportedScheduledExecutorService::submit (11 bytes)
+  55963 3526       3       reactor.core.publisher.FluxConcatMap$ConcatMapInner::onNext (21 bytes)   made not entrant
+  55964 1703       4       java.util.concurrent.locks.ReentrantLock::unlock (10 bytes)   made zombie
+  55964 1831       4       java.util.concurrent.locks.AbstractQueuedSynchronizer::release (33 bytes)   made zombie
+  55964 3582   !   4       io.netty.channel.nio.NioEventLoop::select (307 bytes)
+  55987 3546   !   3       io.netty.channel.nio.NioEventLoop::select (307 bytes)   made not entrant
+  55987 3234       4       io.rsocket.RSocketClient::handleFrame (319 bytes)   made zombie
+  55987 2019       4       reactor.core.publisher.FluxPublish$PublishSubscriber::checkTerminated (182 bytes)   made zombie
+  55988 3584       4       reactor.core.scheduler.ExecutorServiceWorker::schedule (17 bytes)
+  55995 3372       3       reactor.core.scheduler.DelegateServiceScheduler$UnsupportedScheduledExecutorService::submit (11 bytes)   made not entrant
+  55995 2289       4       java.util.concurrent.ThreadPoolExecutor::runStateAtLeast (11 bytes)   made zombie
+  55996 3583   !   4       reactor.core.Disposables$ListCompositeDisposable::add (79 bytes)
+  55999 3541       4       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::finishPoll (44 bytes)   made not entrant
+  56001 3375   !   3       reactor.core.Disposables$ListCompositeDisposable::add (79 bytes)   made not entrant
+  56001 3177       3       io.netty.buffer.PoolThreadCache::trim (43 bytes)   made zombie
+  56001 2429       4       io.netty.util.collection.IntObjectHashMap::get (10 bytes)   made zombie
+  56002 3550       4       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::onNext (9 bytes)
+  56002 1613       3       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::onNext (9 bytes)   made not entrant
+  56003 2512   !   4       java.util.Collections$SynchronizedMap::get (25 bytes)   made zombie
+  56003 3586       3       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::finishPoll (44 bytes)
+  56003 3514   !   4       io.rsocket.internal.LimitableRequestPublisher$InnerSubscriber::onNext (20 bytes)
+  56003 2678   !   4       io.rsocket.RSocketServer::handleFrame (475 bytes)   made zombie
+  56004 2813   !   4       reactor.core.publisher.FluxConcatMap$ConcatMapImmediate::drain (454 bytes)   made zombie
+  56006 3571   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made not entrant
+  56006 3588       3       io.netty.buffer.PooledUnsafeDirectByteBuf::setBytes (16 bytes)
+  56007 3587       4       java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject::awaitNanos (156 bytes)
+  56007 3071       3       io.netty.buffer.WrappedByteBuf::writeBytes (10 bytes)   made zombie
+  56007 3070       3       io.netty.buffer.WrappedByteBuf::writableBytes (8 bytes)   made zombie
+  56007 3161   !   4       reactor.core.publisher.FluxPublish$PublishSubscriber::drain (496 bytes)   made zombie
+  56008 1733   !   3       io.rsocket.internal.LimitableRequestPublisher$InnerSubscriber::onNext (20 bytes)   made not entrant
+  56008 3535       4       io.netty.channel.SingleThreadEventLoop::wakesUpForTask (13 bytes)
+  56008 1959       3       io.netty.channel.SingleThreadEventLoop::wakesUpForTask (13 bytes)   made not entrant
+  56008 3534       4       io.netty.channel.nio.NioEventLoop::wakeup (25 bytes)
+  56012 1960       3       io.netty.channel.nio.NioEventLoop::wakeup (25 bytes)   made not entrant
+  56012 3539       4       io.rsocket.transport.netty.SendPublisher$InnerSubscriber$$Lambda$126/1058659819::run (8 bytes)
+  56028 2259       3       java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject::awaitNanos (156 bytes)   made not entrant
+  56029 3590   !   4       io.netty.util.concurrent.SingleThreadEventExecutor::execute (85 bytes)
+  56040 3527   !   3       io.netty.util.concurrent.SingleThreadEventExecutor::execute (85 bytes)   made not entrant
+  56040 3589       4       io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueue::offer (159 bytes)
+  56043 1907       3       io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueue::offer (159 bytes)   made not entrant
+  56043 3591       4       io.netty.channel.socket.nio.NioSocketChannel::doWrite (222 bytes)
+  56051 3516       3       io.netty.channel.socket.nio.NioSocketChannel::doWrite (222 bytes)   made not entrant
+  56051 3585   !   4       reactor.core.scheduler.Schedulers::workerSchedule (81 bytes)
+  56053 3593       3       io.netty.util.Recycler$DefaultHandle::recycle (54 bytes)
+  56054 3420       2       io.netty.util.Recycler$DefaultHandle::recycle (54 bytes)   made not entrant
+  56054 3594       3       io.netty.util.Recycler$Stack::pushLater (93 bytes)
+  56056 3423       2       io.netty.util.Recycler$Stack::pushLater (93 bytes)   made not entrant
+  56057 3595       3       java.util.concurrent.atomic.LongAdder::add (90 bytes)
+  56058 3437       2       java.util.concurrent.atomic.LongAdder::add (90 bytes)   made not entrant
+  56058 3596       3       io.rsocket.internal.UnboundedProcessor::poll (10 bytes)
+  56058 3499       2       io.rsocket.internal.UnboundedProcessor::poll (10 bytes)   made not entrant
+  56059 3597       3       io.netty.buffer.UnpooledByteBufAllocator::incrementHeap (15 bytes)
+  56059 3395       2       io.netty.buffer.UnpooledByteBufAllocator::incrementHeap (15 bytes)   made not entrant
+  56060 3598       3       reactor.core.publisher.StrictSubscriber::onNext (77 bytes)
+  56060 1926   !   3       reactor.core.scheduler.Schedulers::workerSchedule (81 bytes)   made not entrant
+  56060 3592   !   4       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::drain (280 bytes)
+  56061 3504       2       reactor.core.publisher.StrictSubscriber::onNext (77 bytes)   made not entrant
+  56062 3599       3       sun.nio.ch.SocketChannelImpl::translateReadyOps (191 bytes)
+  56063 3402       2       sun.nio.ch.SocketChannelImpl::translateReadyOps (191 bytes)   made not entrant
+  56068 3600       3       io.netty.util.Recycler$WeakOrderQueue::add (84 bytes)
+  56069 3426       2       io.netty.util.Recycler$WeakOrderQueue::add (84 bytes)   made not entrant
+  56071 3374       3       reactor.core.scheduler.ExecutorServiceWorker::schedule (17 bytes)   made not entrant
+  56071 3310       4       java.util.concurrent.atomic.AtomicIntegerFieldUpdater$AtomicIntegerFieldUpdaterImpl::decrementAndGet (9 bytes)
+  56072 3601       3       io.netty.buffer.PoolArena::free (81 bytes)
+  56072 1006       3       java.util.concurrent.atomic.AtomicIntegerFieldUpdater$AtomicIntegerFieldUpdaterImpl::decrementAndGet (9 bytes)   made not entrant
+  56072 3390       4       io.rsocket.transport.netty.SendPublisher::access$2000 (6 bytes)
+  56073 3429       2       io.netty.buffer.PoolArena::free (81 bytes)   made not entrant
+  56082 2829       3       io.rsocket.transport.netty.SendPublisher$InnerSubscriber$$Lambda$126/1058659819::run (8 bytes)   made not entrant
+  56083 1746       3       io.rsocket.transport.netty.SendPublisher::access$2000 (6 bytes)   made not entrant
+  56084 3602       4       io.netty.util.Recycler$DefaultHandle::recycle (54 bytes)
+  56085 3603       4       io.netty.util.Recycler$Stack::pushLater (93 bytes)
+  56105 3606       3       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber::onNext (11 bytes)
+  56105 3430       2       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber::onNext (11 bytes)   made not entrant
+  56106 3608       3       io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe::flush0 (12 bytes)
+  56107 3551   !   3       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::drain (280 bytes)   made not entrant
+  56107 3410       2       io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe::flush0 (12 bytes)   made not entrant
+  56107 3609       3       io.netty.channel.AbstractChannel$AbstractUnsafe::flush (23 bytes)
+  56107 3605       4       java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject::await (98 bytes)
+  56107 3414       2       io.netty.channel.AbstractChannel$AbstractUnsafe::flush (23 bytes)   made not entrant
+  56108 3611   !   3       io.netty.channel.AbstractChannel$AbstractUnsafe::flush0 (186 bytes)
+  56109 3413   !   2       io.netty.channel.AbstractChannel$AbstractUnsafe::flush0 (186 bytes)   made not entrant
+  56119 3593       3       io.netty.util.Recycler$DefaultHandle::recycle (54 bytes)   made not entrant
+  56119 3610       4       reactor.core.publisher.StrictSubscriber::onNext (77 bytes)
+  56124 3594       3       io.netty.util.Recycler$Stack::pushLater (93 bytes)   made not entrant
+  56124 3607   !   4       java.util.concurrent.ThreadPoolExecutor::runWorker (225 bytes)
+  56126 3598       3       reactor.core.publisher.StrictSubscriber::onNext (77 bytes)   made not entrant
+  56126 3604       4       io.netty.util.Recycler$WeakOrderQueue::add (84 bytes)
+  56129 3330       3       java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject::await (98 bytes)   made not entrant
+  56130 3612       4       io.netty.buffer.PoolArena::free (81 bytes)
+  56131 3600       3       io.netty.util.Recycler$WeakOrderQueue::add (84 bytes)   made not entrant
+  56132 3613       4       io.netty.buffer.UnpooledByteBufAllocator::incrementHeap (15 bytes)
+  56134 3597       3       io.netty.buffer.UnpooledByteBufAllocator::incrementHeap (15 bytes)   made not entrant
+  56136 2786   !   3       java.util.concurrent.ThreadPoolExecutor::runWorker (225 bytes)   made not entrant
+  56140 3582   !   4       io.netty.channel.nio.NioEventLoop::select (307 bytes)   made not entrant
+  56141 3614       4       io.netty.util.concurrent.SingleThreadEventExecutor::delayNanos (19 bytes)
+  56141 3615   !   3       io.netty.channel.nio.NioEventLoop::select (307 bytes)
+  56141 3601       3       io.netty.buffer.PoolArena::free (81 bytes)   made not entrant
+  56143 2338       3       io.netty.util.concurrent.SingleThreadEventExecutor::delayNanos (19 bytes)   made not entrant
+  56147 3616       4       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::finishPoll (44 bytes)
+  56155 3617       4       java.util.concurrent.atomic.LongAdder::add (90 bytes)
+  56156 3618       4       io.netty.buffer.PoolChunkList::allocate (93 bytes)
+  56157 3595       3       java.util.concurrent.atomic.LongAdder::add (90 bytes)   made not entrant
+  56157 3100       4       reactor.core.publisher.Flux::subscribe (12 bytes)   made zombie
+  56157 3106       4       reactor.core.publisher.FluxRepeat$RepeatSubscriber::resubscribe (60 bytes)   made zombie
+  56157 3238       4       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::finishPoll (44 bytes)   made zombie
+  56157 3098       4       reactor.core.scheduler.Schedulers::directSchedule (52 bytes)   made zombie
+  56158 3181   !   4       reactor.core.publisher.FluxPeek$PeekSubscriber::request (52 bytes)   made zombie
+  56158 3612       4       io.netty.buffer.PoolArena::free (81 bytes)   made not entrant
+  56158 3487       4       io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueue::offer (101 bytes)   made not entrant
+  56158 3619       3       io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueue::offer (101 bytes)
+  56159  268       3       java.lang.Number::<init> (5 bytes)   made zombie
+  56159 3151       4       reactor.core.publisher.Mono::subscribe (12 bytes)   made zombie
+  56159 3620       3       io.netty.buffer.PoolArena::free (81 bytes)
+  56160 3621       4       io.netty.buffer.PoolArena::sizeClass (29 bytes)
+  56160  331       3       java.util.ArrayList::add (29 bytes)   made zombie
+  56161 1617       3       io.netty.buffer.PoolArena::sizeClass (29 bytes)   made not entrant
+  56161 3122       4       reactor.core.publisher.StrictSubscriber::request (103 bytes)   made zombie
+  56161 3169       4       reactor.core.publisher.Operators$MultiSubscriptionSubscriber::set (132 bytes)   made zombie
+  56161 3586       3       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::finishPoll (44 bytes)   made not entrant
+  56162  689       3       java.lang.Integer::numberOfLeadingZeros (76 bytes)   made zombie
+  56162 3183       4       reactor.core.publisher.FluxDoFinally$DoFinallySubscriber::request (11 bytes)   made zombie
+  56166 2341       3       io.netty.buffer.PoolChunkList::allocate (93 bytes)   made not entrant
+  56180 3622       4       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber::onNext (11 bytes)
+  56180 3623       4       sun.nio.ch.SocketChannelImpl::translateReadyOps (191 bytes)
+  56183 3599       3       sun.nio.ch.SocketChannelImpl::translateReadyOps (191 bytes)   made not entrant
+  56183 3208   !   4       io.rsocket.internal.LimitableRequestPublisher::requestN (75 bytes)   made zombie
+  56183 3240   !   4       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  56186 3624       4       io.netty.buffer.PoolArena::free (81 bytes)
+  56195 3606       3       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber::onNext (11 bytes)   made not entrant
+  56195 3167       4       reactor.core.publisher.Operators$MultiSubscriptionSubscriber::request (119 bytes)   made zombie
+  56196 3165   !   4       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber::requestUpstream (83 bytes)   made zombie
+  56199 3620       3       io.netty.buffer.PoolArena::free (81 bytes)   made not entrant
+  56200 1539       3       io.netty.channel.DefaultChannelPromise::<init> (18 bytes)   made zombie
+  56200 3201   !   4       reactor.core.publisher.FluxGroupBy$GroupByMain::onNext (193 bytes)   made zombie
+  56200 3166       4       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber::request (80 bytes)   made zombie
+  56200 1582       4       io.netty.channel.AbstractChannelHandlerContext::executor (22 bytes)   made zombie
+  56205 3625   !   4       io.netty.channel.nio.NioEventLoop::select (307 bytes)
+  56230 3626       4       io.netty.channel.AbstractChannel$AbstractUnsafe::flush (23 bytes)
+  56234 3615   !   3       io.netty.channel.nio.NioEventLoop::select (307 bytes)   made not entrant
+  56235 3174       4       java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject::await (98 bytes)   made zombie
+  56235 1774       4       io.netty.channel.AbstractChannelHandlerContext::read (59 bytes)   made zombie
+  56235 1775   !   4       io.netty.channel.AbstractChannelHandlerContext::invokeRead (38 bytes)   made zombie
+  56235 1868       4       io.netty.util.concurrent.DefaultPromise::isDone (8 bytes)   made zombie
+  56237 3627       4       io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe::flush0 (12 bytes)
+  56239 3628   !   4       io.netty.channel.AbstractChannel$AbstractUnsafe::flush0 (186 bytes)
+  56255 3611   !   3       io.netty.channel.AbstractChannel$AbstractUnsafe::flush0 (186 bytes)   made not entrant
+  56255 1947       4       io.netty.channel.AbstractChannelHandlerContext::isNotValidPromise (200 bytes)   made zombie
+  56255 1948   !   4       io.netty.channel.AbstractChannelHandlerContext::write (50 bytes)   made zombie
+  56256 1944       4       reactor.core.publisher.StrictSubscriber::onNext (77 bytes)   made zombie
+  56258 3608       3       io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe::flush0 (12 bytes)   made not entrant
+  56258 2046   !   4       reactor.netty.channel.FluxReceive::drainReceiver (397 bytes)   made zombie
+  56258 2120       4       io.rsocket.transport.netty.SendPublisher::tryComplete (64 bytes)   made zombie
+  56258 2123       4       reactor.core.publisher.FluxGroupBy$UnicastGroupedFlux::checkTerminated (66 bytes)   made zombie
+  56258 2352       4       io.rsocket.frame.FrameHeaderFlyweight::encodeMetadata (84 bytes)   made zombie
+  56258 3609       3       io.netty.channel.AbstractChannel$AbstractUnsafe::flush (23 bytes)   made not entrant
+  56259 2215       4       io.netty.channel.AbstractChannelHandlerContext::invokeChannelRead (53 bytes)   made zombie
+  56259 2384       4       io.netty.buffer.UnsafeByteBufUtil::setBytes (134 bytes)   made zombie
+  56259 2413   !   4       reactor.core.publisher.FluxPeek$PeekSubscriber::onNext (95 bytes)   made zombie
+  56259 2398       4       io.rsocket.internal.UnboundedProcessor::drain (64 bytes)   made zombie
+  56362 3093 % !   4       io.netty.channel.nio.NioEventLoop::run @ -2 (236 bytes)   made not entrant
+  56370 3629       4       io.netty.channel.ChannelOutboundBuffer$Entry$1::newObject (6 bytes)
+  56371 1970       3       io.netty.channel.ChannelOutboundBuffer$Entry$1::newObject (6 bytes)   made not entrant
+  56372 2438   !   4       reactor.core.publisher.UnicastProcessor::onNext (100 bytes)   made zombie
+  56372 2496       4       io.netty.util.concurrent.DefaultPromise::trySuccess (16 bytes)   made zombie
+  56372 2495       4       io.netty.channel.ChannelOutboundBuffer::remove (66 bytes)   made zombie
+  56372 2484   !   4       io.netty.util.concurrent.DefaultPromise::notifyListeners (73 bytes)   made zombie
+  56372 2534       4       reactor.core.publisher.MonoFlatMapMany$FlatMapManyInner::onNext (11 bytes)   made zombie
+  56372 2532       4       reactor.core.publisher.FluxGroupBy$UnicastGroupedFlux::drainRegular (188 bytes)   made zombie
+  56372 2531       4       reactor.core.publisher.FluxGroupBy$UnicastGroupedFlux::drain (41 bytes)   made zombie
+  56372 2545       4       io.netty.util.AbstractReferenceCounted::release0 (48 bytes)   made zombie
+  56373 2543       4       reactor.core.publisher.FluxGroupBy$UnicastGroupedFlux::onNext (68 bytes)   made zombie
+  56373 2573   !   4       io.netty.util.concurrent.DefaultPromise::addListener (39 bytes)   made zombie
+  56373 2590       4       io.netty.util.concurrent.DefaultPromise::addListener0 (59 bytes)   made zombie
+  56373 2578       4       io.netty.channel.DefaultChannelPromise::addListener (8 bytes)   made zombie
+  56373 2602   !   4       sun.nio.ch.IOUtil::write (509 bytes)   made zombie
+  56373 2609       4       io.netty.channel.ChannelOutboundBuffer::nioBuffers (317 bytes)   made zombie
+  56373 3109   !   4       java.util.concurrent.ConcurrentHashMap::putVal (362 bytes)   made not entrant
+  56376 2778       4       io.netty.buffer.PoolThreadCache$MemoryRegionCache::allocate (49 bytes)   made not entrant
+  56376 3630       3       io.netty.buffer.PoolThreadCache$MemoryRegionCache::allocate (49 bytes)
+  56377 2674       4       java.lang.reflect.Constructor::newInstance (87 bytes)   made zombie
+  56377 2727       4       io.rsocket.RSocketClient$$Lambda$122/373928166::apply (20 bytes)   made zombie
+  56377 2788   !   4       sun.nio.ch.SocketChannelImpl::isConnected (28 bytes)   made zombie
+  56378 2720       4       io.netty.buffer.UnpooledByteBufAllocator::incrementHeap (15 bytes)   made zombie
+  56378 2774   !   4       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::flush (39 bytes)   made zombie
+  56378 2772       4       io.rsocket.transport.netty.SendPublisher$InnerSubscriber$$Lambda$101/447756505::run (8 bytes)   made zombie
+  56378 2806       4       java.nio.channels.spi.AbstractInterruptibleChannel::begin (48 bytes)   made zombie
+  56378 2793   !   4       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::drain (280 bytes)   made zombie
+  56378 2591       4       reactor.netty.channel.ChannelOperationsHandler::write (109 bytes)   made zombie
+  56378 2834       4       io.netty.channel.AbstractChannelHandlerContext::invokeChannelReadComplete (52 bytes)   made zombie
+  56380 2831       4       io.netty.channel.socket.nio.NioSocketChannel::isActive (25 bytes)   made zombie
+  56380 2822   !   4       sun.nio.ch.WindowsSelectorImpl$SubSelector::processFDSet (374 bytes)   made zombie
+  56380 2861   !   4       reactor.core.scheduler.SchedulerTask::call (100 bytes)   made zombie
+  56380 2815       4       io.netty.util.concurrent.SingleThreadEventExecutor::runAllTasks (96 bytes)   made zombie
+  56380 2857       4       io.netty.channel.nio.NioEventLoop::processSelectedKeysOptimized (99 bytes)   made zombie
+  56401 3631       4       io.netty.buffer.PoolThreadCache$MemoryRegionCache::allocate (49 bytes)
+  56407 3630       3       io.netty.buffer.PoolThreadCache$MemoryRegionCache::allocate (49 bytes)   made not entrant
+  56407 2858       4       io.netty.channel.nio.NioEventLoop::processSelectedKeys (26 bytes)   made zombie
+  56407 2875       4       reactor.core.publisher.FluxConcatMap$ConcatMapInner::onNext (21 bytes)   made zombie
+  56407 3207   !   4       io.rsocket.internal.LimitableRequestPublisher::increaseRequestLimit (33 bytes)   made zombie
+  56407 2906       4       io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe::flush0 (12 bytes)   made zombie
+  56407 2907       4       io.netty.channel.AbstractChannel$AbstractUnsafe::flush (23 bytes)   made zombie
+  56407 2931       4       reactor.core.publisher.Operators$MonoSubscriber::complete (155 bytes)   made zombie
+  56407 2953       4       reactor.core.publisher.Operators$ScalarSubscription::request (49 bytes)   made zombie
+  56407 2947       4       reactor.core.publisher.MonoJust::subscribe (15 bytes)   made zombie
+  56407 2981       4       io.netty.channel.DefaultChannelPipeline$HeadContext::channelReadComplete (12 bytes)   made zombie
+  56408 2992       4       io.netty.channel.DefaultMaxMessagesRecvByteBufAllocator$MaxMessageHandle::continueReading (52 bytes)   made zombie
+  56408 2999       4       sun.nio.ch.SocketChannelImpl::translateReadyOps (191 bytes)   made zombie
+  56408 2998       4       io.netty.channel.ChannelInboundHandlerAdapter::channelReadComplete (8 bytes)   made zombie
+  56408 3007       4       io.netty.channel.DefaultMaxMessagesRecvByteBufAllocator$MaxMessageHandle::continueReading (9 bytes)   made zombie
+  56408 3015       4       io.netty.util.internal.DefaultPriorityQueue::peek (5 bytes)   made zombie
+  56408 2987   !   4       sun.nio.ch.SocketChannelImpl::read (389 bytes)   made zombie
+  56409 3021       4       io.netty.buffer.PooledUnsafeDirectByteBuf::setBytes (16 bytes)   made zombie
+  56409 3054       4       reactor.core.publisher.UnicastProcessor::drain (64 bytes)   made zombie
+  56409 3043   !   4       io.netty.channel.nio.NioEventLoop::select (307 bytes)   made zombie
+  56409 3077   !   4       reactor.core.Disposables$ListCompositeDisposable::add (79 bytes)   made zombie
+  56409 3078       4       reactor.core.scheduler.DelegateServiceScheduler$UnsupportedScheduledExecutorService::submit (11 bytes)   made zombie
+  56409 3079       4       reactor.core.scheduler.ExecutorServiceWorker::schedule (17 bytes)   made zombie
+  56409 3137   !   4       reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber::request (52 bytes)   made zombie
+  56417 3632       3       java.util.concurrent.atomic.Striped64::advanceProbe (35 bytes)
+  56424 3633 % !   3       io.netty.channel.nio.NioEventLoop::run @ 0 (236 bytes)
+  56441 3634   !   3       java.util.concurrent.ConcurrentHashMap::putVal (362 bytes)
+  56449 3635   !   3       java.util.concurrent.atomic.Striped64::longAccumulate (487 bytes)
+  56543 3636       4       java.util.concurrent.atomic.LongAdder::increment (6 bytes)
+  56546 2971       3       java.util.concurrent.atomic.LongAdder::increment (6 bytes)   made not entrant
+  56632 2968       4       java.util.concurrent.ConcurrentHashMap::addCount (292 bytes)   made not entrant
+  56669 3637       3       java.util.concurrent.ConcurrentHashMap::addCount (292 bytes)
+  56706 3209 % !   4       java.util.concurrent.ThreadPoolExecutor::runWorker @ -2 (225 bytes)   made not entrant
+  56707 3638       4       reactor.core.publisher.Operators$MonoSubscriber::complete (155 bytes)
+  56713 3639   !   3       reactor.core.scheduler.SchedulerTask::call (100 bytes)
+  56741 3640       3       reactor.core.publisher.FluxRepeat$RepeatSubscriber::resubscribe (60 bytes)
+  56742 3462       2       reactor.core.publisher.FluxRepeat$RepeatSubscriber::resubscribe (60 bytes)   made not entrant
+  56751 3641       4       java.util.concurrent.ThreadPoolExecutor::runStateAtLeast (11 bytes)
+  56751 3513       2       java.util.concurrent.ThreadPoolExecutor::runStateAtLeast (11 bytes)   made not entrant
+  56773 3642       3       io.netty.buffer.WrappedByteBuf::refCnt (8 bytes)
+  56773 2731       2       io.netty.buffer.WrappedByteBuf::refCnt (8 bytes)   made not entrant
+  56789 3643       3       io.netty.util.internal.logging.Slf4JLogger::isDebugEnabled (10 bytes)
+  56798 3644       3       io.rsocket.internal.UnboundedProcessor::drain (64 bytes)
+  56799 3434       2       io.rsocket.internal.UnboundedProcessor::drain (64 bytes)   made not entrant
+  56871 3645   !   4       java.util.concurrent.ConcurrentHashMap::replaceNode (416 bytes)
+  56884 3419   !   2       java.util.concurrent.ConcurrentHashMap::replaceNode (416 bytes)   made not entrant
+  56911 3646 % !   3       java.util.concurrent.ThreadPoolExecutor::runWorker @ 21 (225 bytes)
+  56987 3647       4       io.rsocket.internal.UnboundedProcessor::request (21 bytes)
+  57000 3050       3       io.rsocket.internal.UnboundedProcessor::request (21 bytes)   made not entrant
+  57051 3648       4       io.netty.buffer.PooledUnsafeDirectByteBuf::memoryAddress (9 bytes)
+  57052 1593       3       io.netty.buffer.PooledUnsafeDirectByteBuf::memoryAddress (9 bytes)   made not entrant
+  57133 3649   !   4       reactor.core.scheduler.SchedulerTask::call (100 bytes)
+  57133 3650       3       reactor.core.publisher.StrictSubscriber::request (103 bytes)
+  57135 3447       2       reactor.core.publisher.StrictSubscriber::request (103 bytes)   made not entrant
+  57149 3639   !   3       reactor.core.scheduler.SchedulerTask::call (100 bytes)   made not entrant
+  57193 3651   !   4       reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber::request (52 bytes)
+  57204 3652       3       io.netty.buffer.PoolSubpage::init (94 bytes)
+  57246 3653 % !   4       io.netty.channel.nio.NioEventLoop::run @ 0 (236 bytes)
+  57276 3633 % !   3       io.netty.channel.nio.NioEventLoop::run @ -2 (236 bytes)   made not entrant
+  57308 3654       3       io.netty.buffer.PoolSubpage::<init> (45 bytes)
+  57350 3440   !   2       reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber::request (52 bytes)   made not entrant
+  57518 3655  s    4       java.lang.Throwable::fillInStackTrace (29 bytes)
+  57520  495  s    3       java.lang.Throwable::fillInStackTrace (29 bytes)   made not entrant
+  57577 3656 % !   4       java.util.concurrent.ThreadPoolExecutor::runWorker @ 21 (225 bytes)
+  57583 3016       4       io.netty.handler.codec.ByteToMessageDecoder::channelReadComplete (55 bytes)   made not entrant
+  57585 3657       4       io.netty.handler.codec.ByteToMessageDecoder::channelReadComplete (55 bytes)
+  57588 3646 % !   3       java.util.concurrent.ThreadPoolExecutor::runWorker @ -2 (225 bytes)   made not entrant
+  57589 3658       4       io.netty.channel.AbstractChannelHandlerContext::fireChannelReadComplete (9 bytes)
+  57593 2353       3       io.netty.channel.AbstractChannelHandlerContext::fireChannelReadComplete (9 bytes)   made not entrant
+  57832 3659       4       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber::request (80 bytes)
+  57834 3660   !   3       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber::requestUpstream (83 bytes)
+  57835 3512   !   2       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber::requestUpstream (83 bytes)   made not entrant
+  57866 3510       2       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber::request (80 bytes)   made not entrant
+  58011 3602       4       io.netty.util.Recycler$DefaultHandle::recycle (54 bytes)   made not entrant
+  58011 3661       3       io.netty.util.Recycler$DefaultHandle::recycle (54 bytes)
+  58013 3662       4       io.netty.util.Recycler$DefaultHandle::recycle (54 bytes)
+  58018 3661       3       io.netty.util.Recycler$DefaultHandle::recycle (54 bytes)   made not entrant
+  58467 3663       3       reactor.core.publisher.Operators$MultiSubscriptionSubscriber::request (119 bytes)
+  58468 3664       4       reactor.core.publisher.FluxRepeat$RepeatSubscriber::resubscribe (60 bytes)
+  58469 3442       2       reactor.core.publisher.Operators$MultiSubscriptionSubscriber::request (119 bytes)   made not entrant
+  58473 3640       3       reactor.core.publisher.FluxRepeat$RepeatSubscriber::resubscribe (60 bytes)   made not entrant
+  58709 3665   !   4       java.util.concurrent.ConcurrentHashMap::putVal (362 bytes)
+  58731 3666       4       java.util.concurrent.ConcurrentHashMap::addCount (292 bytes)
+  58732 3634   !   3       java.util.concurrent.ConcurrentHashMap::putVal (362 bytes)   made not entrant
+  58732 3358   !   3       io.netty.channel.AbstractChannelHandlerContext::invokeRead (38 bytes)   made zombie
+  58733 3257   !   3       io.rsocket.RSocketServer::handleFrame (475 bytes)   made zombie
+  58733 3329   !   3       reactor.core.Disposables$ListCompositeDisposable::remove (68 bytes)   made zombie
+  58737 3637       3       java.util.concurrent.ConcurrentHashMap::addCount (292 bytes)   made not entrant
+  58737  177   !   3       java.util.WeakHashMap::expungeStaleEntries (139 bytes)   made zombie
+  58737 3325       2       reactor.core.scheduler.Schedulers::directSchedule (52 bytes)   made zombie
+  58737 3302       3       java.util.concurrent.locks.AbstractQueuedSynchronizer::release (33 bytes)   made zombie
+  58737 3601       3       io.netty.buffer.PoolArena::free (81 bytes)   made zombie
+  58737 3340   !   3       reactor.core.publisher.FluxPeek$PeekSubscriber::onNext (95 bytes)   made zombie
+  58930 3667       4       java.util.concurrent.FutureTask::finishCompletion (74 bytes)
+  58931 1431       3       java.util.concurrent.FutureTask::finishCompletion (74 bytes)   made not entrant
+  58932 3352   !   2       sun.nio.ch.WindowsSelectorImpl$SubSelector::processFDSet (374 bytes)   made zombie
+  58932 3343       3       io.netty.channel.socket.nio.NioSocketChannel::isActive (25 bytes)   made zombie
+  59101 3668       3       io.netty.buffer.PoolSubpage::addToPool (55 bytes)
+  59102 3344   !   3       io.netty.channel.AbstractChannelHandlerContext::write (50 bytes)   made zombie
+  59102 3377   !   3       reactor.core.scheduler.WorkerTask::call (208 bytes)   made zombie
+  59102 3541       4       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::finishPoll (44 bytes)   made zombie
+  59102 3567   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  59102 3341       3       reactor.core.publisher.FluxConcatMap$ConcatMapInner::onNext (21 bytes)   made zombie
+  59102 3600       3       io.netty.util.Recycler$WeakOrderQueue::add (84 bytes)   made zombie
+  59246 3669       4       reactor.core.publisher.FluxDoFinally$DoFinallySubscriber::request (11 bytes)
+  59247 3560       2       reactor.core.publisher.FluxDoFinally$DoFinallySubscriber::request (11 bytes)   made not entrant
+  59247 3536   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  59247 3408       2       io.netty.channel.DefaultMaxMessagesRecvByteBufAllocator$MaxMessageHandle::continueReading (52 bytes)   made zombie
+  59247 3164       4       io.rsocket.internal.UnboundedProcessor::poll (10 bytes)   made zombie
+  59523 3670   !   4       reactor.core.publisher.FluxPeek$PeekSubscriber::request (52 bytes)
+  59525 3581   !   2       reactor.core.publisher.FluxPeek$PeekSubscriber::request (52 bytes)   made not entrant
+  59525 3429       2       io.netty.buffer.PoolArena::free (81 bytes)   made zombie
+  59525 3330       3       java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject::await (98 bytes)   made zombie
+  59525 3423       2       io.netty.util.Recycler$Stack::pushLater (93 bytes)   made zombie
+  59559 3671       4       io.netty.buffer.WrappedByteBuf::refCnt (8 bytes)
+  59561 3642       3       io.netty.buffer.WrappedByteBuf::refCnt (8 bytes)   made not entrant
+  59561 3315       3       io.netty.channel.AbstractChannelHandlerContext::invokeChannelRead (53 bytes)   made zombie
+  59561  995       3       java.util.concurrent.atomic.AtomicReferenceArray::byteOffset (12 bytes)   made zombie
+  59561 3353       3       java.nio.channels.spi.AbstractInterruptibleChannel::begin (48 bytes)   made zombie
+  59561 1006       3       java.util.concurrent.atomic.AtomicIntegerFieldUpdater$AtomicIntegerFieldUpdaterImpl::decrementAndGet (9 bytes)   made zombie
+  59561 3328   !   3       sun.nio.ch.SocketChannelImpl::isConnected (28 bytes)   made zombie
+  59561 1013       3       java.util.concurrent.atomic.AtomicReferenceArray::getRaw (12 bytes)   made zombie
+  59561 3332       3       io.rsocket.transport.netty.SendPublisher$InnerSubscriber$$Lambda$101/447756505::run (8 bytes)   made zombie
+  59561 3504       2       reactor.core.publisher.StrictSubscriber::onNext (77 bytes)   made zombie
+  59561 3582   !   4       io.netty.channel.nio.NioEventLoop::select (307 bytes)   made zombie
+  59561 1121       3       java.util.concurrent.atomic.AtomicIntegerFieldUpdater$AtomicIntegerFieldUpdaterImpl::get (17 bytes)   made zombie
+  59561 3338       3       io.netty.util.internal.DefaultPriorityQueue::peek (5 bytes)   made zombie
+  59561 3494   !   2       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::drain (280 bytes)   made zombie
+  59561 3505   !   4       io.netty.channel.nio.NioEventLoop::select (307 bytes)   made zombie
+  59561 3373   !   3       reactor.core.publisher.FluxPublish$PublishSubscriber::drain (496 bytes)   made zombie
+  59561 3402       2       sun.nio.ch.SocketChannelImpl::translateReadyOps (191 bytes)   made zombie
+  59561 3417   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  59561 3594       3       io.netty.util.Recycler$Stack::pushLater (93 bytes)   made zombie
+  59561 3306   !   3       reactor.core.publisher.FluxConcatMap$ConcatMapImmediate::drain (454 bytes)   made zombie
+  59561 3593       3       io.netty.util.Recycler$DefaultHandle::recycle (54 bytes)   made zombie
+  59561 1242       3       reactor.netty.channel.FluxReceive::isCancelled (16 bytes)   made zombie
+  59696 3672       4       java.util.concurrent.locks.AbstractQueuedSynchronizer::addWaiter (50 bytes)
+  59698 3226       3       java.util.concurrent.locks.AbstractQueuedSynchronizer::addWaiter (50 bytes)   made not entrant
+  59698 3363       3       io.netty.util.collection.IntObjectHashMap::get (10 bytes)   made zombie
+  59698 3368   !   3       java.util.Collections$SynchronizedMap::get (25 bytes)   made zombie
+  59699 1253       3       io.netty.util.Recycler$Stack::pushNow (104 bytes)   made zombie
+  59699 3403       2       io.netty.channel.ChannelInboundHandlerAdapter::channelReadComplete (8 bytes)   made zombie
+  59699 3538   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  59699 3357       3       io.netty.channel.AbstractChannelHandlerContext::read (59 bytes)   made zombie
+  59699 1332       3       reactor.core.publisher.Operators::cancelledSubscription (4 bytes)   made zombie
+  59699 3276       3       io.netty.util.concurrent.DefaultPromise::addListener0 (59 bytes)   made zombie
+  59699 3334       3       reactor.core.publisher.StrictSubscriber::onNext (77 bytes)   made zombie
+  59699 1351       3       reactor.util.Loggers$Slf4JLogger::isDebugEnabled (10 bytes)   made zombie
+  59699 3522   !   4       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::take (203 bytes)   made zombie
+  59699 3374       3       reactor.core.scheduler.ExecutorServiceWorker::schedule (17 bytes)   made zombie
+  59699 3317       3       java.util.WeakHashMap::get (77 bytes)   made zombie
+  59699 3394       2       io.netty.channel.DefaultChannelPipeline$HeadContext::channelReadComplete (12 bytes)   made zombie
+  59699 3568   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  59700 3673       4       java.util.concurrent.locks.AbstractQueuedSynchronizer::shouldParkAfterFailedAcquire (50 bytes)
+  59701 3219       3       java.util.concurrent.locks.AbstractQueuedSynchronizer::shouldParkAfterFailedAcquire (50 bytes)   made not entrant
+  59701 3321   !   3       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  59701 3491   !   3       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  59701 3520       2       io.netty.channel.DefaultMaxMessagesRecvByteBufAllocator$MaxMessageHandle::continueReading (9 bytes)   made zombie
+  59701 3322       3       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::finishPoll (44 bytes)   made zombie
+  59701 3372       3       reactor.core.scheduler.DelegateServiceScheduler$UnsupportedScheduledExecutorService::submit (11 bytes)   made zombie
+  59701 1488       3       io.netty.channel.socket.nio.NioSocketChannel::javaChannel (8 bytes)   made zombie
+  59701 3437       2       java.util.concurrent.atomic.LongAdder::add (90 bytes)   made zombie
+  59701 3370       3       reactor.core.publisher.UnicastProcessor::drain (64 bytes)   made zombie
+  59701 1550   !   3       io.netty.channel.AbstractChannelHandlerContext::invokeChannelRead (40 bytes)   made zombie
+  59701 1584       3       java.util.concurrent.atomic.AtomicBoolean::set (14 bytes)   made zombie
+  59701 1589   !   3       io.netty.util.DefaultAttributeMap::attr (224 bytes)   made zombie
+  59702 1613       3       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::onNext (9 bytes)   made zombie
+  59702 1611   !   3       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::tryDrain (83 bytes)   made zombie
+  59702 1646       3       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::onNext (51 bytes)   made zombie
+  59814 3674       4       reactor.core.publisher.StrictSubscriber::request (103 bytes)
+  59833 3650       3       reactor.core.publisher.StrictSubscriber::request (103 bytes)   made not entrant
+  59833 1621       3       io.netty.buffer.PoolThreadCache$MemoryRegionCache::add (33 bytes)   made zombie
+  59833 1684       3       io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueue::offer (101 bytes)   made zombie
+  59833 1687       3       io.netty.util.concurrent.DefaultPromise::setSuccess0 (16 bytes)   made zombie
+  59833 3350   !   3       reactor.core.publisher.UnicastProcessor::onNext (100 bytes)   made zombie
+  59833 1717       3       io.netty.util.Recycler$DefaultHandle::access$602 (7 bytes)   made zombie
+  59834 3542   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  59834 1704   !   3       io.netty.util.DefaultAttributeMap::hasAttr (110 bytes)   made zombie
+  59834 3463       4       reactor.core.publisher.StrictSubscriber::onNext (77 bytes)   made zombie
+  59834 3526       3       reactor.core.publisher.FluxConcatMap$ConcatMapInner::onNext (21 bytes)   made zombie
+  59834 3354       3       io.netty.channel.ChannelOutboundBuffer::remove (66 bytes)   made zombie
+  59834 1733   !   3       io.rsocket.internal.LimitableRequestPublisher$InnerSubscriber::onNext (20 bytes)   made zombie
+  59834 1746       3       io.rsocket.transport.netty.SendPublisher::access$2000 (6 bytes)   made zombie
+  59834 3277   !   3       io.netty.util.concurrent.DefaultPromise::addListener (39 bytes)   made zombie
+  59834 3527   !   3       io.netty.util.concurrent.SingleThreadEventExecutor::execute (85 bytes)   made zombie
+  59834 1690       4       io.netty.util.Recycler$DefaultHandle::recycle (54 bytes)   made zombie
+  59834 1790       3       io.netty.util.concurrent.DefaultPromise::setValue0 (34 bytes)   made zombie
+  59834 3333       3       reactor.core.publisher.FluxPublish$PublishSubscriber::checkTerminated (182 bytes)   made zombie
+  59834 1795   !   3       reactor.netty.channel.ChannelOperationsHandler::channelRead (236 bytes)   made zombie
+  59834 1797       3       reactor.netty.channel.ChannelOperations::as (16 bytes)   made zombie
+  59834 3364   !   2       reactor.core.publisher.FluxGroupBy$GroupByMain::onNext (193 bytes)   made zombie
+  59834 1799   !   3       reactor.netty.channel.FluxReceive::onInboundNext (248 bytes)   made zombie
+  59834 1813       3       io.netty.channel.ChannelOutboundBuffer$Entry::recycle (61 bytes)   made zombie
+  59834 1811       3       io.netty.channel.ChannelOutboundBuffer::decrementPendingOutboundBytes (50 bytes)   made zombie
+  59834 3339       3       io.rsocket.transport.netty.SendPublisher::tryComplete (64 bytes)   made zombie
+  59834 1796       3       reactor.netty.Connection::from (42 bytes)   made zombie
+  59834 1627       3       io.rsocket.transport.netty.SendPublisher::access$1600 (5 bytes)   made zombie
+  59835 1851       3       io.netty.util.collection.IntObjectHashMap::toExternal (33 bytes)   made zombie
+  59835 1815       3       io.netty.channel.ChannelOutboundBuffer::removeEntry (49 bytes)   made zombie
+  59934 3675       4       io.netty.buffer.PoolChunk::usage (33 bytes)
+  59934 3045       3       io.netty.buffer.PoolChunk::usage (33 bytes)   made not entrant
+  59934 3420       2       io.netty.util.Recycler$DefaultHandle::recycle (54 bytes)   made zombie
+  59935 3379   !   3       sun.nio.ch.SocketChannelImpl::read (389 bytes)   made zombie
+  59935 3375   !   3       reactor.core.Disposables$ListCompositeDisposable::add (79 bytes)   made zombie
+  59935 3348       3       io.netty.channel.nio.NioEventLoop::processSelectedKeysOptimized (99 bytes)   made zombie
+  59935 3389       2       io.netty.channel.ChannelOutboundBuffer::nioBuffers (317 bytes)   made zombie
+  59935 3383       3       io.rsocket.RSocketClient::handleFrame (319 bytes)   made zombie
+  59935 3413   !   2       io.netty.channel.AbstractChannel$AbstractUnsafe::flush0 (186 bytes)   made zombie
+  59935 3380       3       io.netty.channel.AbstractChannelHandlerContext::invokeChannelReadComplete (52 bytes)   made zombie
+  59935 3395       2       io.netty.buffer.UnpooledByteBufAllocator::incrementHeap (15 bytes)   made zombie
+  59935 3426       2       io.netty.util.Recycler$WeakOrderQueue::add (84 bytes)   made zombie
+  59935 3382       3       io.netty.channel.nio.NioEventLoop::processSelectedKeys (26 bytes)   made zombie
+  59935 1960       3       io.netty.channel.nio.NioEventLoop::wakeup (25 bytes)   made zombie
+  59935 1959       3       io.netty.channel.SingleThreadEventLoop::wakesUpForTask (13 bytes)   made zombie
+  59935 1907       3       io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueue::offer (159 bytes)   made zombie
+  59935 1926   !   3       reactor.core.scheduler.Schedulers::workerSchedule (81 bytes)   made zombie
+  59935 1974   !   3       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::take (203 bytes)   made zombie
+  59935 3337   !   3       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::flush (39 bytes)   made zombie
+  59935 3282   !   4       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::drain (280 bytes)   made zombie
+  59935 3562   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  59935 3478   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  59935 3551   !   3       io.rsocket.transport.netty.SendPublisher$InnerSubscriber::drain (280 bytes)   made zombie
+  60429 3676       4       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber$$Lambda$136/929474059::run (12 bytes)
+  60459 3087       3       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber$$Lambda$136/929474059::run (12 bytes)   made not entrant
+  60460 3571   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  60460 3546   !   3       io.netty.channel.nio.NioEventLoop::select (307 bytes)   made zombie
+  60460 3356   !   2       reactor.netty.channel.FluxReceive::drainReceiver (397 bytes)   made zombie
+  60460 3563   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  60460 3314       3       io.rsocket.RSocketClient$$Lambda$122/373928166::apply (20 bytes)   made zombie
+  60460 3537   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  60460 3410       2       io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe::flush0 (12 bytes)   made zombie
+  60460 3412       2       io.netty.channel.socket.nio.NioSocketChannel::doWrite (222 bytes)   made zombie
+  60460 3552   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  60594 3677   !   3       io.netty.buffer.PoolChunk::allocateSubpage (135 bytes)
+  60596 2255       3       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::siftDown (121 bytes)   made zombie
+  60596 2254       3       java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask::compareTo (101 bytes)   made zombie
+  60596 2259       3       java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject::awaitNanos (156 bytes)   made zombie
+  60596 2248       4       java.util.concurrent.atomic.LongAdder::add (90 bytes)   made zombie
+  60596 2279       3       io.netty.channel.ChannelOutboundBuffer::nioBufferSize (5 bytes)   made zombie
+  60596 2309       4       java.util.Random::next (47 bytes)   made zombie
+  60596 3501   !   4       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  60596 2338       3       io.netty.util.concurrent.SingleThreadEventExecutor::delayNanos (19 bytes)   made zombie
+  60596 3598       3       reactor.core.publisher.StrictSubscriber::onNext (77 bytes)   made zombie
+  60596 2379       4       io.netty.buffer.PoolArena::free (81 bytes)   made zombie
+  60596 3564   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  60596 3516       3       io.netty.channel.socket.nio.NioSocketChannel::doWrite (222 bytes)   made zombie
+  60596 3439       2       java.util.Random::next (47 bytes)   made zombie
+  60596 3300       3       io.netty.channel.DefaultChannelPromise::addListener (8 bytes)   made zombie
+  60596 2420       4       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber::onNext (11 bytes)   made zombie
+[pool-1-thread-6] INFO prototype.benchmark.AsyncSimulation - Throughput: 58730 processed requests
+[pool-1-thread-6] INFO prototype.benchmark.AsyncSimulation - END BENCHMARK
+[pool-1-thread-1] INFO prototype.benchmark.AsyncSimulation - Throughput: 58906 processed requests
+[pool-1-thread-1] INFO prototype.benchmark.AsyncSimulation - END BENCHMARK
+  60999 3678       3       java.nio.CharBuffer::arrayOffset (35 bytes)
+  61000 3597       3       io.netty.buffer.UnpooledByteBufAllocator::incrementHeap (15 bytes)   made zombie
+  61000 3554   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  61000 3414       2       io.netty.channel.AbstractChannel$AbstractUnsafe::flush (23 bytes)   made zombie
+  61000 3444       2       reactor.core.publisher.FluxConcatMap$ConcatMapInner::onNext (21 bytes)   made zombie
+  61000 3553   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  61000 3474       3       reactor.core.publisher.FluxConcatMap$ConcatMapInner::onNext (21 bytes)   made zombie
+  61000 3484       2       reactor.core.publisher.FluxConcatMap$ConcatMapInner::onNext (21 bytes)   made zombie
+  61002 3229       4       reactor.core.publisher.UnicastProcessor::drainRegular (165 bytes)   made not entrant
+  61002 3490   !   4       reactor.core.publisher.FluxPublish$PublishSubscriber::drain (496 bytes)   made not entrant
+  61003 3679   !   3       reactor.core.publisher.FluxPublish$PublishSubscriber::drain (496 bytes)
+  61003 2511       4       io.rsocket.frame.FrameHeaderFlyweight::encode (190 bytes)   made not entrant
+  61004 3681       4       reactor.core.publisher.FluxPublishOn$PublishOnSubscriber::request (24 bytes)
+  61005 3683       4       io.rsocket.frame.FrameHeaderFlyweight::encodeData (34 bytes)
+  61006 3684       4       io.rsocket.frame.FrameHeaderFlyweight::encode (190 bytes)
+  61007 3561   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  61007 2696   !   4       io.netty.util.concurrent.SingleThreadEventExecutor::execute (85 bytes)   made zombie
+  61008 3565   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  61008 3430       2       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber::onNext (11 bytes)   made zombie
+  61008 3472       3       io.netty.channel.ChannelOutboundBuffer::nioBuffers (317 bytes)   made zombie
+  61008 2810       4       io.netty.channel.socket.nio.NioSocketChannel::adjustMaxBytesPerGatheringWrite (56 bytes)   made zombie
+  61008 3499       2       io.rsocket.internal.UnboundedProcessor::poll (10 bytes)   made zombie
+  61008 2829       3       io.rsocket.transport.netty.SendPublisher$InnerSubscriber$$Lambda$126/1058659819::run (8 bytes)   made zombie
+  61008 3473   !   3       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  61008 3496   !   2       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  61008 3680       3       reactor.core.publisher.UnicastProcessor::drainRegular (165 bytes)
+  61009 2876       4       reactor.core.publisher.FluxConcatMap$ConcatMapImmediate::innerNext (68 bytes)   made zombie
+  61009 3543   !   4       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  61009 2905       4       io.netty.channel.socket.nio.NioSocketChannel::doWrite (222 bytes)   made zombie
+  61009 2904   !   4       io.netty.channel.AbstractChannel$AbstractUnsafe::flush0 (186 bytes)   made zombie
+  61009 3342       2       io.netty.channel.AbstractChannelHandlerContext::isNotValidPromise (200 bytes)   made zombie
+  61009 3605       4       java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject::await (98 bytes)   made not entrant
+  61010 3162       4       reactor.core.publisher.Operators::producedCancellable (72 bytes)   made not entrant
+  61011 2272       3       reactor.core.publisher.FluxPublishOn$PublishOnSubscriber::request (24 bytes)   made not entrant
+  61011 3686       4       io.netty.buffer.UnpooledHeapByteBuf::array (9 bytes)
+  61012 1763       3       io.netty.buffer.UnpooledHeapByteBuf::array (9 bytes)   made not entrant
+  61012 3685       4       io.rsocket.Frame::isFlagSet (13 bytes)
+  61012 1350       3       io.rsocket.Frame::isFlagSet (13 bytes)   made not entrant
+  61013 3688       4       io.rsocket.frame.FrameHeaderFlyweight::computeFrameHeaderLength (12 bytes)
+  61013 2972       3       reactor.util.concurrent.MpscLinkedQueue::poll (76 bytes)   made zombie
+  61013 1135       3       io.rsocket.frame.FrameHeaderFlyweight::computeFrameHeaderLength (12 bytes)   made not entrant
+  61015 3557   !   4       java.util.concurrent.ThreadPoolExecutor::getTask (179 bytes)   made zombie
+  61015 3275   !   3       io.netty.channel.nio.NioEventLoop::select (307 bytes)   made zombie
+  61015 3689       3       reactor.core.publisher.Operators::producedCancellable (72 bytes)
+  61016 1732       3       io.rsocket.frame.FrameHeaderFlyweight::encodeData (34 bytes)   made not entrant
+  61017 3682       3       io.rsocket.frame.FrameHeaderFlyweight::encodeMetadata (84 bytes)
+  61017 3690       3       java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject::await (98 bytes)
+  61019 3687       3       java.util.concurrent.atomic.AtomicLongFieldUpdater$CASUpdater::getAndSet (18 bytes)
+  61036 3691       4       reactor.core.publisher.UnicastProcessor::drainRegular (165 bytes)
+  61044 3692       4       io.rsocket.frame.FrameHeaderFlyweight::encodeMetadata (84 bytes)
+  61050 3682       3       io.rsocket.frame.FrameHeaderFlyweight::encodeMetadata (84 bytes)   made not entrant
+  61052 3693   !   4       reactor.core.publisher.FluxPublish$PublishSubscriber::drain (496 bytes)
+  61056 3694       4       reactor.core.publisher.Operators::producedCancellable (72 bytes)
+  61057 3680       3       reactor.core.publisher.UnicastProcessor::drainRegular (165 bytes)   made not entrant
+  61062 3689       3       reactor.core.publisher.Operators::producedCancellable (72 bytes)   made not entrant
+  61118 3679   !   3       reactor.core.publisher.FluxPublish$PublishSubscriber::drain (496 bytes)   made not entrant
+  61121 3695       4       java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject::await (98 bytes)
+[pool-1-thread-8] INFO prototype.benchmark.AsyncSimulation - Throughput: 60171 processed requests
+[pool-1-thread-8] INFO prototype.benchmark.AsyncSimulation - END BENCHMARK
+  61123 3696       4       java.util.concurrent.atomic.AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl::getAndSet (23 bytes)
+  61125 1255       3       java.util.concurrent.atomic.AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl::getAndSet (23 bytes)   made not entrant
+  61125 3697       3       io.rsocket.RSocketClient::handleMissingResponseProcessor (98 bytes)
+  61126 3698       3       io.rsocket.StreamIdSupplier::isBeforeOrCurrent (18 bytes)
+  61143 3690       3       java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject::await (98 bytes)   made not entrant
+  61143 3611   !   3       io.netty.channel.AbstractChannel$AbstractUnsafe::flush0 (186 bytes)   made zombie
+[pool-1-thread-10] INFO prototype.benchmark.AsyncSimulation - Throughput: 62218 processed requests
+[pool-1-thread-10] INFO prototype.benchmark.AsyncSimulation - END BENCHMARK
+[pool-1-thread-2] INFO prototype.benchmark.AsyncSimulation - Throughput: 65094 processed requests
+[pool-1-thread-2] INFO prototype.benchmark.AsyncSimulation - END BENCHMARK
+  61410 3699       3       java.nio.charset.CoderResult::isUnderflow (13 bytes)
+  61410 3109   !   4       java.util.concurrent.ConcurrentHashMap::putVal (362 bytes)   made zombie
+  61412 3700       3       io.netty.buffer.PooledByteBufAllocator$PoolThreadLocalCache::leastUsedArena (57 bytes)
+  61413 3701       4       io.netty.util.internal.MathUtil::findNextPositivePowerOfTwo (38 bytes)
+  61413 3533       4       io.rsocket.RSocketClient::handleFrame (319 bytes)   made not entrant
+  61413 1243       3       io.netty.util.internal.MathUtil::findNextPositivePowerOfTwo (38 bytes)   made not entrant
+  61415 3702       4       java.util.concurrent.locks.ReentrantLock::unlock (10 bytes)
+  61416 3703       3       io.rsocket.RSocketClient::handleFrame (319 bytes)
+  61466 3704       4       io.rsocket.RSocketClient::handleFrame (319 bytes)
+[pool-1-thread-3] INFO prototype.benchmark.AsyncSimulation - Throughput: 65845 processed requests
+[pool-1-thread-3] INFO prototype.benchmark.AsyncSimulation - END BENCHMARK
+  61534 3703       3       io.rsocket.RSocketClient::handleFrame (319 bytes)   made not entrant
+  61554 3705       3       java.util.concurrent.locks.AbstractQueuedSynchronizer::parkAndCheckInterrupt (8 bytes)
+  61554 2803       2       java.util.concurrent.locks.AbstractQueuedSynchronizer::parkAndCheckInterrupt (8 bytes)   made not entrant
+[pool-1-thread-7] INFO prototype.benchmark.AsyncSimulation - Throughput: 71919 processed requests
+[pool-1-thread-7] INFO prototype.benchmark.AsyncSimulation - END BENCHMARK
+  61746 3706       3       java.util.BitSet::expandTo (23 bytes)
+  61747 3615   !   3       io.netty.channel.nio.NioEventLoop::select (307 bytes)   made zombie
+  61747 2708       4       java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask::run (59 bytes)   made not entrant
+  61748 3707       4       java.util.concurrent.ScheduledThreadPoolExecutor::canRunInCurrentRunState (20 bytes)
+  61748 3708       4       java.util.concurrent.ThreadPoolExecutor::isRunningOrShutdown (31 bytes)
+  61748 3709       3       java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask::run (59 bytes)
+  61749 3586       3       java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue::finishPoll (44 bytes)   made zombie
+  61749 1617       3       io.netty.buffer.PoolArena::sizeClass (29 bytes)   made zombie
+  61749 3612       4       io.netty.buffer.PoolArena::free (81 bytes)   made zombie
+  61749 3710       3       java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask::isPeriodic (15 bytes)
+  61749 3630       3       io.netty.buffer.PoolThreadCache$MemoryRegionCache::allocate (49 bytes)   made zombie
+  61749 3620       3       io.netty.buffer.PoolArena::free (81 bytes)   made zombie
+  61749 3609       3       io.netty.channel.AbstractChannel$AbstractUnsafe::flush (23 bytes)   made zombie
+  61750 3711       3       java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask::access$201 (5 bytes)
+  61750 1970       3       io.netty.channel.ChannelOutboundBuffer$Entry$1::newObject (6 bytes)   made zombie
+[pool-1-thread-4] INFO prototype.benchmark.AsyncSimulation - Throughput: 72219 processed requests
+[pool-1-thread-4] INFO prototype.benchmark.AsyncSimulation - END BENCHMARK
+  61766 3712       3       java.util.Arrays::fill (21 bytes)
+  61766 3714       4       io.netty.util.internal.shaded.org.jctools.util.Pow2::roundToPowerOfTwo (88 bytes)
+  61766 3487       4       io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueue::offer (101 bytes)   made zombie
+  61766 3713       3       io.netty.buffer.PoolThreadCache::createSubPageCaches (46 bytes)
+  61766 2328   !   4       java.util.concurrent.FutureTask::run (126 bytes)   made not entrant
+  61767 3656 % !   4       java.util.concurrent.ThreadPoolExecutor::runWorker @ -2 (225 bytes)   made not entrant
+  61767 3185       3       io.netty.util.internal.shaded.org.jctools.util.Pow2::roundToPowerOfTwo (88 bytes)   made not entrant
+  61767 2341       3       io.netty.buffer.PoolChunkList::allocate (93 bytes)   made zombie
+  61767 3595       3       java.util.concurrent.atomic.LongAdder::add (90 bytes)   made zombie
+  61768 3715   !   3       java.util.concurrent.FutureTask::run (126 bytes)
+  61769 2778       4       io.netty.buffer.PoolThreadCache$MemoryRegionCache::allocate (49 bytes)   made zombie
+  61771 3716       4       java.util.concurrent.FutureTask::set (36 bytes)
+  61772 3717       4       reactor.core.scheduler.WorkerTask::call (5 bytes)
+  61772 1429       3       java.util.concurrent.FutureTask::set (36 bytes)   made not entrant
+  61772 1929       3       reactor.core.scheduler.WorkerTask::call (5 bytes)   made not entrant
+  61773 3606       3       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber::onNext (11 bytes)   made zombie
+  61773 3599       3       sun.nio.ch.SocketChannelImpl::translateReadyOps (191 bytes)   made zombie
+  61773 3608       3       io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe::flush0 (12 bytes)   made zombie
+  61798 3718   !   4       java.util.concurrent.FutureTask::run (126 bytes)
+  61809 3719       4       java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask::run (59 bytes)
+  61820 3715   !   3       java.util.concurrent.FutureTask::run (126 bytes)   made not entrant
+  61831 3709       3       java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask::run (59 bytes)   made not entrant
+  61900 3720       4       io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueL1Pad::<init> (6 bytes)
+[pool-1-thread-9] INFO prototype.benchmark.AsyncSimulation - Throughput: 78177 processed requests
+[pool-1-thread-9] INFO prototype.benchmark.AsyncSimulation - END BENCHMARK
+  61902 3297       3       io.netty.util.internal.shaded.org.jctools.queues.MpscArrayQueueL1Pad::<init> (6 bytes)   made not entrant
+[pool-1-thread-5] INFO prototype.benchmark.AsyncSimulation - Throughput: 80736 processed requests
+[pool-1-thread-5] INFO prototype.benchmark.AsyncSimulation - END BENCHMARK
+  61939 3721       3       java.util.IdentityHashMap::maskNull (12 bytes)
+  61939 3693   !   4       reactor.core.publisher.FluxPublish$PublishSubscriber::drain (496 bytes)   made not entrant
+  61939 3723       4       java.util.concurrent.atomic.AtomicInteger::compareAndSet (13 bytes)
+  61939 3219       3       java.util.concurrent.locks.AbstractQueuedSynchronizer::shouldParkAfterFailedAcquire (50 bytes)   made zombie
+  61939 3162       4       reactor.core.publisher.Operators::producedCancellable (72 bytes)   made zombie
+  61939 3722       3       java.util.IdentityHashMap::hash (18 bytes)
+  61940 3724       1       java.lang.Thread::getThreadGroup (5 bytes)
+  61965 3725       3       java.lang.invoke.MemberName::<init> (131 bytes)
+  61965  495  s    3       java.lang.Throwable::fillInStackTrace (29 bytes)   made zombie
+  61966 3689       3       reactor.core.publisher.Operators::producedCancellable (72 bytes)   made zombie
+  61966 3726       3       java.lang.invoke.MemberName::hashCode (39 bytes)
+  61966 3490   !   4       reactor.core.publisher.FluxPublish$PublishSubscriber::drain (496 bytes)   made zombie
+  61966 3447       2       reactor.core.publisher.StrictSubscriber::request (103 bytes)   made zombie
+  61968 3727       3       java.lang.invoke.LambdaFormEditor$Transform::equals (32 bytes)
+  61968 3728       3       jdk.internal.org.objectweb.asm.ClassWriter::newConstItem (308 bytes)
+  61969 3442       2       reactor.core.publisher.Operators$MultiSubscriptionSubscriber::request (119 bytes)   made zombie
+  61970 3661       3       io.netty.util.Recycler$DefaultHandle::recycle (54 bytes)   made zombie
+  61970 1135       3       io.rsocket.frame.FrameHeaderFlyweight::computeFrameHeaderLength (12 bytes)   made zombie
+  61970 3729       1       java.util.Formatter$Flags::valueOf (5 bytes)
+  61970 3682       3       io.rsocket.frame.FrameHeaderFlyweight::encodeMetadata (84 bytes)   made zombie
+  61970 3637       3       java.util.concurrent.ConcurrentHashMap::addCount (292 bytes)   made zombie
+  61970 3229       4       reactor.core.publisher.UnicastProcessor::drainRegular (165 bytes)   made zombie
+  61970 1350       3       io.rsocket.Frame::isFlagSet (13 bytes)   made zombie
+  61970 3730       3       java.lang.StringBuilder::<init> (6 bytes)
+  61970 3732       4       java.lang.invoke.LambdaForm$DMH/242131142::invokeStatic_LL_L (15 bytes)
+  61970 1431       3       java.util.concurrent.FutureTask::finishCompletion (74 bytes)   made zombie
+  61970 3633 % !   3       io.netty.channel.nio.NioEventLoop::run @ -2 (236 bytes)   made zombie
+  61970 1593       3       io.netty.buffer.PooledUnsafeDirectByteBuf::memoryAddress (9 bytes)   made zombie
+  61970 3581   !   2       reactor.core.publisher.FluxPeek$PeekSubscriber::request (52 bytes)   made zombie
+  61970 3731       3       java.util.Formatter$Flags::contains (22 bytes)
+  61971 1732       3       io.rsocket.frame.FrameHeaderFlyweight::encodeData (34 bytes)   made zombie
+  61971 1763       3       io.netty.buffer.UnpooledHeapByteBuf::array (9 bytes)   made zombie
+  61971 3733       3       java.util.regex.Pattern$BmpCharProperty::match (50 bytes)
+  61971  888       3       java.lang.invoke.LambdaForm$DMH/242131142::invokeStatic_LL_L (15 bytes)   made not entrant
+  61971 3734       1       scala.collection.mutable.ArrayBuffer::size0 (5 bytes)
+  61971 3440   !   2       reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber::request (52 bytes)   made zombie
+Test time	Throughput 	 Throughput/s 
+5849 		 58912 	 10072,149085 
+6260 		 65142 	 10406,070288 
+6350 		 65872 	 10373,543307 
+6613 		 72272 	 10928,776652 
+6786 		 80762 	 11901,267315 
+5827 		 58894 	 10107,087695 
+6592 		 71949 	 10914,593447 
+5917 		 60171 	 10169,173568 
+6741 		 78208 	 11601,839490 
+6154 		 62266 	 10117,972051 
+
+  61973 3735       4       java.util.HashSet::add (20 bytes)
+  61974  831       3       java.util.HashSet::add (20 bytes)   made not entrant
+  61974 3226       3       java.util.concurrent.locks.AbstractQueuedSynchronizer::addWaiter (50 bytes)   made zombie
+  61974 3736       1       scala.collection.mutable.ArrayBuffer::array (5 bytes)
+  61974 3419   !   2       java.util.concurrent.ConcurrentHashMap::replaceNode (416 bytes)   made zombie
+  61974 2272       3       reactor.core.publisher.FluxPublishOn$PublishOnSubscriber::request (24 bytes)   made zombie
+  61974 3650       3       reactor.core.publisher.StrictSubscriber::request (103 bytes)   made zombie
+  61974 3739       3       java.util.regex.Pattern$GroupHead::match (47 bytes)
+  61975 2353       3       io.netty.channel.AbstractChannelHandlerContext::fireChannelReadComplete (9 bytes)   made zombie
+  61975 3742       3       java.util.regex.Pattern$Branch::match (66 bytes)
+  61975 3510       2       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber::request (80 bytes)   made zombie
+  61975 2511       4       io.rsocket.frame.FrameHeaderFlyweight::encode (190 bytes)   made zombie
+  61975 3434       2       io.rsocket.internal.UnboundedProcessor::drain (64 bytes)   made zombie
+  61975 3642       3       io.netty.buffer.WrappedByteBuf::refCnt (8 bytes)   made zombie
+  61975 3560       2       reactor.core.publisher.FluxDoFinally$DoFinallySubscriber::request (11 bytes)   made zombie
+  61975 3680       3       reactor.core.publisher.UnicastProcessor::drainRegular (165 bytes)   made zombie
+  61975 3646 % !   3       java.util.concurrent.ThreadPoolExecutor::runWorker @ -2 (225 bytes)   made zombie
+  61975 2731       2       io.netty.buffer.WrappedByteBuf::refCnt (8 bytes)   made zombie
+  61975 3740       3       java.util.regex.Matcher::group (112 bytes)
+  61976 3512   !   2       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber::requestUpstream (83 bytes)   made zombie
+  61976 3462       2       reactor.core.publisher.FluxRepeat$RepeatSubscriber::resubscribe (60 bytes)   made zombie
+  61976 3513       2       java.util.concurrent.ThreadPoolExecutor::runStateAtLeast (11 bytes)   made zombie
+  61976 3639   !   3       reactor.core.scheduler.SchedulerTask::call (100 bytes)   made zombie
+  61976 3602       4       io.netty.util.Recycler$DefaultHandle::recycle (54 bytes)   made zombie
+  61976 3640       3       reactor.core.publisher.FluxRepeat$RepeatSubscriber::resubscribe (60 bytes)   made zombie
+  61977 2971       3       java.util.concurrent.atomic.LongAdder::increment (6 bytes)   made zombie
+  61977 2968       4       java.util.concurrent.ConcurrentHashMap::addCount (292 bytes)   made zombie
+  61977 3016       4       io.netty.handler.codec.ByteToMessageDecoder::channelReadComplete (55 bytes)   made zombie
+  61977 3634   !   3       java.util.concurrent.ConcurrentHashMap::putVal (362 bytes)   made zombie
+  61977 3045       3       io.netty.buffer.PoolChunk::usage (33 bytes)   made zombie
+  61977 3050       3       io.rsocket.internal.UnboundedProcessor::request (21 bytes)   made zombie
+  61977 3087       3       reactor.core.publisher.FluxSubscribeOn$SubscribeOnSubscriber$$Lambda$136/929474059::run (12 bytes)   made zombie
+  61977 3741       3       java.util.regex.Matcher::groupCount (10 bytes)
+  61977 3738       3       java.util.regex.Pattern$Single::isSatisfiedBy (14 bytes)
+  61977 3737       1       java.util.Formatter::access$000 (5 bytes)
+  61978 3743       1       scala.collection.mutable.WrappedArray$ofRef::array (5 bytes)
+  75144 3744       4       java.util.AbstractSet::<init> (5 bytes)
+  75144 3745       3       io.netty.util.internal.InternalThreadLocalMap::setIndexedVariable (42 bytes)
+  75145  545       3       java.util.AbstractSet::<init> (5 bytes)   made not entrant
+  75146 3746       3       java.util.IdentityHashMap::put (137 bytes)
+  75149 3747       1       io.netty.buffer.EmptyByteBuf::readableBytes (2 bytes)
+  75184 3748     n 0       java.lang.System::currentTimeMillis (native)   (static)

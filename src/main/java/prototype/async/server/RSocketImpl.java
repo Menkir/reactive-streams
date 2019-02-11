@@ -15,7 +15,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class RSocketImpl extends AbstractRSocket {
-	private final ExecutorService executorService = Executors.newFixedThreadPool(1);
+	private final ExecutorService executorService = Executors.newFixedThreadPool(8);
 	private final Scheduler server = Schedulers.fromExecutor(executorService);
 
 	private final WorkQueueProcessor<Flux<Payload>> channels;

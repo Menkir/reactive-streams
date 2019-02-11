@@ -1,0 +1,539 @@
+[main] INFO prototype.benchmark.SyncSimulation - WARMUP
+    805  560       3       java.net.URLClassLoader::defineClass (142 bytes)
+    806  561       3       java.util.regex.Pattern::has (15 bytes)
+    810  562       3       jdk.internal.org.objectweb.asm.ClassWriter::newClass (9 bytes)
+    810  563       3       jdk.internal.org.objectweb.asm.MethodWriter::visitMethodInsn (220 bytes)
+    811  564       3       jdk.internal.org.objectweb.asm.ClassWriter::newMethodItem (91 bytes)
+    814  565       3       java.lang.Class::getSimpleName (120 bytes)
+    815  566       3       sun.reflect.ClassFileAssembler::emitByte (11 bytes)
+    815  567       3       sun.reflect.ByteVectorImpl::add (38 bytes)
+    817  568     n 0       java.lang.Class::isAssignableFrom (native)   
+    818   75       3       java.lang.ThreadLocal::get (38 bytes)   made not entrant
+    820  569       3       sun.misc.FDBigInteger::mult (64 bytes)
+    820  570       3       sun.misc.FDBigInteger::<init> (30 bytes)
+    820  231       4       java.lang.String::indexOf (166 bytes)   made not entrant
+    822  571       4       java.lang.String::startsWith (7 bytes)
+    822  572       3       java.util.LinkedHashMap::newNode (23 bytes)
+    822  574  s    3       java.util.Hashtable::put (104 bytes)
+    822  573       3       java.util.LinkedHashMap$Entry::<init> (10 bytes)
+    823  575       1       sun.util.locale.BaseLocale::getLanguage (5 bytes)
+    823  576       3       java.util.HashMap::resize (359 bytes)
+    823  578     n 0       java.lang.String::intern (native)   
+    823   33       3       java.lang.String::startsWith (7 bytes)   made not entrant
+    823  582       3       java.lang.String::indexOf (166 bytes)
+    824  579       3       java.lang.String::toUpperCase (439 bytes)
+    825  580       3       java.util.LinkedHashMap::get (33 bytes)
+    825  581       3       java.util.Locale::getLanguage (8 bytes)
+    825  577       1       java.util.LinkedHashMap::removeEldestEntry (2 bytes)
+    826  583       1       java.util.HashMap$Node::getValue (5 bytes)
+    826  584       3       java.io.BufferedInputStream::getBufIfOpen (21 bytes)
+    827  585       3       java.io.ObjectStreamClass::requireInitialized (18 bytes)
+    828  586       1       java.io.ObjectStreamField::getName (5 bytes)
+    828  587  s    3       java.io.BufferedInputStream::read (113 bytes)
+    828  588       3       java.io.BufferedInputStream::read1 (108 bytes)
+    829  590       3       java.io.ObjectInputStream$PeekInputStream::readFully (48 bytes)
+    829  589       3       java.io.ObjectInputStream$PeekInputStream::read (115 bytes)
+    830  591       3       java.io.ObjectOutputStream$BlockDataOutputStream::writeByte (33 bytes)
+    830  592  s    3       java.io.BufferedInputStream::read (49 bytes)
+    830  593       3       java.io.ObjectInputStream$BlockDataInputStream::readByte (20 bytes)
+    830  594       3       java.io.ObjectOutputStream$BlockDataOutputStream::writeShort (47 bytes)
+    831  597       3       java.lang.ref.WeakReference::<init> (7 bytes)
+    831  595       3       java.io.Bits::putShort (16 bytes)
+    831  598       4       java.lang.StringBuilder::append (8 bytes)
+    831  596       3       java.io.Bits::getShort (18 bytes)
+    831  599       3       java.io.ObjectStreamField::getTypeCode (9 bytes)
+    831  600       1       java.io.ObjectStreamField::getSignature (5 bytes)
+    831  601       3       java.io.ObjectInputStream$BlockDataInputStream::setBlockDataMode (74 bytes)
+    832  602       3       java.io.ObjectOutputStream$BlockDataOutputStream::getUTFLength (124 bytes)
+    832  603       3       java.io.ObjectInputStream$PeekInputStream::read (47 bytes)
+    832  604     n 0       java.lang.System::identityHashCode (native)   (static)
+    832  605   !   3       java.io.ObjectInputStream$BlockDataInputStream::readUTFSpan (502 bytes)
+    833  606       3       java.io.ObjectInputStream$BlockDataInputStream::read (62 bytes)
+    833  607       3       java.io.ObjectOutputStream$BlockDataOutputStream::drain (45 bytes)
+    833  608       3       java.util.Arrays::copyOf (13 bytes)
+    834  609       3       java.util.HashSet::add (20 bytes)
+    834  610       3       java.io.OutputStream::<init> (5 bytes)
+    834  611  s    3       java.io.BufferedOutputStream::write (67 bytes)
+    835   15       3       java.lang.StringBuilder::append (8 bytes)   made not entrant
+    835  614       3       java.io.ObjectOutputStream$BlockDataOutputStream::writeBytes (144 bytes)
+    835  613       3       java.io.ObjectOutputStream::writeByte (9 bytes)
+    835  612       1       java.io.ObjectStreamClass$WeakClassKey::hashCode (5 bytes)
+    835  615       1       java.io.ObjectInputStream$BlockDataInputStream::getBlockDataMode (5 bytes)
+    835  616       1       java.io.ObjectStreamClass::getPrimDataSize (5 bytes)
+    835  617       1       java.io.ObjectStreamClass::getNumObjFields (5 bytes)
+    836  618       3       java.util.Arrays::fill (28 bytes)
+    836  619       3       java.util.Arrays::rangeCheck (74 bytes)
+    837  620       3       java.io.ObjectOutputStream$BlockDataOutputStream::setBlockDataMode (35 bytes)
+    837  621       3       java.io.ObjectInputStream$PeekInputStream::peek (49 bytes)
+    837  622       3       java.io.ObjectStreamField::isPrimitive (27 bytes)
+    837  623     n 0       sun.misc.Unsafe::putInt (native)   
+    837  624       3       java.io.ObjectStreamField::setOffset (6 bytes)
+    838  625       3       java.lang.Long::valueOf (36 bytes)
+    838  627       3       java.io.ObjectStreamClass::processQueue (21 bytes)
+    838  626       3       java.io.ObjectInputStream$BlockDataInputStream::readShort (73 bytes)
+    839  628     n 0       java.lang.Class::getSuperclass (native)   
+    839  632     n 0       sun.misc.Unsafe::getInt (native)   
+    839  629       3       java.io.ObjectOutputStream::writeUTF (9 bytes)
+    839  630       3       java.io.ObjectOutputStream$BlockDataOutputStream::writeUTF (11 bytes)
+    839  631       3       java.io.ObjectOutputStream$BlockDataOutputStream::writeUTF (46 bytes)
+    840  633       3       java.io.ObjectInputStream::readByte (8 bytes)
+    840  634       3       java.io.ObjectInputStream::readUTF (8 bytes)
+    840  635       3       java.io.ObjectInputStream$BlockDataInputStream::readUTF (10 bytes)
+    840  636       3       java.util.AbstractSet::<init> (5 bytes)
+    840  637       3       java.util.Arrays::fill (21 bytes)
+    841  639     n 0       java.lang.Class::isInstance (native)   
+    841  638       3       java.util.HashMap::containsKey (18 bytes)
+    843  640   !   3       java.net.AbstractPlainSocketImpl::acquireFD (29 bytes)
+    843  642     n 0       java.security.AccessController::doPrivileged (native)   (static)
+    843  643       3       java.io.FilterOutputStream::<init> (10 bytes)
+    843  641       1       java.io.ObjectStreamClass$FieldReflectorKey::hashCode (5 bytes)
+    843  647       3       java.io.ObjectOutputStream$HandleTable::lookup (56 bytes)
+    844  649       3       java.lang.Math::min (12 bytes)
+    844  652       3       java.io.ObjectInputStream$BlockDataInputStream::peekByte (20 bytes)
+    844  648       3       java.io.Bits::putInt (36 bytes)
+    844  655       3       java.io.ObjectInputStream$BlockDataInputStream::readUnsignedShort (76 bytes)
+    844  656       3       java.io.ObjectInputStream$BlockDataInputStream::readUTFBody (156 bytes)
+    845  644       1       java.net.Socket::isInputShutdown (5 bytes)
+    845  645       1       java.net.AbstractPlainSocketImpl::getTimeout (5 bytes)
+    845  646       1       java.net.Socket::isOutputShutdown (5 bytes)
+    845  650       1       java.io.ObjectStreamClass::getName (5 bytes)
+    845  651       1       java.io.ObjectInputStream::access$1000 (5 bytes)
+    845  653       1       java.io.ObjectStreamClass$FieldReflector::getFields (5 bytes)
+    845  654       1       java.io.ObjectStreamClass::getResolveException (5 bytes)
+    848  658       3       java.lang.Long::longValue (5 bytes)
+    848  659       3       java.io.ObjectStreamClass$Caches::access$200 (4 bytes)
+    848  657       3       java.io.ObjectInputStream$BlockDataInputStream::peek (55 bytes)
+    848  660       3       java.io.ObjectStreamClass::forClass (52 bytes)
+    849  662     n 0       java.lang.Class::getModifiers (native)   
+    849  663       3       java.io.ObjectStreamField::<init> (268 bytes)
+    850  664       3       java.io.ObjectStreamClass::getSerialVersionUID (33 bytes)
+    850  665       3       java.io.Bits::getInt (43 bytes)
+    850  666       3       java.io.ObjectInputStream$HandleTable::lookupException (29 bytes)
+    850  661       3       java.util.ArrayList::grow (45 bytes)
+    850  667       3       java.util.ArrayList$Itr::hasNext (20 bytes)
+    850  668       3       java.util.ArrayList::<init> (12 bytes)
+    852  669   !   3       java.net.Socket::isClosed (19 bytes)
+    852  670       3       java.net.Socket::isConnected (20 bytes)
+    852  671   !   3       java.net.AbstractPlainSocketImpl::releaseFD (74 bytes)
+    852  672   !   3       java.net.AbstractPlainSocketImpl::isClosedOrPending (34 bytes)
+    852  673       3       java.io.ObjectStreamClass$Caches::access$2800 (4 bytes)
+    852  674       3       java.io.ObjectOutputStream$HandleTable::<init> (45 bytes)
+    853  675       3       java.io.ObjectStreamClass::<init> (10 bytes)
+    853  676       3       java.util.ArrayList::toArray (60 bytes)
+    855  677       3       java.util.ArrayList$Itr::next (66 bytes)
+    855  678       3       java.util.ArrayList$Itr::checkForComodification (23 bytes)
+    857  679       3       java.lang.reflect.Constructor::newInstance (87 bytes)
+    857  680     n 0       java.lang.Class::forName0 (native)   (static)
+    858  681       3       java.io.OutputStream::flush (1 bytes)
+    858  682  s    3       java.io.BufferedOutputStream::flush (12 bytes)
+    859  683       3       java.lang.Class::forName (53 bytes)
+    859  684       3       java.io.BufferedInputStream::<init> (9 bytes)
+    859  685       3       java.io.BufferedInputStream::<init> (32 bytes)
+    860  687       3       java.io.ObjectStreamClass::computeFieldOffsets (307 bytes)
+    860  688   !   3       java.io.ObjectStreamClass::lookup (335 bytes)
+    862  689       3       java.io.ObjectOutputStream::writeClassDesc (60 bytes)
+    862  690       3       java.io.ObjectOutputStream$HandleTable::assign (52 bytes)
+    862  691       3       java.io.ObjectOutputStream$HandleTable::insert (39 bytes)
+    862  692       3       java.io.ObjectOutputStream$HandleTable::hash (8 bytes)
+    863  693       3       java.io.ObjectInputStream::readClassDesc (119 bytes)
+    863  694       3       java.io.ObjectStreamClass$WeakClassKey::<init> (15 bytes)
+    863  686       3       java.io.BufferedOutputStream::<init> (27 bytes)
+    864  695       4       java.io.ObjectStreamClass::requireInitialized (18 bytes)
+    864  585       3       java.io.ObjectStreamClass::requireInitialized (18 bytes)   made not entrant
+    865  696   !   3       java.io.ObjectInputStream$BlockDataInputStream::refill (136 bytes)
+    867  701       3       java.io.ObjectInputStream$HandleTable::finish (111 bytes)
+    867  698       3       java.io.ObjectStreamClass::isExternalizable (9 bytes)
+    867  697       3       java.io.ObjectInputStream$HandleTable::assign (48 bytes)
+    867  699       3       java.io.ObjectStreamClass::getClassDataLayout (20 bytes)
+    867  700       3       java.io.ObjectStreamClass::getFields (22 bytes)
+    868  702       3       java.io.ObjectStreamClass$WeakClassKey::equals (42 bytes)
+    869  703       3       java.io.ObjectStreamClass$FieldReflectorKey::<init> (95 bytes)
+    870  704       3       java.io.ObjectStreamClass::writeNonProxy (161 bytes)
+    871  707       3       java.io.ObjectStreamClass$FieldReflector::setPrimFieldValues (329 bytes)
+    871  705       3       java.io.ObjectStreamClass$FieldReflector::getPrimFieldValues (317 bytes)
+    872  706   !   3       java.io.ObjectStreamClass::readNonProxy (407 bytes)
+    874  708   !   3       java.net.Socket::getInputStream (84 bytes)
+    874  714       1       java.lang.Long::longValue (5 bytes)
+    874  658       3       java.lang.Long::longValue (5 bytes)   made not entrant
+    874  709       3       java.net.Socket$2::<init> (10 bytes)
+    874  710       3       java.net.Socket$2::run (5 bytes)
+    874  711       3       java.net.Socket$2::run (11 bytes)
+    875  712  s    3       java.net.PlainSocketImpl::getInputStream (8 bytes)
+    875  713       3       java.io.ObjectInputStream::isCustomSubclass (21 bytes)
+    876  715       3       java.io.ObjectOutputStream::writeNonProxyDesc (109 bytes)
+    877  718       4       java.io.ObjectOutputStream$BlockDataOutputStream::getUTFLength (124 bytes)
+    877  719  s    4       java.io.BufferedInputStream::read (113 bytes)
+    877  720       4       java.io.BufferedInputStream::read1 (108 bytes)
+    877  717       3       java.io.BufferedInputStream::getInIfOpen (21 bytes)
+    877  716       3       java.io.BufferedInputStream::fill (233 bytes)
+    878  721   !   3       java.io.ObjectInputStream::readNonProxyDesc (239 bytes)
+    880  724   !   3       java.io.ObjectInputStream$BlockDataInputStream::readBlockHeader (249 bytes)
+    881  602       3       java.io.ObjectOutputStream$BlockDataOutputStream::getUTFLength (124 bytes)   made not entrant
+    881  723       4       java.io.ObjectOutputStream$BlockDataOutputStream::writeBytes (144 bytes)
+    882  726       3       java.io.ObjectStreamClass::getClassDataLayout0 (296 bytes)
+    884  588       3       java.io.BufferedInputStream::read1 (108 bytes)   made not entrant
+    884  725   !   4       java.io.ObjectInputStream$BlockDataInputStream::readUTFSpan (502 bytes)
+    885  728       3       java.io.ObjectOutputStream$BlockDataOutputStream::writeLong (48 bytes)
+    886  729       3       java.io.Bits::getLong (105 bytes)
+    886  614       3       java.io.ObjectOutputStream$BlockDataOutputStream::writeBytes (144 bytes)   made not entrant
+    886  722       4       java.io.ObjectInputStream$PeekInputStream::read (115 bytes)
+    887  730       3       java.io.Bits::putLong (86 bytes)
+    888  731       3       java.io.ObjectInputStream$BlockDataInputStream::readLong (76 bytes)
+    888  587  s    3       java.io.BufferedInputStream::read (113 bytes)   made not entrant
+    888  727       4       java.io.Bits::putInt (36 bytes)
+    889  648       3       java.io.Bits::putInt (36 bytes)   made not entrant
+    889  732  s!   3       java.net.AbstractPlainSocketImpl::getInputStream (75 bytes)
+    889  738     n 0       java.net.SocketInputStream::socketRead0 (native)   
+    890  739       3       java.io.DataOutputStream::<init> (19 bytes)
+    890  733       3       java.net.SocketInputStream::read (15 bytes)
+    890  735   !   3       java.net.SocketInputStream::read (328 bytes)
+    890  745       4       java.io.Bits::getInt (43 bytes)
+    891  736   !   3       java.net.AbstractPlainSocketImpl::isConnectionReset (31 bytes)
+    891  665       3       java.io.Bits::getInt (43 bytes)   made not entrant
+    891  737       3       java.net.SocketInputStream::socketRead (12 bytes)
+    891  740       3       java.io.ObjectInputStream::<init> (81 bytes)
+    892  741       3       java.io.ObjectInputStream::verifySubclass (99 bytes)
+    893  742       3       java.io.ObjectOutputStream::writeStreamHeader (19 bytes)
+    893  743   !   3       java.io.ObjectOutputStream::defaultWriteFields (270 bytes)
+    893  746       4       java.io.ObjectInputStream$PeekInputStream::readFully (48 bytes)
+    894  744   !   3       java.io.ObjectInputStream::readObject0 (566 bytes)
+    894  605   !   3       java.io.ObjectInputStream$BlockDataInputStream::readUTFSpan (502 bytes)   made not entrant
+    895  590       3       java.io.ObjectInputStream$PeekInputStream::readFully (48 bytes)   made not entrant
+    896  749       3       java.io.ObjectInputStream::skipCustomData (103 bytes)
+    897  750       3       java.io.ObjectStreamClass::initNonProxy (551 bytes)
+    899  589       3       java.io.ObjectInputStream$PeekInputStream::read (115 bytes)   made not entrant
+    900  747   !   3       java.io.ObjectInputStream::resolveClass (37 bytes)
+    900  751       3       java.io.ObjectStreamClass::getVariantFor (51 bytes)
+    901  752       3       java.util.Collections::reverse (125 bytes)
+    901  748   !   3       java.io.ObjectInputStream::filterCheck (267 bytes)
+    904  734   !   3       prototype.sync.client.Car::sendData (90 bytes)
+    904  753   !   4       java.net.AbstractPlainSocketImpl::acquireFD (29 bytes)
+    904  754       3       java.io.ObjectInputStream$BlockDataInputStream::<init> (79 bytes)
+    904  765     n 0       sun.misc.VM::latestUserDefinedLoader (native)   (static)
+    905  756   !   3       java.io.ObjectStreamClass::getReflector (336 bytes)
+    905  640   !   3       java.net.AbstractPlainSocketImpl::acquireFD (29 bytes)   made not entrant
+    907  755       3       java.io.ObjectInputStream$PeekInputStream::<init> (20 bytes)
+    907  757       3       java.io.DataInputStream::<init> (30 bytes)
+    907  758       3       java.io.ObjectInputStream$HandleTable::<init> (38 bytes)
+    907  766       3       java.io.ObjectStreamClass$FieldReflectorKey::equals (78 bytes)
+    907  759       3       java.io.ObjectInputStream::readStreamHeader (60 bytes)
+    908  767       4       java.io.ObjectOutputStream$BlockDataOutputStream::writeByte (33 bytes)
+    908  768  s    4       java.io.BufferedInputStream::read (49 bytes)
+    908  769       4       java.io.ObjectInputStream$BlockDataInputStream::read (62 bytes)
+    908  760   !   3       java.net.Socket::getOutputStream (84 bytes)
+    909  591       3       java.io.ObjectOutputStream$BlockDataOutputStream::writeByte (33 bytes)   made not entrant
+    909  761       3       java.net.Socket$3::<init> (10 bytes)
+    909  762       3       java.net.Socket$3::run (5 bytes)
+    909  763       3       java.net.Socket$3::run (11 bytes)
+    910  764  s    3       java.net.PlainSocketImpl::getOutputStream (8 bytes)
+    910  592  s    3       java.io.BufferedInputStream::read (49 bytes)   made not entrant
+    910  770       4       java.io.ObjectInputStream$PeekInputStream::read (47 bytes)
+    910  606       3       java.io.ObjectInputStream$BlockDataInputStream::read (62 bytes)   made not entrant
+    911  603       3       java.io.ObjectInputStream$PeekInputStream::read (47 bytes)   made not entrant
+    916  771       4       java.io.ObjectOutputStream$BlockDataOutputStream::drain (45 bytes)
+    916  772  s!   3       java.net.AbstractPlainSocketImpl::getOutputStream (75 bytes)
+    916  788       4       java.io.ObjectOutputStream$BlockDataOutputStream::writeShort (47 bytes)
+    917  784   !   3       java.io.ObjectOutputStream::writeSerialData (221 bytes)
+    917  594       3       java.io.ObjectOutputStream$BlockDataOutputStream::writeShort (47 bytes)   made not entrant
+    918  785       3       java.io.ObjectStreamClass::hasWriteObjectMethod (17 bytes)
+    918  786       3       java.io.ObjectOutputStream$BlockDataOutputStream::write (152 bytes)
+    918  787       3       java.io.ObjectStreamClass$FieldReflector::getObjFieldValues (99 bytes)
+    919  774       3       java.io.ObjectOutputStream::<init> (99 bytes)
+    919  607       3       java.io.ObjectOutputStream$BlockDataOutputStream::drain (45 bytes)   made not entrant
+    919  775       3       java.io.ObjectOutputStream::verifySubclass (99 bytes)
+    920  773       3       java.io.BufferedOutputStream::<init> (9 bytes)
+    920  776       3       java.io.ObjectOutputStream$BlockDataOutputStream::<init> (57 bytes)
+    920  789       4       java.lang.ref.SoftReference::get (29 bytes)
+    920  777       3       java.io.ObjectOutputStream$ReplaceTable::<init> (26 bytes)
+    921  778   !   3       java.io.ObjectOutputStream::writeObject (38 bytes)
+    921   67       3       java.lang.ref.SoftReference::get (29 bytes)   made not entrant
+    921  779   !   3       java.io.ObjectOutputStream::writeObject0 (619 bytes)
+    923  780       3       java.io.ObjectOutputStream$ReplaceTable::lookup (24 bytes)
+    923  781       3       java.io.ObjectStreamClass::hasWriteReplaceMethod (17 bytes)
+    923  782   !   3       java.io.ObjectOutputStream::writeOrdinaryObject (175 bytes)
+    924  783       3       java.io.ObjectStreamClass::checkSerialize (20 bytes)
+    927  790       3       java.lang.Math::multiplyExact (74 bytes)
+    927  796     n 0       java.net.SocketOutputStream::socketWrite0 (native)   
+    927  792       3       java.io.ObjectOutputStream::flush (8 bytes)
+    928  804   !   3       java.io.ObjectInputStream::readSerialData (367 bytes)
+    928  811       4       java.io.ObjectInputStream$BlockDataInputStream::setBlockDataMode (74 bytes)
+    928  601       3       java.io.ObjectInputStream$BlockDataInputStream::setBlockDataMode (74 bytes)   made not entrant
+    930  807       3       java.io.ObjectInputStream$BlockDataInputStream::readFully (42 bytes)
+    930  793       3       java.io.ObjectOutputStream$BlockDataOutputStream::flush (12 bytes)
+    930  797   !   3       java.io.ObjectInputStream::readObject (130 bytes)
+    931  798       3       java.io.ObjectInputStream$BlockDataInputStream::currentBlockRemaining (41 bytes)
+    931  799   !   3       java.io.ObjectInputStream::readOrdinaryObject (321 bytes)
+    933  794       3       java.net.SocketOutputStream::write (8 bytes)
+    934  795   !   3       java.net.SocketOutputStream::socketWrite (159 bytes)
+    935  800       3       java.io.ObjectStreamClass::checkDeserialize (20 bytes)
+    935  801       3       java.io.ObjectStreamClass::isInstantiable (17 bytes)
+    935  802   !   3       java.io.ObjectStreamClass::newInstance (140 bytes)
+    936  803   !   3       sun.reflect.GeneratedSerializationConstructorAccessor1::newInstance (49 bytes)
+    937  805       3       java.io.ObjectStreamClass::hasReadObjectMethod (17 bytes)
+    937  806       3       java.io.ObjectInputStream::defaultReadFields (199 bytes)
+    938  808       3       java.io.ObjectInputStream$BlockDataInputStream::read (138 bytes)
+    938  809       3       java.io.ObjectStreamClass::setPrimFieldValues (10 bytes)
+    938  810       3       java.io.ObjectStreamClass::setObjFieldValues (10 bytes)
+    938  812       3       java.io.ObjectStreamClass$FieldReflector::setObjFieldValues (248 bytes)
+    939  813       3       java.io.ObjectInputStream::checkResolve (86 bytes)
+    940  814       3       java.io.ObjectInputStream$HandleTable::markDependency (171 bytes)
+    940  815   !   3       java.io.ObjectInputStream$ValidationList::doCallbacks (58 bytes)
+    940  791       3       java.lang.Math::addExact (32 bytes)
+    944  816       4       java.io.ObjectInputStream$PeekInputStream::peek (49 bytes)
+    946  621       3       java.io.ObjectInputStream$PeekInputStream::peek (49 bytes)   made not entrant
+    954  817       1       java.io.OutputStream::flush (1 bytes)
+    954  681       3       java.io.OutputStream::flush (1 bytes)   made not entrant
+    958  818     n 0       java.lang.Thread::sleep (native)   (static)
+    965  819       4       java.io.ObjectOutputStream$BlockDataOutputStream::writeUTF (46 bytes)
+    966  820       4       java.io.Bits::getLong (105 bytes)
+    971  789       4       java.lang.ref.SoftReference::get (29 bytes)   made not entrant
+    971  821       3       sun.misc.VM::addFinalRefCount (24 bytes)
+    971  822     n 0       java.lang.Object::notifyAll (native)   
+    971  823   !   3       java.lang.ref.Reference::tryHandlePending (115 bytes)
+    971  826       4       java.io.Bits::putLong (86 bytes)
+    972  729       3       java.io.Bits::getLong (105 bytes)   made not entrant
+    972  824   !   3       java.lang.ref.ReferenceQueue::enqueue (119 bytes)
+    972  730       3       java.io.Bits::putLong (86 bytes)   made not entrant
+    973  829       3       java.lang.ref.ReferenceQueue::reallyPoll (66 bytes)
+    973  827       3       java.lang.ref.ReferenceQueue::remove (6 bytes)
+    973  828   !   3       java.lang.ref.ReferenceQueue::remove (125 bytes)
+    973  836       4       java.io.ObjectInputStream$BlockDataInputStream::peek (55 bytes)
+    973  837       4       java.io.ObjectStreamClass::forClass (52 bytes)
+    973  830       3       java.lang.ref.Finalizer::access$100 (6 bytes)
+    973  831   !   3       java.lang.ref.Finalizer::runFinalizer (62 bytes)
+    974  660       3       java.io.ObjectStreamClass::forClass (52 bytes)   made not entrant
+    974  838       3       java.lang.ref.SoftReference::get (29 bytes)
+    974  832       3       java.lang.ref.Finalizer::hasBeenFinalized (14 bytes)
+    975  825       3       java.lang.ref.Finalizer::access$000 (4 bytes)
+    975  833   !   3       java.lang.ref.Finalizer::remove (94 bytes)
+    975  834       3       java.lang.System$2::invokeFinalize (5 bytes)
+    976  835       3       java.lang.ref.Reference::clear (6 bytes)
+    976  657       3       java.io.ObjectInputStream$BlockDataInputStream::peek (55 bytes)   made not entrant
+    977  631       3       java.io.ObjectOutputStream$BlockDataOutputStream::writeUTF (46 bytes)   made not entrant
+    979  839       4       java.util.concurrent.ConcurrentHashMap::get (162 bytes)
+    980  840       4       java.util.HashMap::putVal (300 bytes)
+    983  343       3       java.util.concurrent.ConcurrentHashMap::get (162 bytes)   made not entrant
+    989   58       3       java.util.HashMap::putVal (300 bytes)   made not entrant
+    989  842       4       java.io.ObjectInputStream$BlockDataInputStream::readUTFBody (156 bytes)
+    990  841       4       java.io.ObjectInputStream$BlockDataInputStream::readUnsignedShort (76 bytes)
+    991  655       3       java.io.ObjectInputStream$BlockDataInputStream::readUnsignedShort (76 bytes)   made not entrant
+    999  656       3       java.io.ObjectInputStream$BlockDataInputStream::readUTFBody (156 bytes)   made not entrant
+   1001  843       4       java.lang.Long::valueOf (36 bytes)
+   1001  844       4       java.io.ObjectInputStream$BlockDataInputStream::readShort (73 bytes)
+   1001  625       3       java.lang.Long::valueOf (36 bytes)   made not entrant
+   1002  626       3       java.io.ObjectInputStream$BlockDataInputStream::readShort (73 bytes)   made not entrant
+   1003  845       4       java.io.ObjectOutputStream$HandleTable::lookup (56 bytes)
+   1003  647       3       java.io.ObjectOutputStream$HandleTable::lookup (56 bytes)   made not entrant
+   1006  846       4       java.io.ObjectStreamField::<init> (268 bytes)
+   1008  663       3       java.io.ObjectStreamField::<init> (268 bytes)   made not entrant
+   1022  847 %     4       java.util.Arrays::fill @ 5 (21 bytes)
+   1025  848       4       java.lang.String::substring (56 bytes)
+   1029  338       3       java.lang.String::substring (56 bytes)   made not entrant
+   1047  674       3       java.io.ObjectOutputStream$HandleTable::<init> (45 bytes)   made not entrant
+   1047  849       3       java.io.ObjectOutputStream$HandleTable::<init> (45 bytes)
+   1047  850       3       java.io.ObjectOutputStream$HandleTable::clear (27 bytes)
+   1051  851       4       java.util.Arrays::rangeCheck (74 bytes)
+   1051  619       3       java.util.Arrays::rangeCheck (74 bytes)   made not entrant
+   1052  852       4       java.util.Arrays::fill (21 bytes)
+   1053  637       3       java.util.Arrays::fill (21 bytes)   made not entrant
+   1058  853   !   4       java.net.AbstractPlainSocketImpl::isClosedOrPending (34 bytes)
+   1058  854   !   4       java.net.AbstractPlainSocketImpl::releaseFD (74 bytes)
+   1058  855       4       java.io.ObjectOutputStream$HandleTable::<init> (45 bytes)
+   1059  672   !   3       java.net.AbstractPlainSocketImpl::isClosedOrPending (34 bytes)   made not entrant
+   1059  671   !   3       java.net.AbstractPlainSocketImpl::releaseFD (74 bytes)   made not entrant
+   1061  849       3       java.io.ObjectOutputStream$HandleTable::<init> (45 bytes)   made not entrant
+   1062  856   !   4       java.io.ObjectStreamClass::lookup (335 bytes)
+   1062  857       4       java.io.ObjectInputStream::readClassDesc (119 bytes)
+   1062  858       4       java.io.ObjectStreamClass$WeakClassKey::equals (42 bytes)
+   1063  702       3       java.io.ObjectStreamClass$WeakClassKey::equals (42 bytes)   made not entrant
+   1070  688   !   3       java.io.ObjectStreamClass::lookup (335 bytes)   made not entrant
+   1074  859  s    4       java.io.BufferedOutputStream::write (67 bytes)
+   1076  611  s    3       java.io.BufferedOutputStream::write (67 bytes)   made not entrant
+   1077  860       4       java.util.HashMap::tableSizeFor (59 bytes)
+   1077  861       4       java.util.HashMap::<init> (98 bytes)
+   1078   87       3       java.util.HashMap::tableSizeFor (59 bytes)   made not entrant
+   1078   82       3       java.util.HashMap::<init> (98 bytes)   made not entrant
+   1093  862       4       java.io.ObjectOutputStream::writeClassDesc (60 bytes)
+   1093  863       4       java.io.ObjectOutputStream$HandleTable::assign (52 bytes)
+   1096  690       3       java.io.ObjectOutputStream$HandleTable::assign (52 bytes)   made not entrant
+   1096  866       4       java.io.ObjectInputStream$HandleTable::finish (111 bytes)
+   1097  701       3       java.io.ObjectInputStream$HandleTable::finish (111 bytes)   made not entrant
+   1097  865       4       java.io.ObjectInputStream$HandleTable::assign (48 bytes)
+   1098  697       3       java.io.ObjectInputStream$HandleTable::assign (48 bytes)   made not entrant
+   1098  864       4       java.io.ObjectOutputStream$HandleTable::insert (39 bytes)
+   1100  691       3       java.io.ObjectOutputStream$HandleTable::insert (39 bytes)   made not entrant
+   1177  867       4       java.io.ObjectStreamClass::computeFieldOffsets (307 bytes)
+   1180  687       3       java.io.ObjectStreamClass::computeFieldOffsets (307 bytes)   made not entrant
+   1181  868       4       java.lang.ref.SoftReference::get (29 bytes)
+   1181  838       3       java.lang.ref.SoftReference::get (29 bytes)   made not entrant
+   1183  869       4       java.io.ObjectStreamClass$FieldReflectorKey::<init> (95 bytes)
+   1217  703       3       java.io.ObjectStreamClass$FieldReflectorKey::<init> (95 bytes)   made not entrant
+   1217  870       4       java.io.ObjectStreamClass::writeNonProxy (161 bytes)
+   1238  693       3       java.io.ObjectInputStream::readClassDesc (119 bytes)   made not entrant
+   1240  871       4       java.util.Arrays::copyOf (46 bytes)
+   1244  464       3       java.util.Arrays::copyOf (46 bytes)   made not entrant
+   1244  872       4       java.util.ArrayList::grow (45 bytes)
+   1246  661       3       java.util.ArrayList::grow (45 bytes)   made not entrant
+   1246  873       4       java.util.ArrayList::toArray (60 bytes)
+   1250  676       3       java.util.ArrayList::toArray (60 bytes)   made not entrant
+   1265  874       4       java.lang.reflect.Constructor::newInstance (87 bytes)
+   1268  679       3       java.lang.reflect.Constructor::newInstance (87 bytes)   made not entrant
+   1268  875  s    4       java.io.BufferedOutputStream::flush (12 bytes)
+   1273  682  s    3       java.io.BufferedOutputStream::flush (12 bytes)   made not entrant
+   1273  876       4       java.io.ObjectOutputStream::writeNonProxyDesc (109 bytes)
+   1275  704       3       java.io.ObjectStreamClass::writeNonProxy (161 bytes)   made not entrant
+   1276  877       4       java.io.ObjectStreamClass$FieldReflector::setPrimFieldValues (329 bytes)
+   1281  707       3       java.io.ObjectStreamClass$FieldReflector::setPrimFieldValues (329 bytes)   made not entrant
+   1282  878       4       java.io.ObjectStreamClass$FieldReflector::getPrimFieldValues (317 bytes)
+   1287  705       3       java.io.ObjectStreamClass$FieldReflector::getPrimFieldValues (317 bytes)   made not entrant
+   1287  879   !   4       java.io.ObjectStreamClass::readNonProxy (407 bytes)
+   1349  689       3       java.io.ObjectOutputStream::writeClassDesc (60 bytes)   made not entrant
+   1351  881       4       java.util.HashMap::resize (359 bytes)
+   1357  576       3       java.util.HashMap::resize (359 bytes)   made not entrant
+   1357  880  s!   4       java.net.AbstractPlainSocketImpl::getInputStream (75 bytes)
+   1364  732  s!   3       java.net.AbstractPlainSocketImpl::getInputStream (75 bytes)   made not entrant
+   1365  882       4       java.io.BufferedInputStream::<init> (32 bytes)
+   1366  685       3       java.io.BufferedInputStream::<init> (32 bytes)   made not entrant
+   1370  883       4       java.io.ObjectStreamClass::getClassDataLayout0 (296 bytes)
+   1401  706   !   3       java.io.ObjectStreamClass::readNonProxy (407 bytes)   made not entrant
+   1401  886       4       java.net.Socket$2::run (5 bytes)
+   1406  710       3       java.net.Socket$2::run (5 bytes)   made not entrant
+   1406  885   !   4       java.net.Socket::getInputStream (84 bytes)
+   1410  708   !   3       java.net.Socket::getInputStream (84 bytes)   made not entrant
+   1410  884       4       java.io.ObjectInputStream$BlockDataInputStream::readLong (76 bytes)
+   1412  726       3       java.io.ObjectStreamClass::getClassDataLayout0 (296 bytes)   made not entrant
+   1415  731       3       java.io.ObjectInputStream$BlockDataInputStream::readLong (76 bytes)   made not entrant
+   1454  887       4       java.io.ObjectStreamClass::initNonProxy (551 bytes)
+   1461  888       4       java.net.SocketInputStream::read (15 bytes)
+   1462  733       3       java.net.SocketInputStream::read (15 bytes)   made not entrant
+   1462  889   !   4       java.net.SocketInputStream::read (328 bytes)
+   1468  735   !   3       java.net.SocketInputStream::read (328 bytes)   made not entrant
+   1468  890       4       java.io.ObjectInputStream::<init> (81 bytes)
+   1484  740       3       java.io.ObjectInputStream::<init> (81 bytes)   made not entrant
+   1484  891       4       java.io.ObjectInputStream::verifySubclass (99 bytes)
+   1484  741       3       java.io.ObjectInputStream::verifySubclass (99 bytes)   made not entrant
+   1484  892       4       java.io.ObjectInputStream$BlockDataInputStream::<init> (79 bytes)
+   1489  754       3       java.io.ObjectInputStream$BlockDataInputStream::<init> (79 bytes)   made not entrant
+   1489  893       4       java.io.ObjectInputStream$HandleTable::<init> (38 bytes)
+   1491  758       3       java.io.ObjectInputStream$HandleTable::<init> (38 bytes)   made not entrant
+   1495  750       3       java.io.ObjectStreamClass::initNonProxy (551 bytes)   made not entrant
+   1525  715       3       java.io.ObjectOutputStream::writeNonProxyDesc (109 bytes)   made not entrant
+   1544  894   !   4       java.io.ObjectOutputStream::writeSerialData (221 bytes)
+   1544  896       4       java.io.ObjectInputStream$BlockDataInputStream::readFully (42 bytes)
+   1544  897   !   4       java.io.ObjectInputStream::readSerialData (367 bytes)
+   1546  807       3       java.io.ObjectInputStream$BlockDataInputStream::readFully (42 bytes)   made not entrant
+   1546  895   !   4       java.io.ObjectStreamClass::getReflector (336 bytes)
+   1555  756   !   3       java.io.ObjectStreamClass::getReflector (336 bytes)   made not entrant
+   1556  898   !   4       java.net.Socket::getOutputStream (84 bytes)
+   1559  760   !   3       java.net.Socket::getOutputStream (84 bytes)   made not entrant
+   1559  899       4       java.net.Socket$3::run (5 bytes)
+   1561  804   !   3       java.io.ObjectInputStream::readSerialData (367 bytes)   made not entrant
+   1561  900  s    4       java.net.PlainSocketImpl::getOutputStream (8 bytes)
+   1564  762       3       java.net.Socket$3::run (5 bytes)   made not entrant
+   1564  901  s!   4       java.net.AbstractPlainSocketImpl::getOutputStream (75 bytes)
+   1566  764  s    3       java.net.PlainSocketImpl::getOutputStream (8 bytes)   made not entrant
+   1566  902       4       java.io.BufferedOutputStream::<init> (9 bytes)
+   1567  773       3       java.io.BufferedOutputStream::<init> (9 bytes)   made not entrant
+   1568  772  s!   3       java.net.AbstractPlainSocketImpl::getOutputStream (75 bytes)   made not entrant
+   1570  784   !   3       java.io.ObjectOutputStream::writeSerialData (221 bytes)   made not entrant
+   1614  903       4       java.io.ObjectOutputStream::<init> (99 bytes)
+   1614  905       4       java.io.ObjectOutputStream$BlockDataOutputStream::<init> (57 bytes)
+   1614  904       4       java.io.ObjectOutputStream::verifySubclass (99 bytes)
+   1614  775       3       java.io.ObjectOutputStream::verifySubclass (99 bytes)   made not entrant
+   1614  910   !   4       java.io.ObjectInputStream::readObject (130 bytes)
+   1617  776       3       java.io.ObjectOutputStream$BlockDataOutputStream::<init> (57 bytes)   made not entrant
+   1617  797   !   3       java.io.ObjectInputStream::readObject (130 bytes)   made not entrant
+   1617  909       4       java.io.ObjectOutputStream::flush (8 bytes)
+   1617  906   !   4       java.io.ObjectOutputStream::writeObject (38 bytes)
+   1618  778   !   3       java.io.ObjectOutputStream::writeObject (38 bytes)   made not entrant
+   1618  911   !   4       java.io.ObjectInputStream::readObject0 (566 bytes)
+   1622  792       3       java.io.ObjectOutputStream::flush (8 bytes)   made not entrant
+   1622  907   !   4       java.io.ObjectOutputStream::writeObject0 (619 bytes)
+   1643  779   !   3       java.io.ObjectOutputStream::writeObject0 (619 bytes)   made not entrant
+   1644  774       3       java.io.ObjectOutputStream::<init> (99 bytes)   made not entrant
+   1644  908   !   4       java.io.ObjectOutputStream::writeOrdinaryObject (175 bytes)
+   1644  912       4       java.io.ObjectInputStream$BlockDataInputStream::currentBlockRemaining (41 bytes)
+   1645  798       3       java.io.ObjectInputStream$BlockDataInputStream::currentBlockRemaining (41 bytes)   made not entrant
+   1645  913   !   4       java.io.ObjectInputStream::readOrdinaryObject (321 bytes)
+   1650  782   !   3       java.io.ObjectOutputStream::writeOrdinaryObject (175 bytes)   made not entrant
+   1650  914   !   4       java.io.ObjectStreamClass::newInstance (140 bytes)
+   1654  802   !   3       java.io.ObjectStreamClass::newInstance (140 bytes)   made not entrant
+   1663  799   !   3       java.io.ObjectInputStream::readOrdinaryObject (321 bytes)   made not entrant
+   1668  915       4       java.util.ArrayList$Itr::hasNext (20 bytes)
+   1668  667       3       java.util.ArrayList$Itr::hasNext (20 bytes)   made not entrant
+   1669  744   !   3       java.io.ObjectInputStream::readObject0 (566 bytes)   made not entrant
+   1684  916       4       java.util.ArrayList$Itr::next (66 bytes)
+   1686  677       3       java.util.ArrayList$Itr::next (66 bytes)   made not entrant
+   1707  917   !   4       prototype.sync.client.Car::sendData (90 bytes)
+   1707  918       4       java.lang.Math::multiplyExact (74 bytes)
+   1708  790       3       java.lang.Math::multiplyExact (74 bytes)   made not entrant
+   1736  734   !   3       prototype.sync.client.Car::sendData (90 bytes)   made not entrant
+   1744  919       4       java.io.BufferedInputStream::<init> (9 bytes)
+   1745  684       3       java.io.BufferedInputStream::<init> (9 bytes)   made not entrant
+   2106  920       3       java.util.ArrayList::iterator (9 bytes)
+   2106  921       3       java.util.ArrayList$Itr::<init> (26 bytes)
+   6473  922 %     3       prototype.sync.client.Car::send @ 12 (50 bytes)
+   6473    3       3       java.lang.String::replace (127 bytes)   made zombie
+   6473   17       3       java.lang.AbstractStringBuilder::append (50 bytes)   made zombie
+   6473   14       2       java.lang.String::length (6 bytes)   made zombie
+   6473   19       3       java.lang.String::startsWith (72 bytes)   made zombie
+   6473   25       3       sun.nio.cs.UTF_8$Encoder::encode (359 bytes)   made zombie
+   6473   36       3       java.lang.String::lastIndexOf (52 bytes)   made zombie
+   6473   39       3       java.util.Arrays::copyOf (19 bytes)   made zombie
+   6473   26       2       java.lang.Math::min (11 bytes)   made zombie
+   6473   27       3       java.lang.String::indexOf (166 bytes)   made zombie
+   6473   21  s!   3       sun.misc.URLClassPath::getLoader (243 bytes)   made zombie
+   6473   61       3       java.util.jar.Manifest::toLower (24 bytes)   made zombie
+   6473   55       3       java.util.HashMap::getNode (148 bytes)   made zombie
+   6473   63       3       java.util.HashMap::afterNodeInsertion (1 bytes)   made zombie
+   6473   49       3       java.util.HashMap::get (23 bytes)   made zombie
+   6473   60       3       java.util.jar.Manifest$FastInputStream::readLine (167 bytes)   made zombie
+   6474   62       3       sun.nio.cs.UTF_8$Decoder::decode (779 bytes)   made zombie
+   6560  923       3       prototype.sync.client.Car::send (50 bytes)
+   6560   71       3       java.nio.charset.CharsetDecoder::maxCharsPerByte (5 bytes)   made zombie
+   6560   74       3       java.lang.ThreadLocal::getMap (5 bytes)   made zombie
+   6560   20  s    3       sun.misc.URLClassPath::getNextLoader (88 bytes)   made zombie
+   6560   38       3       java.util.zip.ZipFile::ensureOpen (37 bytes)   made zombie
+   6560   40       3       java.util.Arrays::copyOfRange (63 bytes)   made zombie
+   6560  100       3       java.lang.String::<init> (82 bytes)   made zombie
+   6560   46       3       java.lang.String::getChars (62 bytes)   made zombie
+   6560  102       3       java.util.zip.ZipCoder::getBytes (192 bytes)   made zombie
+   6560  107   !   3       sun.misc.URLClassPath$JarLoader::getResource (85 bytes)   made zombie
+   6561  108   !   3       sun.misc.URLClassPath$JarLoader::ensureOpen (36 bytes)   made zombie
+   6561  111   !   3       java.util.zip.ZipFile::getEntry (101 bytes)   made zombie
+   6601  924 % !   3       prototype.sync.server.Server::lambda$null$0 @ 0 (109 bytes)
+   6601  125       3       java.lang.String::substring (79 bytes)   made zombie
+   6602  128       3       java.lang.String::lastIndexOf (151 bytes)   made zombie
+   6602  138       3       java.lang.System::getSecurityManager (4 bytes)   made zombie
+   6602  154       3       java.util.concurrent.ConcurrentHashMap::tabAt (21 bytes)   made zombie
+   6602  156       3       java.util.concurrent.ConcurrentHashMap::setTabAt (19 bytes)   made zombie
+   6690  925   !   3       prototype.sync.server.Server::lambda$null$0 (109 bytes)
+   6691  204  s!   4       sun.misc.URLClassPath::getLoader (243 bytes)   made zombie
+   6691  206  s    4       sun.misc.URLClassPath::getNextLoader (88 bytes)   made zombie
+   9939  926 %     4       prototype.sync.client.Car::send @ 12 (50 bytes)
+   9943  922 %     3       prototype.sync.client.Car::send @ -2 (50 bytes)   made not entrant
+   9943  207   !   4       sun.misc.URLClassPath$JarLoader::getResource (85 bytes)   made zombie
+   9943  245       4       java.lang.String::lastIndexOf (151 bytes)   made zombie
+   9943  273       3       java.lang.String::lastIndexOf (151 bytes)   made zombie
+  10190  927 % !   4       prototype.sync.server.Server::lambda$null$0 @ 0 (109 bytes)
+  10215  924 % !   3       prototype.sync.server.Server::lambda$null$0 @ -2 (109 bytes)   made not entrant
+  10215  294       3       jdk.internal.org.objectweb.asm.ByteVector::putUTF8 (142 bytes)   made zombie
+  45100  926 %     4       prototype.sync.client.Car::send @ -2 (50 bytes)   made not entrant
+  45101  889   !   4       java.net.SocketInputStream::read (328 bytes)   made not entrant
+  45101  722       4       java.io.ObjectInputStream$PeekInputStream::read (115 bytes)   made not entrant
+  45101  890       4       java.io.ObjectInputStream::<init> (81 bytes)   made not entrant
+  45101  927 % !   4       prototype.sync.server.Server::lambda$null$0 @ -2 (109 bytes)   made not entrant
+  45101  598       4       java.lang.StringBuilder::append (8 bytes)   made not entrant
+  45101  875  s    4       java.io.BufferedOutputStream::flush (12 bytes)   made not entrant
+  45103  928   !   3       java.util.zip.ZipFile::releaseInflater (41 bytes)
+  45103  351       3       java.lang.invoke.MethodType::parameterType (7 bytes)   made zombie
+  45103  929   !   3       java.util.zip.Inflater::reset (69 bytes)
+[Server] Connection to Client was dropped null
+  45106  930     n 0       java.util.zip.Inflater::reset (native)   (static)
+  45107  931       3       java.util.ArrayDeque::add (7 bytes)
+  45107  932       3       java.util.ArrayDeque::addLast (53 bytes)
+  45110  933       4       java.io.WinNTFileSystem::normalize (143 bytes)
+  45113  934  s!   4       sun.misc.URLClassPath::getLoader (243 bytes)
+  45113  935  s    4       sun.misc.URLClassPath::getNextLoader (88 bytes)
+  45115  937       1       java.nio.Buffer::limit (5 bytes)
+

@@ -1,0 +1,362 @@
+[main] INFO prototype.benchmark.SyncSimulation - START BENCHMARK
+  45123  939       3       java.lang.invoke.MethodHandle::<init> (35 bytes)
+  45124  940       3       java.lang.invoke.LambdaForm::prepare (43 bytes)
+  45134  542  s!   3       sun.misc.URLClassPath::getLoader (243 bytes)   made not entrant
+  45135  936   !   4       sun.misc.URLClassPath$JarLoader::getResource (85 bytes)
+  45135  541  s    3       sun.misc.URLClassPath::getNextLoader (88 bytes)   made not entrant
+  45135  938       4       sun.net.www.ParseUtil::encodePath (336 bytes)
+  45135  941       3       java.util.zip.ZipEntry::<init> (146 bytes)
+  45137  942       3       java.lang.invoke.LambdaForm$BasicType::basicTypeChar (8 bytes)
+  45137  944       3       java.lang.Class::getEnclosingClass (60 bytes)
+  45137  947     n 0       java.lang.Thread::isInterrupted (native)   
+  45137  946       3       java.lang.Thread::interrupted (8 bytes)
+  45137  945       3       java.lang.Class::getDeclaringClass (22 bytes)
+  45139  874       4       java.lang.reflect.Constructor::newInstance (87 bytes)   made not entrant
+  45141  948   !   3       sun.misc.URLClassPath$FileLoader::getResource (164 bytes)
+  45143  949       3       java.lang.ClassLoader::addClass (9 bytes)
+  45144  950       3       java.net.URLClassLoader::getAndVerifyPackage (109 bytes)
+  45144  954     n 0       java.lang.ClassLoader::defineClass1 (native)   
+  45145  951       3       java.lang.ClassLoader::preDefineClass (109 bytes)
+  45145  952   !   3       java.lang.ClassLoader::checkCerts (195 bytes)
+  45146  953       3       java.lang.ClassLoader::defineClassSourceLocation (28 bytes)
+  45146  139       3       sun.net.www.ParseUtil::encodePath (336 bytes)   made not entrant
+  45146  956       3       java.lang.Throwable::<init> (39 bytes)
+  45146  943       4       java.lang.StringBuilder::toString (17 bytes)
+  45147  955       3       java.lang.ClassLoader::postDefineClass (26 bytes)
+  45148  957       3       java.net.URLStreamHandler::equals (45 bytes)
+  45148  958       3       java.net.URLStreamHandler::sameFile (136 bytes)
+  45149  543   !   3       sun.misc.URLClassPath$JarLoader::getResource (85 bytes)   made not entrant
+  45149  959       3       sun.net.www.protocol.file.Handler::hostsEqual (69 bytes)
+  45149  112       3       java.lang.StringBuilder::toString (17 bytes)   made not entrant
+  45149  960       3       java.net.URLStreamHandler::hostsEqual (75 bytes)
+  45149  961       3       java.security.CodeSource::matchCerts (254 bytes)
+  45150  962   !   3       java.lang.invoke.MemberName$Factory::resolve (145 bytes)
+  45150  963   !   3       java.lang.invoke.MemberName::clone (14 bytes)
+  45150  964       3       java.util.LinkedHashMap::afterNodeInsertion (40 bytes)
+  45151  965       3       jdk.internal.org.objectweb.asm.Label::<init> (5 bytes)
+  45153  966       3       sun.net.www.protocol.jar.Handler::indexOfBangSlash (52 bytes)
+  45153  967       3       sun.net.www.ParseUtil::canonizeString (195 bytes)
+  45154  973       4       jdk.internal.org.objectweb.asm.ClassWriter::get (49 bytes)
+  45154  971       3       sun.misc.URLClassPath$JarLoader$2::getCodeSigners (8 bytes)
+  45154  974       4       jdk.internal.org.objectweb.asm.Item::set (143 bytes)
+  45154  968       3       sun.misc.URLClassPath$JarLoader$2::getCodeSourceURL (8 bytes)
+  45154  969       3       sun.misc.URLClassPath$JarLoader$2::getManifest (11 bytes)
+  45155  970       3       sun.misc.URLClassPath$JarLoader$2::getInputStream (15 bytes)
+  45155  972       3       java.net.URLStreamHandler::setURL (159 bytes)
+  45156  296       3       jdk.internal.org.objectweb.asm.ClassWriter::get (49 bytes)   made not entrant
+  45156  975       4       java.lang.String::indexOf (166 bytes)
+  45158  977       3       java.lang.invoke.MethodTypeForm::canonicalizeAll (66 bytes)
+  45159  978       3       java.util.Arrays::copyOfRange (11 bytes)
+  45159  976       3       java.lang.invoke.MethodType::checkRtype (6 bytes)
+  45159  979       3       java.lang.invoke.MethodType::toMethodDescriptorString (21 bytes)
+  45160  980       3       java.lang.invoke.MethodType::basicType (8 bytes)
+  45160  582       3       java.lang.String::indexOf (166 bytes)   made not entrant
+  45162  981       3       java.lang.ref.SoftReference::<init> (13 bytes)
+  45164  295       3       jdk.internal.org.objectweb.asm.Item::set (143 bytes)   made not entrant
+  45164  982     n 0       sun.misc.Unsafe::compareAndSwapInt (native)   
+  45166  983       3       java.net.URI$Parser::charAt (9 bytes)
+  45166  899       4       java.net.Socket$3::run (5 bytes)   made not entrant
+  45167  886       4       java.net.Socket$2::run (5 bytes)   made not entrant
+  45167  880  s!   4       java.net.AbstractPlainSocketImpl::getInputStream (75 bytes)   made not entrant
+  45167  900  s    4       java.net.PlainSocketImpl::getOutputStream (8 bytes)   made not entrant
+  45168  984       3       java.io.ObjectInputStream$PeekInputStream::read (115 bytes)
+  45168  985  s!   3       java.net.AbstractPlainSocketImpl::getInputStream (75 bytes)
+  45170  986  s    3       java.io.BufferedOutputStream::flush (12 bytes)
+  45171  987       3       java.net.Socket$3::run (5 bytes)
+  45171  988  s    3       java.net.PlainSocketImpl::getOutputStream (8 bytes)
+  45172  990       4       java.io.ObjectInputStream$ValidationList::<init> (5 bytes)
+  45173  991   !   4       sun.misc.ObjectInputFilter$Config::getSerialFilter (17 bytes)
+  45173  989       3       java.io.ObjectInputStream::<init> (81 bytes)
+  45174  992       3       java.net.Socket$2::run (5 bytes)
+  45174  993   !   3       java.net.SocketInputStream::read (328 bytes)
+  45178  994       4       java.net.SocketOutputStream::write (8 bytes)
+  45180  794       3       java.net.SocketOutputStream::write (8 bytes)   made not entrant
+  45189  995       4       java.io.ObjectInputStream$PeekInputStream::read (115 bytes)
+  45191  984       3       java.io.ObjectInputStream$PeekInputStream::read (115 bytes)   made not entrant
+  45217  996   !   4       java.net.AbstractPlainSocketImpl::isConnectionReset (31 bytes)
+  45219  736   !   3       java.net.AbstractPlainSocketImpl::isConnectionReset (31 bytes)   made not entrant
+  45254   13       3       java.io.WinNTFileSystem::normalize (143 bytes)   made not entrant
+  45403  997  s    4       java.io.BufferedOutputStream::flush (12 bytes)
+  45406  998   !   4       java.net.SocketInputStream::read (328 bytes)
+  45408  986  s    3       java.io.BufferedOutputStream::flush (12 bytes)   made not entrant
+  45411  993   !   3       java.net.SocketInputStream::read (328 bytes)   made not entrant
+  45420  999  s!   4       java.net.AbstractPlainSocketImpl::getInputStream (75 bytes)
+  45424  985  s!   3       java.net.AbstractPlainSocketImpl::getInputStream (75 bytes)   made not entrant
+  45436 1000       4       java.net.Socket$2::run (5 bytes)
+  45436 1001  s    4       java.net.PlainSocketImpl::getInputStream (8 bytes)
+  45437  712  s    3       java.net.PlainSocketImpl::getInputStream (8 bytes)   made not entrant
+  45437  992       3       java.net.Socket$2::run (5 bytes)   made not entrant
+  45445 1002       4       java.net.Socket$3::run (5 bytes)
+  45445 1003  s    4       java.net.PlainSocketImpl::getOutputStream (8 bytes)
+  45447 1004       4       java.io.ObjectInputStream::<init> (81 bytes)
+  45451  988  s    3       java.net.PlainSocketImpl::getOutputStream (8 bytes)   made not entrant
+  45451 1005       4       java.io.ObjectInputStream::readStreamHeader (60 bytes)
+  45452  987       3       java.net.Socket$3::run (5 bytes)   made not entrant
+  45456  759       3       java.io.ObjectInputStream::readStreamHeader (60 bytes)   made not entrant
+  45460  989       3       java.io.ObjectInputStream::<init> (81 bytes)   made not entrant
+  49621 1006 % !   4       prototype.sync.server.Server::lambda$null$0 @ 0 (109 bytes)
+  49696   15       3       java.lang.StringBuilder::append (8 bytes)   made zombie
+  49696   67       3       java.lang.ref.SoftReference::get (29 bytes)   made zombie
+  50568 1007   !   4       prototype.sync.server.Server::lambda$null$0 (109 bytes)
+  50593  925   !   3       prototype.sync.server.Server::lambda$null$0 (109 bytes)   made not entrant
+  50593   75       3       java.lang.ThreadLocal::get (38 bytes)   made zombie
+  50593   33       3       java.lang.String::startsWith (7 bytes)   made zombie
+  50828 1008 %     3       prototype.sync.client.Car::send @ 12 (56 bytes)
+  50929 1009       3       prototype.sync.client.Car::send (56 bytes)
+  50929  231       4       java.lang.String::indexOf (166 bytes)   made zombie
+[main] INFO prototype.benchmark.SyncSimulation - Throughput: 61120 processed requests
+[main] INFO prototype.benchmark.SyncSimulation - END BENCHMARK
+[main] INFO prototype.benchmark.SyncSimulation - START BENCHMARK
+[Server] Connection to Client was dropped null
+  51058  719  s    4       java.io.BufferedInputStream::read (113 bytes)   made not entrant
+  51058  917   !   4       prototype.sync.client.Car::sendData (90 bytes)   made not entrant
+  51058 1010       3       java.lang.StringBuilder::append (8 bytes)
+  51058  898   !   4       java.net.Socket::getOutputStream (84 bytes)   made not entrant
+  51060 1011  s    3       java.io.BufferedInputStream::read (113 bytes)
+  51069 1012   !   3       prototype.sync.client.Car::sendData (90 bytes)
+  51071 1013   !   3       java.net.Socket::getOutputStream (84 bytes)
+  51078 1014  s    4       java.io.BufferedInputStream::read (113 bytes)
+  51086 1011  s    3       java.io.BufferedInputStream::read (113 bytes)   made not entrant
+  51126 1015       4       java.lang.Math::addExact (32 bytes)
+  51126  791       3       java.lang.Math::addExact (32 bytes)   made not entrant
+  51126  585       3       java.io.ObjectStreamClass::requireInitialized (18 bytes)   made zombie
+  51126  587  s    3       java.io.BufferedInputStream::read (113 bytes)   made zombie
+  51126  588       3       java.io.BufferedInputStream::read1 (108 bytes)   made zombie
+  51126  590       3       java.io.ObjectInputStream$PeekInputStream::readFully (48 bytes)   made zombie
+  51126  589       3       java.io.ObjectInputStream$PeekInputStream::read (115 bytes)   made zombie
+  51126  591       3       java.io.ObjectOutputStream$BlockDataOutputStream::writeByte (33 bytes)   made zombie
+  51126  592  s    3       java.io.BufferedInputStream::read (49 bytes)   made zombie
+  51126  594       3       java.io.ObjectOutputStream$BlockDataOutputStream::writeShort (47 bytes)   made zombie
+  51126  601       3       java.io.ObjectInputStream$BlockDataInputStream::setBlockDataMode (74 bytes)   made zombie
+  51126  602       3       java.io.ObjectOutputStream$BlockDataOutputStream::getUTFLength (124 bytes)   made zombie
+  51126  603       3       java.io.ObjectInputStream$PeekInputStream::read (47 bytes)   made zombie
+  51126  605   !   3       java.io.ObjectInputStream$BlockDataInputStream::readUTFSpan (502 bytes)   made zombie
+  51126  606       3       java.io.ObjectInputStream$BlockDataInputStream::read (62 bytes)   made zombie
+  51126  607       3       java.io.ObjectOutputStream$BlockDataOutputStream::drain (45 bytes)   made zombie
+  51126  614       3       java.io.ObjectOutputStream$BlockDataOutputStream::writeBytes (144 bytes)   made zombie
+  51126  621       3       java.io.ObjectInputStream$PeekInputStream::peek (49 bytes)   made zombie
+  51568 1016   !   4       prototype.sync.client.Car::sendData (90 bytes)
+  51581 1017   !   4       java.net.Socket::getOutputStream (84 bytes)
+  51584 1013   !   3       java.net.Socket::getOutputStream (84 bytes)   made not entrant
+  51584  640   !   3       java.net.AbstractPlainSocketImpl::acquireFD (29 bytes)   made zombie
+  51584  648       3       java.io.Bits::putInt (36 bytes)   made zombie
+  51584  658       3       java.lang.Long::longValue (5 bytes)   made zombie
+  51584  665       3       java.io.Bits::getInt (43 bytes)   made zombie
+  51584  681       3       java.io.OutputStream::flush (1 bytes)   made zombie
+  51590 1012   !   3       prototype.sync.client.Car::sendData (90 bytes)   made not entrant
+  54334 1018 %     4       prototype.sync.client.Car::send @ 12 (56 bytes)
+  54337 1008 %     3       prototype.sync.client.Car::send @ -2 (56 bytes)   made not entrant
+  54969 1019       4       java.util.ArrayList::iterator (9 bytes)
+  54970  920       3       java.util.ArrayList::iterator (9 bytes)   made not entrant
+  55033 1020       4       prototype.sync.client.Car::send (56 bytes)
+  55037 1009       3       prototype.sync.client.Car::send (56 bytes)   made not entrant
+[main] INFO prototype.benchmark.SyncSimulation - Throughput: 64490 processed requests
+  56660  998   !   4       java.net.SocketInputStream::read (328 bytes)   made not entrant
+[main] INFO prototype.benchmark.SyncSimulation - END BENCHMARK
+  56660 1021       3       java.nio.Buffer::position (43 bytes)
+[main] INFO prototype.benchmark.SyncSimulation - START BENCHMARK
+[Server] Connection to Client was dropped null
+  56660 1023       3       java.nio.ByteBuffer::arrayOffset (35 bytes)
+  56661 1022       3       java.nio.Buffer::limit (62 bytes)
+  56662 1024   !   3       java.net.SocketInputStream::read (328 bytes)
+  56880 1025   !   4       java.net.SocketInputStream::read (328 bytes)
+  56886 1024   !   3       java.net.SocketInputStream::read (328 bytes)   made not entrant
+[main] INFO prototype.benchmark.SyncSimulation - Throughput: 69384 processed requests
+[main] INFO prototype.benchmark.SyncSimulation - END BENCHMARK
+[Server] Connection to Client was dropped null
+  62831 1026       3       java.nio.CharBuffer::arrayOffset (35 bytes)
+[main] INFO prototype.benchmark.SyncSimulation - START BENCHMARK
+  62831   58       3       java.util.HashMap::putVal (300 bytes)   made zombie
+  68352 1016   !   4       prototype.sync.client.Car::sendData (90 bytes)   made not entrant
+[main] INFO prototype.benchmark.SyncSimulation - Throughput: 63658 processed requests
+  68352 1027   !   3       prototype.sync.client.Car::sendData (90 bytes)
+[main] INFO prototype.benchmark.SyncSimulation - END BENCHMARK
+  68353   87       3       java.util.HashMap::tableSizeFor (59 bytes)   made zombie
+[Server] Connection to Client was dropped null
+  68353   82       3       java.util.HashMap::<init> (98 bytes)   made zombie
+[main] INFO prototype.benchmark.SyncSimulation - START BENCHMARK
+  68353  112       3       java.lang.StringBuilder::toString (17 bytes)   made zombie
+  68868 1028   !   4       prototype.sync.client.Car::sendData (90 bytes)
+  68888 1027   !   3       prototype.sync.client.Car::sendData (90 bytes)   made not entrant
+  68888  139       3       sun.net.www.ParseUtil::encodePath (336 bytes)   made zombie
+[main] INFO prototype.benchmark.SyncSimulation - Throughput: 74972 processed requests
+  74788 1029       3       prototype.model.Coordinate::<init> (20 bytes)
+[main] INFO prototype.benchmark.SyncSimulation - END BENCHMARK
+[Server] Connection to Client was dropped null
+[main] INFO prototype.benchmark.SyncSimulation - START BENCHMARK
+  74788 1030       3       java.net.URI::access$300 (7 bytes)
+  74788  296       3       jdk.internal.org.objectweb.asm.ClassWriter::get (49 bytes)   made zombie
+  74788  295       3       jdk.internal.org.objectweb.asm.Item::set (143 bytes)   made zombie
+  74788 1031       3       java.net.URI::match (56 bytes)
+  74789  338       3       java.lang.String::substring (56 bytes)   made zombie
+  74789  343       3       java.util.concurrent.ConcurrentHashMap::get (162 bytes)   made zombie
+[main] INFO prototype.benchmark.SyncSimulation - Throughput: 68818 processed requests
+[main] INFO prototype.benchmark.SyncSimulation - END BENCHMARK
+[Server] Connection to Client was dropped null
+  80694 1032       3       java.nio.charset.CoderResult::isUnderflow (13 bytes)
+[main] INFO prototype.benchmark.SyncSimulation - START BENCHMARK
+  80694 1033       3       java.nio.ByteBuffer::array (35 bytes)
+  80695  464       3       java.util.Arrays::copyOf (46 bytes)   made zombie
+[main] INFO prototype.benchmark.SyncSimulation - Throughput: 78007 processed requests
+[main] INFO prototype.benchmark.SyncSimulation - END BENCHMARK
+[Server] Connection to Client was dropped null
+[main] INFO prototype.benchmark.SyncSimulation - START BENCHMARK
+  93841  854   !   4       java.net.AbstractPlainSocketImpl::releaseFD (74 bytes)   made not entrant
+[main] INFO prototype.benchmark.SyncSimulation - Throughput: 72893 processed requests
+[main] INFO prototype.benchmark.SyncSimulation - END BENCHMARK
+[Server] Connection to Client was dropped null
+[Server] stoppedsocket closed
+  93865 1034       1       java.lang.Integer::intValue (5 bytes)
+  93865  542  s!   3       sun.misc.URLClassPath::getLoader (243 bytes)   made zombie
+  93865  541  s    3       sun.misc.URLClassPath::getNextLoader (88 bytes)   made zombie
+  93865  543   !   3       sun.misc.URLClassPath$JarLoader::getResource (85 bytes)   made zombie
+  93865 1035       1       java.util.HashMap$Node::getKey (5 bytes)
+  93865  582       3       java.lang.String::indexOf (166 bytes)   made zombie
+  93865  576       3       java.util.HashMap::resize (359 bytes)   made zombie
+  93865  611  s    3       java.io.BufferedOutputStream::write (67 bytes)   made zombie
+  93865  598       4       java.lang.StringBuilder::append (8 bytes)   made zombie
+  93865  619       3       java.util.Arrays::rangeCheck (74 bytes)   made zombie
+  93870  839       4       java.util.concurrent.ConcurrentHashMap::get (162 bytes)   made not entrant
+  93872 1036       3       sun.util.locale.LocaleUtils::isUpper (18 bytes)
+  93872  625       3       java.lang.Long::valueOf (36 bytes)   made zombie
+  93872  626       3       java.io.ObjectInputStream$BlockDataInputStream::readShort (73 bytes)   made zombie
+  93872  631       3       java.io.ObjectOutputStream$BlockDataOutputStream::writeUTF (46 bytes)   made zombie
+  93872  637       3       java.util.Arrays::fill (21 bytes)   made zombie
+  93872  647       3       java.io.ObjectOutputStream$HandleTable::lookup (56 bytes)   made zombie
+  93872  655       3       java.io.ObjectInputStream$BlockDataInputStream::readUnsignedShort (76 bytes)   made zombie
+  93872  656       3       java.io.ObjectInputStream$BlockDataInputStream::readUTFBody (156 bytes)   made zombie
+  93872  657       3       java.io.ObjectInputStream$BlockDataInputStream::peek (55 bytes)   made zombie
+  93873  660       3       java.io.ObjectStreamClass::forClass (52 bytes)   made zombie
+  93873  663       3       java.io.ObjectStreamField::<init> (268 bytes)   made zombie
+  93873  661       3       java.util.ArrayList::grow (45 bytes)   made zombie
+  93873  667       3       java.util.ArrayList$Itr::hasNext (20 bytes)   made zombie
+  93873  671   !   3       java.net.AbstractPlainSocketImpl::releaseFD (74 bytes)   made zombie
+  93873  672   !   3       java.net.AbstractPlainSocketImpl::isClosedOrPending (34 bytes)   made zombie
+  93873  674       3       java.io.ObjectOutputStream$HandleTable::<init> (45 bytes)   made zombie
+  93873  676       3       java.util.ArrayList::toArray (60 bytes)   made zombie
+  93873  677       3       java.util.ArrayList$Itr::next (66 bytes)   made zombie
+  93873  679       3       java.lang.reflect.Constructor::newInstance (87 bytes)   made zombie
+  93873  682  s    3       java.io.BufferedOutputStream::flush (12 bytes)   made zombie
+  93873  936   !   4       sun.misc.URLClassPath$JarLoader::getResource (85 bytes)   made not entrant
+  93873 1037       1       java.nio.charset.Charset::name (5 bytes)
+  93873  684       3       java.io.BufferedInputStream::<init> (9 bytes)   made zombie
+  93873  685       3       java.io.BufferedInputStream::<init> (32 bytes)   made zombie
+  93873  687       3       java.io.ObjectStreamClass::computeFieldOffsets (307 bytes)   made zombie
+  93873  688   !   3       java.io.ObjectStreamClass::lookup (335 bytes)   made zombie
+  93873  689       3       java.io.ObjectOutputStream::writeClassDesc (60 bytes)   made zombie
+  93873  690       3       java.io.ObjectOutputStream$HandleTable::assign (52 bytes)   made zombie
+  93873  691       3       java.io.ObjectOutputStream$HandleTable::insert (39 bytes)   made zombie
+  93873  693       3       java.io.ObjectInputStream::readClassDesc (119 bytes)   made zombie
+  93873  697       3       java.io.ObjectInputStream$HandleTable::assign (48 bytes)   made zombie
+  93873  701       3       java.io.ObjectInputStream$HandleTable::finish (111 bytes)   made zombie
+  93873  702       3       java.io.ObjectStreamClass$WeakClassKey::equals (42 bytes)   made zombie
+  93873  703       3       java.io.ObjectStreamClass$FieldReflectorKey::<init> (95 bytes)   made zombie
+  93873  704       3       java.io.ObjectStreamClass::writeNonProxy (161 bytes)   made zombie
+  93873  707       3       java.io.ObjectStreamClass$FieldReflector::setPrimFieldValues (329 bytes)   made zombie
+  93873  705       3       java.io.ObjectStreamClass$FieldReflector::getPrimFieldValues (317 bytes)   made zombie
+  93874  706   !   3       java.io.ObjectStreamClass::readNonProxy (407 bytes)   made zombie
+  93874  708   !   3       java.net.Socket::getInputStream (84 bytes)   made zombie
+  93874  710       3       java.net.Socket$2::run (5 bytes)   made zombie
+  93874  715       3       java.io.ObjectOutputStream::writeNonProxyDesc (109 bytes)   made zombie
+  93874  730       3       java.io.Bits::putLong (86 bytes)   made zombie
+  93874  729       3       java.io.Bits::getLong (105 bytes)   made zombie
+  93874  732  s!   3       java.net.AbstractPlainSocketImpl::getInputStream (75 bytes)   made zombie
+  93874  726       3       java.io.ObjectStreamClass::getClassDataLayout0 (296 bytes)   made zombie
+  93874  731       3       java.io.ObjectInputStream$BlockDataInputStream::readLong (76 bytes)   made zombie
+  93874  740       3       java.io.ObjectInputStream::<init> (81 bytes)   made zombie
+  93874  733       3       java.net.SocketInputStream::read (15 bytes)   made zombie
+  93874  735   !   3       java.net.SocketInputStream::read (328 bytes)   made zombie
+  93874  741       3       java.io.ObjectInputStream::verifySubclass (99 bytes)   made zombie
+  93874  549   !   4       java.util.zip.ZipFile::getEntry (101 bytes)   made not entrant
+  93875  548       4       java.util.zip.ZipCoder::getBytes (192 bytes)   made not entrant
+  93877  768  s    4       java.io.BufferedInputStream::read (49 bytes)   made not entrant
+  93877 1038  s    3       java.io.BufferedInputStream::read (49 bytes)
+  93877 1039       4       java.io.BufferedInputStream::getBufIfOpen (21 bytes)
+  93878  744   !   3       java.io.ObjectInputStream::readObject0 (566 bytes)   made zombie
+  93878  754       3       java.io.ObjectInputStream$BlockDataInputStream::<init> (79 bytes)   made zombie
+  93878  722       4       java.io.ObjectInputStream$PeekInputStream::read (115 bytes)   made zombie
+  93878  750       3       java.io.ObjectStreamClass::initNonProxy (551 bytes)   made zombie
+  93878  584       3       java.io.BufferedInputStream::getBufIfOpen (21 bytes)   made not entrant
+  93878  734   !   3       prototype.sync.client.Car::sendData (90 bytes)   made zombie
+  93878  760   !   3       java.net.Socket::getOutputStream (84 bytes)   made zombie
+  93878  758       3       java.io.ObjectInputStream$HandleTable::<init> (38 bytes)   made zombie
+  93878  756   !   3       java.io.ObjectStreamClass::getReflector (336 bytes)   made zombie
+  93878  789       4       java.lang.ref.SoftReference::get (29 bytes)   made zombie
+  93878  764  s    3       java.net.PlainSocketImpl::getOutputStream (8 bytes)   made zombie
+  93878  762       3       java.net.Socket$3::run (5 bytes)   made zombie
+  93878  773       3       java.io.BufferedOutputStream::<init> (9 bytes)   made zombie
+  93878  772  s!   3       java.net.AbstractPlainSocketImpl::getOutputStream (75 bytes)   made zombie
+  93878  774       3       java.io.ObjectOutputStream::<init> (99 bytes)   made zombie
+  93878  784   !   3       java.io.ObjectOutputStream::writeSerialData (221 bytes)   made zombie
+  93878  778   !   3       java.io.ObjectOutputStream::writeObject (38 bytes)   made zombie
+  93878  776       3       java.io.ObjectOutputStream$BlockDataOutputStream::<init> (57 bytes)   made zombie
+  93878  775       3       java.io.ObjectOutputStream::verifySubclass (99 bytes)   made zombie
+  93878  790       3       java.lang.Math::multiplyExact (74 bytes)   made zombie
+  93878  782   !   3       java.io.ObjectOutputStream::writeOrdinaryObject (175 bytes)   made zombie
+  93878  779   !   3       java.io.ObjectOutputStream::writeObject0 (619 bytes)   made zombie
+  93878  792       3       java.io.ObjectOutputStream::flush (8 bytes)   made zombie
+  93878  798       3       java.io.ObjectInputStream$BlockDataInputStream::currentBlockRemaining (41 bytes)   made zombie
+  93878  797   !   3       java.io.ObjectInputStream::readObject (130 bytes)   made zombie
+  93878  807       3       java.io.ObjectInputStream$BlockDataInputStream::readFully (42 bytes)   made zombie
+  93878  804   !   3       java.io.ObjectInputStream::readSerialData (367 bytes)   made zombie
+  93878  799   !   3       java.io.ObjectInputStream::readOrdinaryObject (321 bytes)   made zombie
+  93878  802   !   3       java.io.ObjectStreamClass::newInstance (140 bytes)   made zombie
+  93878 1040       3       java.io.DataInputStream::readInt (72 bytes)
+  93878  838       3       java.lang.ref.SoftReference::get (29 bytes)   made zombie
+  93878  849       3       java.io.ObjectOutputStream$HandleTable::<init> (45 bytes)   made zombie
+  93879 1041       4       java.util.HashSet::add (20 bytes)
+  93879 1043       3       java.util.StringTokenizer::scanToken (179 bytes)
+  93880  890       4       java.io.ObjectInputStream::<init> (81 bytes)   made zombie
+  93880  874       4       java.lang.reflect.Constructor::newInstance (87 bytes)   made zombie
+  93880  875  s    4       java.io.BufferedOutputStream::flush (12 bytes)   made zombie
+  93880  922 %     3       prototype.sync.client.Car::send @ -2 (50 bytes)   made zombie
+  93880  889   !   4       java.net.SocketInputStream::read (328 bytes)   made zombie
+  93880  926 %     4       prototype.sync.client.Car::send @ -2 (50 bytes)   made zombie
+  93880  924 % !   3       prototype.sync.server.Server::lambda$null$0 @ -2 (109 bytes)   made zombie
+  93880 1042       3       java.util.StringTokenizer::skipDelimiters (116 bytes)
+  93880  609       3       java.util.HashSet::add (20 bytes)   made not entrant
+  93882  927 % !   4       prototype.sync.server.Server::lambda$null$0 @ -2 (109 bytes)   made zombie
+  93882 1044       3       sun.misc.URLClassPath$JarLoader::findResource (18 bytes)
+  93883 1045       3       java.lang.invoke.MethodHandles$Lookup::lookupClassOrNull (17 bytes)
+  93884 1046       3       java.lang.invoke.MethodTypeForm::cachedLambdaForm (44 bytes)
+  93884 1047       3       jdk.internal.org.objectweb.asm.MethodVisitor::<init> (35 bytes)
+  93884 1048   !   3       sun.misc.URLClassPath$JarLoader::getResource (85 bytes)
+  93884 1050       4       java.nio.charset.CharsetEncoder::reset (11 bytes)
+  93884 1052       4       java.nio.charset.CharsetEncoder::maxBytesPerChar (5 bytes)
+  93884 1051       4       java.nio.charset.CharsetEncoder::implReset (1 bytes)
+  93886 1049   !   3       java.util.zip.ZipFile::getEntry (101 bytes)
+  93887 1053       3       java.util.zip.ZipCoder::getBytes (192 bytes)
+  93888 1054       3       java.util.zip.ZipFile$ZipFileInputStream::finalize (5 bytes)
+  93888 1055       3       sun.misc.URLClassPath$JarLoader$2::<init> (26 bytes)
+  93889 1056       3       java.lang.reflect.Modifier::isPublic (12 bytes)
+  93889 1057       3       jdk.internal.org.objectweb.asm.MethodWriter::visitLabel (281 bytes)
+  93890 1058       3       java.util.concurrent.ConcurrentHashMap::get (162 bytes)
+  93890 1059       1       java.util.Formatter$Flags::valueOf (5 bytes)
+  93891 1060       3       java.util.Formatter$Flags::contains (22 bytes)
+  93891 1063       3       java.lang.ThreadLocal::get (38 bytes)
+  93891 1061       3       java.util.regex.Pattern$BmpCharProperty::match (50 bytes)
+  93892 1062       1       scala.collection.mutable.ArrayBuffer::size0 (5 bytes)
+  93894  859  s    4       java.io.BufferedOutputStream::write (67 bytes)   made not entrant
+Test time	Throughput 	 Throughput/s 
+5887 		 61147 	 10386,784440 
+5601 		 64492 	 11514,372433 
+6169 		 69386 	 11247,527962 
+5520 		 63661 	 11532,789855 
+6434 		 74974 	 11652,782095 
+5905 		 68821 	 11654,699407 
+6824 		 78009 	 11431,565064 
+6319 		 72895 	 11535,844279 
+
+  93894 1064       3       java.util.regex.Pattern$GroupHead::match (47 bytes)
+  93895 1065       3       java.util.regex.Matcher::group (112 bytes)
+  93895 1069       4       java.lang.StringBuilder::append (8 bytes)
+  93895 1067       3       java.util.regex.Pattern$Branch::match (66 bytes)
+  93895 1066       1       scala.collection.mutable.ArrayBuffer::array (5 bytes)
+  93895 1068       1       java.util.Formatter::access$000 (5 bytes)
+  93895 1070       3       java.lang.Character::isHighSurrogate (18 bytes)
+  93896 1071       3       java.lang.invoke.DirectMethodHandle::internalMemberName (8 bytes)
+  93896 1072       1       scala.collection.mutable.WrappedArray$ofRef::array (5 bytes)
+  93896 1073       3       java.lang.Character::charCount (12 bytes)
+  93898   41       3       java.lang.StringBuilder::append (8 bytes)   made not entrant
+  93898 1074       3       java.util.regex.Pattern::peek (26 bytes)
+  93901 1014  s    4       java.io.BufferedInputStream::read (113 bytes)   made not entrant

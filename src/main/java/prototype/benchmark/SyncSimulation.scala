@@ -1,21 +1,18 @@
 package prototype.benchmark
-
-import java.lang.management.ManagementFactory
 import java.net.InetSocketAddress
 import java.util.Scanner
-
 import com.typesafe.scalalogging.Logger
 import prototype.sync.client.Car
 import prototype.sync.server.Server
 
 import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.{Future, Promise}
-import scala.util.{Failure, Random, Success, Try}
+import scala.concurrent.Future
+import scala.util.Random
 class SyncSimulation() extends Simulation {
   var server: Server = _
-  val logger = Logger[SyncSimulation]
-  val host = new InetSocketAddress("192.168.0.199", 1338)
-  val list  = List.tabulate(10)(n => Random.nextInt(5000)+2000)
+  val logger: Logger = Logger[SyncSimulation]
+  val host = new InetSocketAddress("localhost", 1338)
+  val list  = List.tabulate(8)(n => Random.nextInt(2000)+5000)
 
   def startServer(): Unit={
     logger.info("START SERVER")
@@ -38,8 +35,17 @@ class SyncSimulation() extends Simulation {
       logger.info("START LOCAL MULTI THREAD BENCHMARK")
       startServer()
       warmup()
-      //val results = todo multi threadng implementation
 
+      Future.sequence(list.map(runtime => {
+        Thread sleep 100 // Zeitverögerung, da Server Socket sonst überwältigt wird https://stackoverflow.com/a/48442827
+        Future((runtime, benchmark(runtime)))
+      })).onComplete(
+        result => {
+          printResult(result.get)
+          saveResult(classOf[SyncSimulation].getCanonicalName + ".local.multi.txt", result.get)
+          server close()
+        }
+      )
     } else if(!local && !singleThreaded){
       logger.info("START REMOTE MULTI THREAD BENCHMARK")
     }
@@ -48,7 +54,7 @@ class SyncSimulation() extends Simulation {
   override def benchmark(runtime: Int): Int ={
     logger.info("START BENCHMARK")
     val car = new Car(host)
-    Future{
+    Future {
       car.connect()
       car.send()
     }
@@ -64,7 +70,7 @@ class SyncSimulation() extends Simulation {
     logger.info("WARMUP")
     val car = new Car(host)
     car.connect()
-    car.send(50000) // should be 500_000
+    car.send(500000)
     car.close()
   }
 }
@@ -86,5 +92,6 @@ object SyncSimulation{
     while(scanner.hasNext()){
 
     }
+    sys exit 0
   }
 }

@@ -1,29 +1,67 @@
 package prototype.benchmark
-import java.lang.management.ManagementFactory
 import java.net.InetSocketAddress
+import java.util.Scanner
+import java.util.concurrent.Executors
 
 import com.typesafe.scalalogging.Logger
 import prototype.async.client.Car
 import prototype.async.server.Server
 
+import scala.concurrent.{ExecutionContext, ExecutionContextExecutor, Future}
 import scala.util.Random
+import scala.concurrent.ExecutionContext.Implicits.global
 class AsyncSimulation extends Simulation{
   val logger: Logger = Logger[AsyncSimulation]
-  val host = new InetSocketAddress("127.0.0.1", 1337)
-  def run(): Unit = {
+  val host = new InetSocketAddress("localhost", 1337)
+  var server: Server = _
+  val list: List[Int] = List.tabulate(8)(n => Random.nextInt(2000)+5000)
+  val executors: ExecutionContextExecutor = ExecutionContext.fromExecutor(Executors.newFixedThreadPool(100))
+
+  def startServer(): Unit={
     logger.info("START SERVER")
-    val server = new Server(host)
+    server = new Server(host)
     server receive()
+  }
 
-    logger.info("WARMUP")
-    warmup()
-    val list  = List.tabulate(10)(n => Random.nextInt(500)+500)
-                    .map(runtime => (runtime, benchmark(runtime)))
-
-    logger.info("CLEAN UP")
-    server dispose()
-    printResult(list)
-    saveResult(classOf[AsyncSimulation].getCanonicalName + ".txt", list)
+  
+  def run(local: Boolean, singleThreaded: Boolean): Unit = {
+    if(local && singleThreaded){
+      logger.info("START LOCAL SINGLE THREAD BENCHMARK")
+      startServer()
+      warmup()
+      val result = list.map(runtime => (runtime, benchmark(runtime)))
+      server.dispose()
+      printResult(result)
+      saveResult(classOf[AsyncSimulation].getCanonicalName + ".local.single.txt", result)
+    } else if(!local && singleThreaded){
+      logger.info("START REMOTE SINGLE THREAD BENCHMARK")
+      warmup()
+      val result = list.map(runtime => (runtime, benchmark(runtime)))
+      server.dispose()
+      printResult(result)
+      saveResult(classOf[AsyncSimulation].getCanonicalName + ".remote.single.txt", result)
+    } else if(local && !singleThreaded){
+      logger.info("START LOCAL MULTI THREAD BENCHMARK")
+      startServer()
+      warmup()
+      Future.sequence(list.map(runtime => Future((runtime, benchmark(runtime)))(executors))).onComplete(
+        result => {
+          printResult(result.get)
+          saveResult(classOf[AsyncSimulation].getCanonicalName + ".local.multi.txt", result.get)
+          server dispose()
+        }
+      )
+    } else if(!local && !singleThreaded){
+      logger.info("START REMOTE MULTI THREAD BENCHMARK")
+      warmup()
+      Future.sequence(list.map(runtime => Future((runtime, benchmark(runtime)))(executors))).onComplete(
+        result => {
+          printResult(result.get)
+          saveResult(classOf[AsyncSimulation].getCanonicalName + ".remote.multi.txt", result.get)
+          server dispose()
+        }
+      )
+    }
   }
 
   def benchmark(runtime: Int): Int ={
@@ -41,6 +79,7 @@ class AsyncSimulation extends Simulation{
   }
 
   def warmup(): Unit={
+    logger.info("WARMUP")
     val iterations = 3000000
     val car = new Car(host)
     car connect()
@@ -48,7 +87,6 @@ class AsyncSimulation extends Simulation{
     val disposable = car subscribeOnServerEndpoint()
     while(car.getFlowrate < iterations){
       Thread.sleep(1)
-      //println(car.getFlowrate)
     }
     disposable.dispose()
     car.shutDown()
@@ -57,8 +95,20 @@ class AsyncSimulation extends Simulation{
 
 object AsyncSimulation{
   def main(args: Array[String]): Unit = {
+    var local = true //default
+    var singleThreaded = true //default
+
+    args.foreach {
+      case "remote" => local = false
+      case "multi" => singleThreaded = false
+    }
     val simulation = new AsyncSimulation
-    simulation run()
+    simulation run(local, singleThreaded)
+
+    val scanner = new Scanner(System.in)
+    while(scanner.hasNext()){
+
+    }
     sys.exit(0)
   }
 }

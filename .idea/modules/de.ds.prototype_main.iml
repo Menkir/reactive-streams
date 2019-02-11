@@ -16,6 +16,7 @@
     <orderEntry type="library" name="Gradle: io.reactivex.rxjava2:rxjava:2.2.0" level="project" />
     <orderEntry type="library" name="Gradle: com.google.inject:guice:4.0" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.jmeter:ApacheJMeter_java:2.7" level="project" />
+    <orderEntry type="library" name="Gradle: com.typesafe.scala-logging:scala-logging_2.12:3.9.2" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-codec-http2:4.1.32.Final" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-handler-proxy:4.1.32.Final" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-codec-http:4.1.32.Final" level="project" />
@@ -72,14 +73,26 @@
     <orderEntry type="library" name="Gradle: javax.mail:mail:1.4.4" level="project" />
     <orderEntry type="library" name="Gradle: javax.activation:activation:1.1.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.geronimo.specs:geronimo-jms_1.1_spec:1.1.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.scala-lang:scala-reflect:2.12.7" level="project" />
+    <orderEntry type="library" name="Gradle: org.scala-lang:scala-library:2.12.7" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-codec-socks:4.1.32.Final" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-codec:4.1.32.Final" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-transport-native-unix-common:4.1.32.Final" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-transport:4.1.32.Final" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-buffer:4.1.32.Final" level="project" />
-    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-resolver:4.1.32.Final" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-common:4.1.32.Final" level="project" />
     <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.1" level="project" />
+    <orderEntry type="library" name="scala-sdk-2.12.8 (3)" level="application" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../libs/slf4j-simple-1.7.25.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
