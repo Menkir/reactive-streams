@@ -65,7 +65,7 @@ public class Server extends Observable implements IServer  {
 	public static void main(final String... args){
 	    Scanner sc = new Scanner(System.in);
 		try {
-			new Server(new InetSocketAddress("192.168.0.199", 1338)).receive();
+			new Server(new InetSocketAddress("141.37.202.55", 1338)).receive();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -73,8 +73,5 @@ public class Server extends Observable implements IServer  {
 		while(sc.hasNext()){
 
         }
-        long times = clientServedTimes.size();
-		long sum = clientServedTimes.stream().reduce(Math::addExact).get();
-        System.out.println("Server Bearbeitungszeit: " + (sum/(double)times));
 	}
 }

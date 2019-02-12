@@ -58,7 +58,6 @@ class AsyncSimulation extends Simulation{
         result => {
           printResult(result.get)
           saveResult(classOf[AsyncSimulation].getCanonicalName + ".remote.multi.txt", result.get)
-          server dispose()
         }
       )
     }

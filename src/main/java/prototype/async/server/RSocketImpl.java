@@ -30,11 +30,6 @@ public class RSocketImpl extends AbstractRSocket {
 
 	@Override
 	public Flux<Payload> requestChannel(final Publisher<Payload> payloads) {
-		Flux<Payload> share = Flux.from(payloads)
-				.subscribeOn(server)
-				.publishOn(server)
-				.share();
-		channels.onNext(share);
-		return share;
+		return Flux.from(payloads);
 	}
 }

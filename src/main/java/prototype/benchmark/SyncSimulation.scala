@@ -1,18 +1,22 @@
 package prototype.benchmark
+import java.lang.Thread._
 import java.net.InetSocketAddress
 import java.util.Scanner
+import java.util.concurrent.{ExecutorService, Executors, ThreadPoolExecutor}
+
 import com.typesafe.scalalogging.Logger
 import prototype.sync.client.Car
 import prototype.sync.server.Server
 
 import scala.concurrent.ExecutionContext.Implicits.global
-import scala.concurrent.Future
+import scala.concurrent.{ExecutionContext, Future}
 import scala.util.Random
 class SyncSimulation() extends Simulation {
   var server: Server = _
   val logger: Logger = Logger[SyncSimulation]
   val host = new InetSocketAddress("localhost", 1338)
-  val list  = List.tabulate(8)(n => Random.nextInt(2000)+5000)
+  val list  = List.tabulate(8)(n => Random.nextInt(5000)+2000)
+  val context = ExecutionContext.fromExecutor(Executors.newFixedThreadPool(8))
 
   def startServer(): Unit={
     logger.info("START SERVER")
@@ -37,7 +41,7 @@ class SyncSimulation() extends Simulation {
       warmup()
 
       Future.sequence(list.map(runtime => {
-        Thread sleep 100 // Zeitverögerung, da Server Socket sonst überwältigt wird https://stackoverflow.com/a/48442827
+        //Thread sleep 100 // Zeitverögerung, da Server Socket sonst überwältigt wird https://stackoverflow.com/a/48442827
         Future((runtime, benchmark(runtime)))
       })).onComplete(
         result => {
@@ -54,12 +58,12 @@ class SyncSimulation() extends Simulation {
   override def benchmark(runtime: Int): Int ={
     logger.info("START BENCHMARK")
     val car = new Car(host)
-    Future {
-      car.connect()
-      car.send()
-    }
 
-    Thread sleep runtime
+    Future{
+      car connect()
+      car send()
+    }(context)
+    sleep(runtime)
     logger.info("Throughput: {} processed requests", car.getFlowrate)
     logger.info("END BENCHMARK")
     car.close()

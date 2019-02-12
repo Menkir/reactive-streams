@@ -53,10 +53,8 @@ public class Car implements ICar {
 				Flux.fromIterable(routingFactory.getRoutingType(carConfiguration.ROUTETYPE).getRouteAsList())
                         .repeat(100_000) // emit 400k Coordinates
 						.delayElements(carConfiguration.DELAY)
-						.subscribeOn(scheduler)
 						.doOnNext(coordinate -> coordinate.setSignalPower(((int) (Math.random() * 10))))
 						.map(coordinate -> DefaultPayload.create(Serializer.serialize(coordinate)))
-						.publishOn(scheduler)
 						.share()
 		);
 	}
