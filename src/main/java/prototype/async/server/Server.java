@@ -26,7 +26,7 @@ public class Server implements IServer {
 				.acceptor((setupPayload, reactiveSocket) ->
 						Mono.just(rSocket))
 				.transport(TcpServerTransport.create(socketAddress.getHostName(), socketAddress.getPort()))
-                .start()
+				.start()
 				.subscribe();
 	}
 

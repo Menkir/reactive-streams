@@ -14,7 +14,7 @@ import scala.util.Random
 class SyncSimulation() extends Simulation {
   var server: Server = _
   val logger: Logger = Logger[SyncSimulation]
-  val host = new InetSocketAddress("141.37.202.55", 1338)
+  val host = new InetSocketAddress("localhost", 1338)
   val list  = List.tabulate(8)(n => Random.nextInt(5000)+2000)
   val context = ExecutionContext.fromExecutor(Executors.newFixedThreadPool(8))
 

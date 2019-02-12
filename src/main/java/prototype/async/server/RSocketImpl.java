@@ -30,6 +30,18 @@ public class RSocketImpl extends AbstractRSocket {
 
 	@Override
 	public Flux<Payload> requestChannel(final Publisher<Payload> payloads) {
-		return Flux.from(payloads);
+		return Flux.from(payloads)
+				.doOnNext(next -> simulateWork());
+	}
+
+	/**
+	 * Simulate Server processing time by sleeping 100ms
+	 */
+	private void simulateWork(){
+		try {
+			Thread.sleep(1);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 }

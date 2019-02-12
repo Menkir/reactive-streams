@@ -14,15 +14,25 @@ class AsyncSimulation extends Simulation{
   val logger: Logger = Logger[AsyncSimulation]
   val host = new InetSocketAddress("127.0.0.1", 1337)
   var server: Server = _
-  val list: List[Int] = List.tabulate(8)(n => Random.nextInt(2000)+5000)
-  val executors: ExecutionContextExecutor = ExecutionContext.fromExecutor(Executors.newFixedThreadPool(100))
+  val list: List[Int] = List(
+    1000,
+    2000,
+    4000,
+    8000,
+    16000,
+    32000,
+    64000,
+    128000,
+    256000,
+    512000
+  )
+  val executors: ExecutionContextExecutor = ExecutionContext.fromExecutor(Executors.newFixedThreadPool(8))
 
   def startServer(): Unit={
     logger.info("START SERVER")
     server = new Server(host)
     server receive()
   }
-
   
   def run(local: Boolean, singleThreaded: Boolean): Unit = {
     if(local && singleThreaded){

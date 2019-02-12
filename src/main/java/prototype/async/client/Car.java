@@ -14,6 +14,7 @@ import reactor.core.scheduler.Scheduler;
 import reactor.core.scheduler.Schedulers;
 import prototype.routing.RoutingFactory;
 import java.net.InetSocketAddress;
+import java.time.Duration;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -41,6 +42,7 @@ public class Car implements ICar {
 	public void connect() {
 		this.client = RSocketFactory
 				.connect()
+				.keepAliveAckTimeout(Duration.ofMinutes(30))
 				.transport(TcpClientTransport.create(socketAddress.getHostName(), socketAddress.getPort()))
 				.start()
 				.subscribeOn(scheduler)
