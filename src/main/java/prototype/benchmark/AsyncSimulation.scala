@@ -12,7 +12,7 @@ import scala.util.Random
 import scala.concurrent.ExecutionContext.Implicits.global
 class AsyncSimulation extends Simulation{
   val logger: Logger = Logger[AsyncSimulation]
-  val host = new InetSocketAddress("localhost", 1337)
+  val host = new InetSocketAddress("127.0.0.1", 1337)
   var server: Server = _
   val list: List[Int] = List.tabulate(8)(n => Random.nextInt(2000)+5000)
   val executors: ExecutionContextExecutor = ExecutionContext.fromExecutor(Executors.newFixedThreadPool(100))
@@ -37,7 +37,6 @@ class AsyncSimulation extends Simulation{
       logger.info("START REMOTE SINGLE THREAD BENCHMARK")
       warmup()
       val result = list.map(runtime => (runtime, benchmark(runtime)))
-      server.dispose()
       printResult(result)
       saveResult(classOf[AsyncSimulation].getCanonicalName + ".remote.single.txt", result)
     } else if(local && !singleThreaded){
@@ -79,7 +78,7 @@ class AsyncSimulation extends Simulation{
 
   def warmup(): Unit={
     logger.info("WARMUP")
-    val iterations = 3000000
+    val iterations = 1500
     val car = new Car(host)
     car connect()
     car requestChannel()

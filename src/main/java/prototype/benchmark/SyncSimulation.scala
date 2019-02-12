@@ -14,7 +14,7 @@ import scala.util.Random
 class SyncSimulation() extends Simulation {
   var server: Server = _
   val logger: Logger = Logger[SyncSimulation]
-  val host = new InetSocketAddress("localhost", 1338)
+  val host = new InetSocketAddress("141.37.202.55", 1338)
   val list  = List.tabulate(8)(n => Random.nextInt(5000)+2000)
   val context = ExecutionContext.fromExecutor(Executors.newFixedThreadPool(8))
 
@@ -35,13 +35,15 @@ class SyncSimulation() extends Simulation {
     } else if(!local && singleThreaded){
       logger.info("START REMOTE SINGLE THREAD BENCHMARK")
       warmup()
+      val result = list.map(runtime => (runtime, benchmark(runtime)))
+      printResult(result)
+      saveResult(classOf[SyncSimulation].getCanonicalName + ".remote.single.txt", result)
     } else if(local && !singleThreaded){
       logger.info("START LOCAL MULTI THREAD BENCHMARK")
       startServer()
       warmup()
 
       Future.sequence(list.map(runtime => {
-        //Thread sleep 100 // Zeitverögerung, da Server Socket sonst überwältigt wird https://stackoverflow.com/a/48442827
         Future((runtime, benchmark(runtime)))
       })).onComplete(
         result => {
@@ -52,6 +54,16 @@ class SyncSimulation() extends Simulation {
       )
     } else if(!local && !singleThreaded){
       logger.info("START REMOTE MULTI THREAD BENCHMARK")
+      warmup()
+
+      Future.sequence(list.map(runtime => {
+        Future((runtime, benchmark(runtime)))
+      })).onComplete(
+        result => {
+          printResult(result.get)
+          saveResult(classOf[SyncSimulation].getCanonicalName + ".remote.multi.txt", result.get)
+        }
+      )
     }
   }
 
@@ -74,7 +86,7 @@ class SyncSimulation() extends Simulation {
     logger.info("WARMUP")
     val car = new Car(host)
     car.connect()
-    car.send(500000)
+    car.send(1500)
     car.close()
   }
 }
