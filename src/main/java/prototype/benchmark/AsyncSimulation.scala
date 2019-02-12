@@ -12,7 +12,7 @@ import scala.util.Random
 import scala.concurrent.ExecutionContext.Implicits.global
 class AsyncSimulation extends Simulation{
   val logger: Logger = Logger[AsyncSimulation]
-  val host = new InetSocketAddress("127.0.0.1", 1337)
+  val host = new InetSocketAddress("192.168.0.199", 1337)
   var server: Server = _
   val list: List[Int] = List(
     1000,

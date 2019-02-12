@@ -53,7 +53,7 @@ public class Car implements ICar {
 	public void requestChannel() {
 		serverEndpoint = client.requestChannel(
 				Flux.fromIterable(routingFactory.getRoutingType(carConfiguration.ROUTETYPE).getRouteAsList())
-                        .repeat(100_000) // emit 400k Coordinates
+                        .repeat(100_000)// emit 400k Coordinates
 						.delayElements(carConfiguration.DELAY)
 						.doOnNext(coordinate -> coordinate.setSignalPower(((int) (Math.random() * 10))))
 						.map(coordinate -> DefaultPayload.create(Serializer.serialize(coordinate)))

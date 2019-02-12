@@ -42,10 +42,13 @@ public class Server extends Observable implements IServer  {
 							ois = new ObjectInputStream(new BufferedInputStream(finalClientSocket.getInputStream()));
 							Coordinate coordinate = (Coordinate) ois.readObject();
 
+							// to expensive work
+                            Thread.sleep(1);
+
 							oos = new ObjectOutputStream(new BufferedOutputStream(finalClientSocket.getOutputStream()));
 							oos.writeObject(coordinate);
 							oos.flush();
-						} catch (IOException | ClassNotFoundException e) {
+						} catch (IOException | ClassNotFoundException | InterruptedException e) {
 							System.err.println("[Server] Connection to Client was dropped " + e.getMessage());
 							break;
 						}

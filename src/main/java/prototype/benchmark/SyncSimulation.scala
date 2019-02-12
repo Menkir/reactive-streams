@@ -15,7 +15,18 @@ class SyncSimulation() extends Simulation {
   var server: Server = _
   val logger: Logger = Logger[SyncSimulation]
   val host = new InetSocketAddress("localhost", 1338)
-  val list  = List.tabulate(8)(n => Random.nextInt(5000)+2000)
+  val list  = List(
+    1000,
+    2000,
+    4000,
+    8000,
+    16000,
+    32000,
+    64000,
+    128000,
+    256000,
+    512000
+  )
   val context = ExecutionContext.fromExecutor(Executors.newFixedThreadPool(8))
 
   def startServer(): Unit={
