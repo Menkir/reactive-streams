@@ -91,13 +91,16 @@ public class Car implements ICar {
      */
 	private void sendData(Coordinate coordinate){
 		try {
+		    Thread.sleep(carConfiguration.DELAY.toMillis());
 			// send
 			ObjectOutputStream oos = new ObjectOutputStream(new BufferedOutputStream(clientSocket.getOutputStream()));
 			oos.writeObject(coordinate);
 			oos.flush();
+
 			// receive
 			ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(clientSocket.getInputStream()));
 			Coordinate c = (Coordinate) ois.readObject();
+
 			// increment flowrate for analysis
              ++flowrate;
             Thread.sleep(carConfiguration.DELAY.toMillis());

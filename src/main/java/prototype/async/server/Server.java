@@ -39,7 +39,7 @@ public class Server implements IServer {
 	}
 
 	public static void main(final String... args){
-	    Server server = new Server(new InetSocketAddress("141.37.202.55", 1337));
+	    Server server = new Server(new InetSocketAddress("192.168.0.199", 1337));
 	    server.receive();
 	    Scanner sc = new Scanner(System.in);
 	    while(sc.hasNext()){

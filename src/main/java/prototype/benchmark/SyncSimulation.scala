@@ -1,22 +1,25 @@
 package prototype.benchmark
 import java.lang.Thread._
 import java.net.InetSocketAddress
+import java.time.Duration
 import java.util.Scanner
 import java.util.concurrent.{ExecutorService, Executors, ThreadPoolExecutor}
 
 import com.typesafe.scalalogging.Logger
+import prototype.async.client.CarConfiguration
+import prototype.routing.RoutingFactory
 import prototype.sync.client.Car
 import prototype.sync.server.Server
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.{ExecutionContext, Future}
-import scala.util.Random
 class SyncSimulation() extends Simulation {
   var server: Server = _
   val logger: Logger = Logger[SyncSimulation]
   val host = new InetSocketAddress("localhost", 1338)
   val list  = List(
-    1000,
+   2000
+    /* 1000,
     2000,
     4000,
     8000,
@@ -25,7 +28,7 @@ class SyncSimulation() extends Simulation {
     64000,
     128000,
     256000,
-    512000
+    512000*/
   )
   val context = ExecutionContext.fromExecutor(Executors.newFixedThreadPool(8))
 
@@ -80,7 +83,7 @@ class SyncSimulation() extends Simulation {
 
   override def benchmark(runtime: Int): Int ={
     logger.info("START BENCHMARK")
-    val car = new Car(host)
+    val car = new Car(host, new CarConfiguration(Duration.ZERO, RoutingFactory.RouteType.RECTANGLE))
 
     Future{
       car connect()

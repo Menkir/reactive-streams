@@ -42,8 +42,8 @@ public class Server extends Observable implements IServer  {
 							ois = new ObjectInputStream(new BufferedInputStream(finalClientSocket.getInputStream()));
 							Coordinate coordinate = (Coordinate) ois.readObject();
 
-							// to expensive work
-                            Thread.sleep(1);
+							// do expensive work
+                            Thread.sleep(10);
 
 							oos = new ObjectOutputStream(new BufferedOutputStream(finalClientSocket.getOutputStream()));
 							oos.writeObject(coordinate);

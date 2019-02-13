@@ -1,15 +1,15 @@
 package prototype.benchmark
 import java.net.InetSocketAddress
+import java.time.Duration
 import java.util.Scanner
 import java.util.concurrent.Executors
-
 import com.typesafe.scalalogging.Logger
-import prototype.async.client.Car
+import prototype.async.client.{Car, CarConfiguration}
 import prototype.async.server.Server
-
+import prototype.routing.RoutingFactory
 import scala.concurrent.{ExecutionContext, ExecutionContextExecutor, Future}
-import scala.util.Random
 import scala.concurrent.ExecutionContext.Implicits.global
+
 class AsyncSimulation extends Simulation{
   val logger: Logger = Logger[AsyncSimulation]
   val host = new InetSocketAddress("192.168.0.199", 1337)
@@ -74,7 +74,7 @@ class AsyncSimulation extends Simulation{
 
   def benchmark(runtime: Int): Int ={
     logger.info("START BENCHMARK")
-    val car = new Car(host)
+    val car = new Car(host,  new CarConfiguration(Duration.ZERO, RoutingFactory.RouteType.RECTANGLE))
     car connect()
     car requestChannel()
     val disposable = car subscribeOnServerEndpoint()
