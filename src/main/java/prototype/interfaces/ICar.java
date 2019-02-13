@@ -1,5 +1,11 @@
 package prototype.interfaces;
 
 public interface ICar {
-	public void connect();
+    int flowRate = 0;
+	void connect();
+	void send();
+	void close();
+	default int getFlowRate(){
+	    return flowRate;
+    }
 }

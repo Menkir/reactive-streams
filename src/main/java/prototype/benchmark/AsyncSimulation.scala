@@ -1,122 +1,69 @@
 package prototype.benchmark
 import java.net.InetSocketAddress
-import java.time.Duration
-import java.util.Scanner
 import java.util.concurrent.Executors
+
 import com.typesafe.scalalogging.Logger
 import prototype.async.client.{Car, CarConfiguration}
-import prototype.async.server.Server
-import prototype.routing.RoutingFactory
+import prototype.interfaces.{ICar, IServer}
+
 import scala.concurrent.{ExecutionContext, ExecutionContextExecutor, Future}
 import scala.concurrent.ExecutionContext.Implicits.global
 
 class AsyncSimulation extends Simulation{
   val logger: Logger = Logger[AsyncSimulation]
-  val host = new InetSocketAddress("192.168.0.199", 1337)
-  var server: Server = _
-  val list: List[Int] = List(
-    1000,
-    2000,
-    4000,
-    8000,
-    16000,
-    32000,
-    64000,
-    128000,
-    256000,
-    512000
-  )
-  val executors: ExecutionContextExecutor = ExecutionContext.fromExecutor(Executors.newFixedThreadPool(8))
+  val hostInfo = new InetSocketAddress("127.0.0.1", 1337)
+  var server: IServer = _
+  var carClass: ICar = _
+  val executors: ExecutionContextExecutor = ExecutionContext.fromExecutor(Executors newFixedThreadPool 8)
+
 
   def startServer(): Unit={
     logger.info("START SERVER")
-    server = new Server(host)
     server receive()
   }
-  
-  def run(local: Boolean, singleThreaded: Boolean): Unit = {
-    if(local && singleThreaded){
-      logger.info("START LOCAL SINGLE THREAD BENCHMARK")
-      startServer()
-      warmup()
-      val result = list.map(runtime => (runtime, benchmark(runtime)))
-      server.dispose()
-      printResult(result)
-      saveResult(classOf[AsyncSimulation].getCanonicalName + ".local.single.txt", result)
-    } else if(!local && singleThreaded){
-      logger.info("START REMOTE SINGLE THREAD BENCHMARK")
-      warmup()
-      val result = list.map(runtime => (runtime, benchmark(runtime)))
-      printResult(result)
-      saveResult(classOf[AsyncSimulation].getCanonicalName + ".remote.single.txt", result)
-    } else if(local && !singleThreaded){
-      logger.info("START LOCAL MULTI THREAD BENCHMARK")
-      startServer()
-      warmup()
-      Future.sequence(list.map(runtime => Future((runtime, benchmark(runtime)))(executors))).onComplete(
+
+  def run(config: CarConfiguration = new CarConfiguration()): Unit = {
+      logger info "START TEST"
+      warmUp()
+      Future sequence(durationList map(duration => Future((duration, benchmark(duration, config)))(executors))) onComplete(
         result => {
-          printResult(result.get)
-          saveResult(classOf[AsyncSimulation].getCanonicalName + ".local.multi.txt", result.get)
-          server dispose()
+          printResult(result get)
+          saveResult("ReactiveBenchmarkResult.txt", result get)
+          logger info "END TEST"
         }
       )
-    } else if(!local && !singleThreaded){
-      logger.info("START REMOTE MULTI THREAD BENCHMARK")
-      warmup()
-      Future.sequence(list.map(runtime => Future((runtime, benchmark(runtime)))(executors))).onComplete(
-        result => {
-          printResult(result.get)
-          saveResult(classOf[AsyncSimulation].getCanonicalName + ".remote.multi.txt", result.get)
-        }
-      )
-    }
   }
 
-  def benchmark(runtime: Int): Int ={
+  def benchmark(runtime: Int, config: CarConfiguration): Int ={
     logger.info("START BENCHMARK")
-    val car = new Car(host,  new CarConfiguration(Duration.ZERO, RoutingFactory.RouteType.RECTANGLE))
+    val car = new Car(hostInfo)
     car connect()
-    car requestChannel()
-    val disposable = car subscribeOnServerEndpoint()
+    car send()
     Thread sleep runtime
-    logger info("Throughput: {} processed requests", car getFlowrate)
+    logger info("Throughput: {} processed requests", car getFlowRate)
     logger info "END BENCHMARK"
-    disposable dispose()
-    car shutDown()
-    car getFlowrate
+    car close()
+    car getFlowRate
   }
 
-  def warmup(): Unit={
+  def warmUp(): Unit={
     logger.info("WARMUP")
     val iterations = 1500
-    val car = new Car(host)
+    val car = new Car(hostInfo)
     car connect()
-    car requestChannel()
-    val disposable = car subscribeOnServerEndpoint()
-    while(car.getFlowrate < iterations){
-      Thread.sleep(1)
+    car send()
+    while(car.getFlowRate < iterations){
+      Thread sleep 1
     }
-    disposable.dispose()
-    car.shutDown()
+    car close()
   }
 }
 
 object AsyncSimulation{
+  // Be sure you running this benchmark on -client JVM Argument otherwise no optimazation is guaranteed
   def main(args: Array[String]): Unit = {
-    var local = true //default
-    var singleThreaded = true //default
+    val simulation = new AsyncSimulation()
+    simulation.run()
 
-    args.foreach {
-      case "remote" => local = false
-      case "multi" => singleThreaded = false
-    }
-    val simulation = new AsyncSimulation
-    simulation run(local, singleThreaded)
-
-    val scanner = new Scanner(System.in)
-    while(scanner.hasNext()){
-
-    }
-    sys.exit(0)
   }
 }

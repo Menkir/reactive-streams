@@ -24,7 +24,7 @@ public class Monitor extends JFrame implements Observer {
 		this.setPreferredSize(new Dimension(750,460));
 		this.setLayout(null);
 		this.server = server;
-		this.server.addObserver(this);
+		//this.server.addObserver(this);
 
 		// SCROLLPANE
 		//JScrollPane scrollPane = new JScrollPane(clientList);

@@ -3,5 +3,6 @@ package prototype.interfaces;
 import java.io.IOException;
 
 public interface IServer {
-	public void receive() throws IOException;
+	void receive() throws IOException;
+	void close();
 }

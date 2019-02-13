@@ -84,11 +84,6 @@ public class Monitor extends JFrame{
         }
     }
 
-    public Disposable listeningOnIncomingCars(){
-        return server.getChannels()
-                .subscribe(channel -> listmodel.addElement(new SimpleEntry<>(listmodel.getSize()+1, channel)));
-    }
-
     public Subscription listeningOnIncomingCoordinates(){
         return ListSelectionEventSource.fromListSelectionEventsOf(clientList.getSelectionModel())
                 .filter(ListSelectionEvent::getValueIsAdjusting)

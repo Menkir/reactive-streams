@@ -8,7 +8,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class Server extends Observable implements IServer  {
+public class Server implements IServer {
 	private final InetSocketAddress socketAddress;
 	private ServerSocket serverSocket;
     private ExecutorService executorService = Executors.newFixedThreadPool(8);
@@ -43,7 +43,7 @@ public class Server extends Observable implements IServer  {
 							Coordinate coordinate = (Coordinate) ois.readObject();
 
 							// do expensive work
-                            Thread.sleep(10);
+							Thread.sleep(10);
 
 							oos = new ObjectOutputStream(new BufferedOutputStream(finalClientSocket.getOutputStream()));
 							oos.writeObject(coordinate);
@@ -61,14 +61,18 @@ public class Server extends Observable implements IServer  {
 
 	}
 
-	public void close() throws IOException {
-		serverSocket.close();
+	public void close() {
+		try {
+			serverSocket.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public static void main(final String... args){
 	    Scanner sc = new Scanner(System.in);
 		try {
-			new Server(new InetSocketAddress("141.37.202.55", 1338)).receive();
+			new Server(new InetSocketAddress("192.168.0.199", 1337)).receive();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

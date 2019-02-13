@@ -2,7 +2,12 @@ package prototype.benchmark
 
 import java.io.{File, PrintWriter}
 
+import prototype.async.client.CarConfiguration
+
+
 trait Simulation {
+  val durationList: List[Int] = List range(0,10) map(n => Math.pow(2, n toDouble).toInt * 1000)
+
   def getResult(result: List[Tuple2[Int, Int]]): String={
     val sb = new StringBuilder
     val tab = "\t"
@@ -12,16 +17,16 @@ trait Simulation {
     sb.toString()
   }
 
-  def printResult(result: List[Tuple2[Int, Int]]): Unit={
+  def printResult(result: List[(Int, Int)]): Unit={
     println(getResult(result))
   }
 
-  def saveResult(fileName: String, result: List[Tuple2[Int, Int]]): Unit ={
+  def saveResult(fileName: String, result: List[(Int, Int)]): Unit ={
     val writer = new PrintWriter(new File(fileName))
     writer.write(getResult(result))
     writer.close()
   }
 
-  def warmup(): Unit
-  def benchmark(runtime: Int): Int
+  def benchmark(runtime: Int, config: CarConfiguration): Int
 }
+

@@ -9,13 +9,11 @@ import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
 
 public class Car implements ICar {
 	private final InetSocketAddress socketAddress;
 	private Socket clientSocket;
 	private CarConfiguration carConfiguration;
-    private final int MAXELEMENTS = 100_000_000;
     private RoutingFactory routingFactory = new RoutingFactory();
     private List<Coordinate> route;
     private int flowrate;
@@ -51,10 +49,14 @@ public class Car implements ICar {
         return flowrate;
     }
 
-	public void close() throws IOException {
+	public void close() {
 		if(clientSocket != null){
 		    done = true;
-            clientSocket.close();
+            try {
+                clientSocket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 	}
 
@@ -63,9 +65,11 @@ public class Car implements ICar {
      */
 	public void send() {
         int deliveredElements = 0;
+        int MAXELEMENTS = 100_000_000;
         do{
             for (Coordinate coordinate : route) {
                 sendData(coordinate);
+                delay();
                 deliveredElements ++;
             }
         }while(deliveredElements < MAXELEMENTS && !done);
@@ -73,7 +77,7 @@ public class Car implements ICar {
 
     /**
      *
-     * @param elements number of coordinates which been sended
+     * @param elements number of coordinates which has been sended
      */
 	public void send(int elements){
         int deliveredElements = 0;
@@ -91,7 +95,6 @@ public class Car implements ICar {
      */
 	private void sendData(Coordinate coordinate){
 		try {
-		    Thread.sleep(carConfiguration.DELAY.toMillis());
 			// send
 			ObjectOutputStream oos = new ObjectOutputStream(new BufferedOutputStream(clientSocket.getOutputStream()));
 			oos.writeObject(coordinate);
@@ -103,9 +106,15 @@ public class Car implements ICar {
 
 			// increment flowrate for analysis
              ++flowrate;
-            Thread.sleep(carConfiguration.DELAY.toMillis());
+		} catch (IOException | ClassNotFoundException ignore) {
+        }
+    }
 
-		} catch (InterruptedException | IOException | ClassNotFoundException ignore) {
+    private void delay(){
+        try {
+            Thread.sleep(carConfiguration.DELAY.toMillis());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }
