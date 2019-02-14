@@ -40,20 +40,32 @@ public class Car implements ICar {
 				.block();
 	}
 
-    @Override
+	public int getFlowrate() {
+		return flowrate;
+	}
+
+	@Override
     public void send() {
         serverEndpoint = client.requestChannel(
                 Flux.fromIterable(routingFactory.getRoutingType(carConfiguration.ROUTETYPE).getRouteAsList())
-                        .repeat(100_000) // emit 400_000 Coordinates
+                        .repeat(100_000)
                         .delayElements(carConfiguration.DELAY)
                         .doOnNext(coordinate -> coordinate.setSignalPower(((int) (Math.random() * 10))))
                         .map(coordinate -> DefaultPayload.create(Serializer.serialize(coordinate)))
-                        .publish().autoConnect(0)
                         .share()
         ).subscribe(payload -> ++flowrate);
     }
 
-    @Override
+	@Override
+	public void send(int numberOfData) {
+		try {
+			throw new Exception("not implemented");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
     public void close() {
         serverEndpoint.dispose();
     }

@@ -16,7 +16,7 @@ public class Car implements ICar {
 	private CarConfiguration carConfiguration;
     private RoutingFactory routingFactory = new RoutingFactory();
     private List<Coordinate> route;
-    private int flowrate;
+    private int flowrate = 0;
     private boolean done = false;
 
 
@@ -24,14 +24,12 @@ public class Car implements ICar {
 		this.socketAddress = socketAddress;
 		carConfiguration = new CarConfiguration();
         this.route = routingFactory.getRoutingType(carConfiguration.ROUTETYPE).getRouteAsList();
-        this.flowrate = 0;
 	}
 
     public Car(InetSocketAddress socketAddress, CarConfiguration configuration) {
         this.socketAddress = socketAddress;
         this.carConfiguration = configuration;
         this.route = routingFactory.getRoutingType(carConfiguration.ROUTETYPE).getRouteAsList();
-	    this.flowrate = 0;
 	}
 
 	@Override

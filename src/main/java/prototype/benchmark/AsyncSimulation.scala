@@ -4,24 +4,14 @@ import java.util.concurrent.Executors
 
 import com.typesafe.scalalogging.Logger
 import prototype.async.client.{Car, CarConfiguration}
-import prototype.interfaces.{ICar, IServer}
 
-import scala.concurrent.{ExecutionContext, ExecutionContextExecutor, Future}
 import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.{ExecutionContext, ExecutionContextExecutor, Future}
 
-class AsyncSimulation extends Simulation{
+class AsyncSimulation(hostInfo: InetSocketAddress = new InetSocketAddress("127.0.0.1", 1337)) extends Simulation{
   val logger: Logger = Logger[AsyncSimulation]
-  val hostInfo = new InetSocketAddress("127.0.0.1", 1337)
-  var server: IServer = _
-  var carClass: ICar = _
   val executors: ExecutionContextExecutor = ExecutionContext.fromExecutor(Executors newFixedThreadPool 8)
-
-
-  def startServer(): Unit={
-    logger.info("START SERVER")
-    server receive()
-  }
-
+  val durationList: List[Int] = List range(0,10) map(n => Math.pow(2, n toDouble).toInt * 1000)
   def run(config: CarConfiguration = new CarConfiguration()): Unit = {
       logger info "START TEST"
       warmUp()
@@ -40,10 +30,10 @@ class AsyncSimulation extends Simulation{
     car connect()
     car send()
     Thread sleep runtime
-    logger info("Throughput: {} processed requests", car getFlowRate)
+    logger info("Throughput: {} processed requests", car getFlowrate)
     logger info "END BENCHMARK"
     car close()
-    car getFlowRate
+    car getFlowrate
   }
 
   def warmUp(): Unit={
@@ -52,7 +42,7 @@ class AsyncSimulation extends Simulation{
     val car = new Car(hostInfo)
     car connect()
     car send()
-    while(car.getFlowRate < iterations){
+    while(car.getFlowrate < iterations){
       Thread sleep 1
     }
     car close()
@@ -64,6 +54,5 @@ object AsyncSimulation{
   def main(args: Array[String]): Unit = {
     val simulation = new AsyncSimulation()
     simulation.run()
-
   }
 }

@@ -6,9 +6,7 @@ import prototype.async.client.CarConfiguration
 
 
 trait Simulation {
-  val durationList: List[Int] = List range(0,10) map(n => Math.pow(2, n toDouble).toInt * 1000)
-
-  def getResult(result: List[Tuple2[Int, Int]]): String={
+  def getResult(result: List[(Int, Int)]): String={
     val sb = new StringBuilder
     val tab = "\t"
     sb.append("Test time%sThroughput %s Throughput/s \n".format(tab, tab))
@@ -28,5 +26,7 @@ trait Simulation {
   }
 
   def benchmark(runtime: Int, config: CarConfiguration): Int
+  def warmUp(): Unit
+  def run(config: CarConfiguration = new CarConfiguration()): Unit
 }
 

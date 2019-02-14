@@ -41,10 +41,8 @@ public class Server implements IServer {
 							assert finalClientSocket != null;
 							ois = new ObjectInputStream(new BufferedInputStream(finalClientSocket.getInputStream()));
 							Coordinate coordinate = (Coordinate) ois.readObject();
-
 							// do expensive work
 							Thread.sleep(10);
-
 							oos = new ObjectOutputStream(new BufferedOutputStream(finalClientSocket.getOutputStream()));
 							oos.writeObject(coordinate);
 							oos.flush();
@@ -72,7 +70,7 @@ public class Server implements IServer {
 	public static void main(final String... args){
 	    Scanner sc = new Scanner(System.in);
 		try {
-			new Server(new InetSocketAddress("192.168.0.199", 1337)).receive();
+			new Server(new InetSocketAddress("127.0.0.1", 1337)).receive();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
