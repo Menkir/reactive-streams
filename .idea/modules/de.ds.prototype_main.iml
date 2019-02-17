@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="de.ds.prototype:main" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="prototype" external.system.module.type="sourceSet" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output url="file://$MODULE_DIR$/../../out/production/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../src/main/java" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Gradle: io.rsocket:rsocket-transport-netty:0.11.14" level="project" />
+    <orderEntry type="library" name="Gradle: io.projectreactor.netty:reactor-netty:0.8.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: io.rsocket:rsocket-core:0.11.14" level="project" />
+    <orderEntry type="library" name="Gradle: io.projectreactor:reactor-core:3.2.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: io.reactivex:rxswing:0.27.0" level="project" />
+    <orderEntry type="library" name="Gradle: io.reactivex.rxjava2:rxjava:2.2.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.inject:guice:4.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.jmeter:ApacheJMeter_java:2.7" level="project" />
+    <orderEntry type="library" name="Gradle: com.typesafe.scala-logging:scala-logging_2.12:3.9.2" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-codec-http2:4.1.32.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-handler-proxy:4.1.32.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-codec-http:4.1.32.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-handler:4.1.32.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-transport-native-epoll:linux-x86_64:4.1.32.Final" level="project" />
+    <orderEntry type="library" name="Gradle: org.reactivestreams:reactive-streams:1.0.2" level="project" />
+    <orderEntry type="library" name="Gradle: io.reactivex:rxjava:1.1.8" level="project" />
+    <orderEntry type="library" name="Gradle: javax.inject:javax.inject:1" level="project" />
+    <orderEntry type="library" name="Gradle: aopalliance:aopalliance:1.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.guava:guava:16.0.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.jmeter:ApacheJMeter_components:2.7" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.jmeter:ApacheJMeter_core:2.7" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.jmeter:jorphan:2.7" level="project" />
+    <orderEntry type="library" name="Gradle: bsf:bsf:2.4.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.bsf:bsf-api:3.1" level="project" />
+    <orderEntry type="library" name="Gradle: avalon-framework:avalon-framework:4.1.4" level="project" />
+    <orderEntry type="library" name="Gradle: org.beanshell:bsh:2.0b5" level="project" />
+    <orderEntry type="library" name="Gradle: org.bouncycastle:bcmail-jdk15:1.45" level="project" />
+    <orderEntry type="library" name="Gradle: org.bouncycastle:bcprov-jdk15:1.45" level="project" />
+    <orderEntry type="library" name="Gradle: commons-httpclient:commons-httpclient:3.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpclient:4.1.3" level="project" />
+    <orderEntry type="library" name="Gradle: commons-codec:commons-codec:1.6" level="project" />
+    <orderEntry type="library" name="Gradle: commons-collections:commons-collections:3.2.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.xmlgraphics:xmlgraphics-commons:1.3.1" level="project" />
+    <orderEntry type="library" name="Gradle: commons-io:commons-io:2.2" level="project" />
+    <orderEntry type="library" name="Gradle: commons-jexl:commons-jexl:1.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.commons:commons-jexl:2.1.1" level="project" />
+    <orderEntry type="library" name="Gradle: commons-lang:commons-lang:2.6" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpmime:4.1.3" level="project" />
+    <orderEntry type="library" name="Gradle: commons-logging:commons-logging:1.1.1" level="project" />
+    <orderEntry type="library" name="Gradle: commons-net:commons-net:3.0.1" level="project" />
+    <orderEntry type="library" name="Gradle: excalibur-datasource:excalibur-datasource:1.1.1" level="project" />
+    <orderEntry type="library" name="Gradle: excalibur-instrument:excalibur-instrument:1.0" level="project" />
+    <orderEntry type="library" name="Gradle: excalibur-logger:excalibur-logger:1.1" level="project" />
+    <orderEntry type="library" name="Gradle: excalibur-pool:excalibur-pool:1.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.htmlparser:htmlparser:2.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.htmlparser:htmllexer:2.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpcore:4.1.4" level="project" />
+    <orderEntry type="library" name="Gradle: oro:oro:2.0.8" level="project" />
+    <orderEntry type="library" name="Gradle: jcharts:jcharts:0.7.5" level="project" />
+    <orderEntry type="library" name="Gradle: org.jdom:jdom:1.1.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.mozilla:rhino:1.7R3" level="project" />
+    <orderEntry type="library" name="Gradle: junit:junit:4.10" level="project" />
+    <orderEntry type="library" name="Gradle: logkit:logkit:2.0" level="project" />
+    <orderEntry type="library" name="Gradle: soap:soap:2.3.1" level="project" />
+    <orderEntry type="library" name="Gradle: net.sf.jtidy:jtidy:r938" level="project" />
+    <orderEntry type="library" name="Gradle: com.thoughtworks.xstream:xstream:1.4.2" level="project" />
+    <orderEntry type="library" name="Gradle: xmlpull:xmlpull:1.1.3.1" level="project" />
+    <orderEntry type="library" name="Gradle: xpp3:xpp3_min:1.1.4c" level="project" />
+    <orderEntry type="library" name="Gradle: xalan:xalan:2.7.1" level="project" />
+    <orderEntry type="library" name="Gradle: xalan:serializer:2.7.1" level="project" />
+    <orderEntry type="library" name="Gradle: xerces:xercesImpl:2.9.1" level="project" />
+    <orderEntry type="library" name="Gradle: xml-apis:xml-apis:1.3.04" level="project" />
+    <orderEntry type="library" name="Gradle: javax.mail:mail:1.4.4" level="project" />
+    <orderEntry type="library" name="Gradle: javax.activation:activation:1.1.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.geronimo.specs:geronimo-jms_1.1_spec:1.1.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.scala-lang:scala-reflect:2.12.7" level="project" />
+    <orderEntry type="library" name="Gradle: org.scala-lang:scala-library:2.12.7" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.25" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-codec-socks:4.1.32.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-codec:4.1.32.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-transport-native-unix-common:4.1.32.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-transport:4.1.32.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-buffer:4.1.32.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-resolver:4.1.32.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-common:4.1.32.Final" level="project" />
+    <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.1" level="project" />
+    <orderEntry type="library" name="scala-sdk-2.12.8 (3)" level="application" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../libs/slf4j-simple-1.7.25.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="scala-sdk-2.12.4" level="application" />
+  </component>
+</module>
