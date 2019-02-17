@@ -104,7 +104,8 @@ public class Car implements ICar {
 
 			// increment flowrate for analysis
              ++flowrate;
-		} catch (IOException | ClassNotFoundException ignore) {
+		} catch (IOException | ClassNotFoundException e) {
+		    e.printStackTrace();
         }
     }
 

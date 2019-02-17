@@ -1,6 +1,7 @@
 package prototype.benchmark
 import java.lang.Thread._
 import java.net.InetSocketAddress
+import java.time.Duration
 import java.util.concurrent.Executors
 
 import com.typesafe.scalalogging.Logger
@@ -53,7 +54,7 @@ class SyncSimulation(hostInfo: InetSocketAddress = new InetSocketAddress("127.0.
 
 object SyncSimulation{
   def main(args: Array[String]): Unit = {
-    val simulation = new SyncSimulation
+    val simulation = new SyncSimulation()
     simulation.run()
 
   }
