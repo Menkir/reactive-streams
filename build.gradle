@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'com.github.johnrengelman.shadow' version '4.0.4'
 }
 
 group 'prototype'
@@ -20,15 +19,7 @@ dependencies {
     implementation 'io.rsocket:rsocket-core:0.11.14'
     implementation 'io.rsocket:rsocket-transport-netty:0.11.14'
     compile 'io.reactivex:rxswing:0.27.0'
-    compile 'io.reactivex.rxjava2:rxjava:2.2.0'
-    compile group: 'com.google.inject', name: 'guice', version: '4.0'
-    compile group: 'org.apache.jmeter', name: 'ApacheJMeter_java', version: '2.7'
     compile group: 'com.typesafe.scala-logging', name: 'scala-logging_2.12', version: '3.9.2'
-
+    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
 }
 
-shadowJar {
-    baseName = 'shadow'
-    classifier = null
-    version = null
-}

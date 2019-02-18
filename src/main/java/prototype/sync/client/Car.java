@@ -59,7 +59,7 @@ public class Car implements ICar {
 	}
 
     /**
-     * Send MAXELEMENTS Coordinates to Server
+     * Send MAXELEMENTS Coordinates to CarServer
      */
 	public void send() {
         int deliveredElements = 0;
@@ -88,7 +88,7 @@ public class Car implements ICar {
     }
 
     /**
-     * Send Coordinate via Outputstream to Server
+     * Send Coordinate via Outputstream to CarServer
      * @param coordinate which is sended
      */
 	private void sendData(Coordinate coordinate){

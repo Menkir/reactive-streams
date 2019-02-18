@@ -8,12 +8,12 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class Server implements IServer {
+public class CarServer implements IServer {
 	private final InetSocketAddress socketAddress;
 	private ServerSocket serverSocket;
     private ExecutorService executorService = Executors.newFixedThreadPool(8);
 
-	private Server(InetSocketAddress socketAddress){
+	private CarServer(InetSocketAddress socketAddress){
 		this.socketAddress = socketAddress;
 	}
 
@@ -69,14 +69,14 @@ public class Server implements IServer {
 
 	public static void main(final String... args) throws IOException {
 		Scanner sc = new Scanner(System.in);
-		Server server = new Server(new InetSocketAddress("127.0.0.1", 1337));
-		server.receive();
+		CarServer carServer = new CarServer(new InetSocketAddress("127.0.0.1", 1337));
+		carServer.receive();
 
 		System.out.println("Type 'close' to terminate the CarServer:");
 		while(true){
 			String input = sc.nextLine();
 			switch(input){
-				case "close": server.close();
+				case "close": carServer.close();
 					return;
 				default:
 					System.err.println("Try again...");

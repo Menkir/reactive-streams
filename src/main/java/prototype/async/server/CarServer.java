@@ -14,11 +14,11 @@ import java.net.InetSocketAddress;
 import java.time.Duration;
 import java.util.Scanner;
 
-public class Server implements IServer {
+public class CarServer implements IServer {
 	private InetSocketAddress socketAddress;
 	private Disposable channel;
 
-	private Server(InetSocketAddress socketAddress){
+	private CarServer(InetSocketAddress socketAddress){
 		this.socketAddress = socketAddress;
 	}
 
@@ -45,14 +45,14 @@ public class Server implements IServer {
 
 	public static void main(final String... args){
 		Scanner sc = new Scanner(System.in);
-		Server server = new Server(new InetSocketAddress("127.0.0.1", 1337));
-	    server.receive();
+		CarServer carServer = new CarServer(new InetSocketAddress("127.0.0.1", 1337));
+	    carServer.receive();
 
-		System.out.println("Type 'close' to terminate the Server:");
+		System.out.println("Type 'close' to terminate the CarServer:");
 		while(true){
 			String input = sc.nextLine();
 			switch(input){
-				case "close": server.close();
+				case "close": carServer.close();
 					return;
 				default:
 					System.err.println("Try again...");
