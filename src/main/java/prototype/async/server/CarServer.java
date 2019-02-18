@@ -18,7 +18,7 @@ public class Server implements IServer {
 	private InetSocketAddress socketAddress;
 	private Disposable channel;
 
-	public Server(InetSocketAddress socketAddress){
+	private Server(InetSocketAddress socketAddress){
 		this.socketAddress = socketAddress;
 	}
 
@@ -44,12 +44,20 @@ public class Server implements IServer {
 	}
 
 	public static void main(final String... args){
-	    Server server = new Server(new InetSocketAddress("127.0.0.1", 1337));
+		Scanner sc = new Scanner(System.in);
+		Server server = new Server(new InetSocketAddress("127.0.0.1", 1337));
 	    server.receive();
-	    Scanner sc = new Scanner(System.in);
-	    while(sc.hasNext()){
 
-        }
+		System.out.println("Type 'close' to terminate the Server:");
+		while(true){
+			String input = sc.nextLine();
+			switch(input){
+				case "close": server.close();
+					return;
+				default:
+					System.err.println("Try again...");
+			}
+		}
 
     }
 }

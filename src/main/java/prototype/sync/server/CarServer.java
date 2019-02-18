@@ -12,9 +12,8 @@ public class Server implements IServer {
 	private final InetSocketAddress socketAddress;
 	private ServerSocket serverSocket;
     private ExecutorService executorService = Executors.newFixedThreadPool(8);
-    private static ArrayList<Long> clientServedTimes = new ArrayList<>();
 
-	public Server(InetSocketAddress socketAddress){
+	private Server(InetSocketAddress socketAddress){
 		this.socketAddress = socketAddress;
 	}
 
@@ -28,7 +27,7 @@ public class Server implements IServer {
 				try {
 					clientSocket = serverSocket.accept();
 				} catch (IOException e) {
-					System.err.println("[Server] stopped" + e.getMessage());
+					System.err.println("[CarServer] " + e.getMessage());
 					return;
 				}
 
@@ -47,7 +46,7 @@ public class Server implements IServer {
 							oos.writeObject(coordinate);
 							oos.flush();
 						} catch (IOException | ClassNotFoundException | InterruptedException e) {
-							System.err.println("[Server] Connection to Client was dropped " + e.getMessage());
+							System.err.println("[CarServer] Connection to Client was dropped " + e.getMessage());
 							break;
 						}
 
@@ -65,18 +64,23 @@ public class Server implements IServer {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		executorService.shutdown();
 	}
 
-	public static void main(final String... args){
-	    Scanner sc = new Scanner(System.in);
-		try {
-			new Server(new InetSocketAddress("127.0.0.1", 1337)).receive();
-		} catch (IOException e) {
-			e.printStackTrace();
+	public static void main(final String... args) throws IOException {
+		Scanner sc = new Scanner(System.in);
+		Server server = new Server(new InetSocketAddress("127.0.0.1", 1337));
+		server.receive();
+
+		System.out.println("Type 'close' to terminate the CarServer:");
+		while(true){
+			String input = sc.nextLine();
+			switch(input){
+				case "close": server.close();
+					return;
+				default:
+					System.err.println("Try again...");
+			}
 		}
-
-		while(sc.hasNext()){
-
-        }
 	}
 }
