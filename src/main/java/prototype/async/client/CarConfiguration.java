@@ -20,6 +20,8 @@ public class CarConfiguration {
 
 	/**
 	 * Initialize DELAY and ROUTETYPE with custom values.
+	 * @param DELAY Object of Duration.
+	 * @param ROUTETYPE Contains the Enum RoutType.
 	 */
 	public CarConfiguration(Duration DELAY, RouteType ROUTETYPE){
 		this.DELAY = DELAY;

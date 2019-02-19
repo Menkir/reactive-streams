@@ -1,6 +1,5 @@
 package prototype.sync.server;
-import prototype.interfaces.IServer;
-import prototype.model.Coordinate;
+import prototype.model.Measurement;
 import java.io.*;
 import java.net.*;
 import java.util.*;
@@ -8,16 +7,25 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class CarServer implements IServer {
+public class CarServer {
 	private final InetSocketAddress socketAddress;
 	private ServerSocket serverSocket;
     private ExecutorService executorService = Executors.newFixedThreadPool(8);
 
+	/**
+	 * Inintialize Host Information like IP and Port.
+	 * @param socketAddress Contains Information about IP and Port.
+	 */
 	private CarServer(InetSocketAddress socketAddress){
 		this.socketAddress = socketAddress;
 	}
 
-	@Override
+	/**
+	 * This (asynchronous) Method handles incoming Connections and incoming Measurements from Car Instances.
+	 * Each Car Socket is swapped to a Thread (Future) where incoming Measurements are handled in a blocking, synchronous manner.
+	 *
+	 * @throws IOException Occur when accepting incoming Connection fail.
+	 */
 	public void receive() throws IOException {
 		this.serverSocket = new ServerSocket();
 		serverSocket.bind(socketAddress);
@@ -39,11 +47,11 @@ public class CarServer implements IServer {
 						try {
 							assert finalClientSocket != null;
 							ois = new ObjectInputStream(new BufferedInputStream(finalClientSocket.getInputStream()));
-							Coordinate coordinate = (Coordinate) ois.readObject();
+							Measurement measurement = (Measurement) ois.readObject();
 							// do expensive work
 							Thread.sleep(10);
 							oos = new ObjectOutputStream(new BufferedOutputStream(finalClientSocket.getOutputStream()));
-							oos.writeObject(coordinate);
+							oos.writeObject(measurement);
 							oos.flush();
 						} catch (IOException | ClassNotFoundException | InterruptedException e) {
 							System.err.println("[CarServer] Connection to Client was dropped " + e.getMessage());
@@ -58,6 +66,9 @@ public class CarServer implements IServer {
 
 	}
 
+	/**
+	 * Close the Server Socket and shutdown the Executor Threads.
+	 */
 	public void close() {
 		try {
 			serverSocket.close();

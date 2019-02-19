@@ -5,7 +5,6 @@ import io.rsocket.Payload;
 import io.rsocket.RSocketFactory;
 import io.rsocket.transport.netty.server.TcpServerTransport;
 import org.reactivestreams.Publisher;
-import prototype.interfaces.IServer;
 import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -14,15 +13,25 @@ import java.net.InetSocketAddress;
 import java.time.Duration;
 import java.util.Scanner;
 
-public class CarServer implements IServer {
+public class CarServer {
 	private InetSocketAddress socketAddress;
 	private Disposable channel;
 
+	/**
+	 * Inintialize Host Information like IP and Port.
+	 * @param socketAddress Contains Information about IP and Port.
+	 */
 	private CarServer(InetSocketAddress socketAddress){
 		this.socketAddress = socketAddress;
 	}
 
-	@Override
+	/**
+	 * Instantiate Server Socket in channel Variable. The receive Method returns a ServerRSocketFactory whcih is configured down below.
+	 * The acceptor takes a Lambda for a SocketAcceptor Class which returns an AbstractSocket Instance. The AbstractSocket Instance override's one of the four Interaction Models for RSocket: channel.
+	 * The requestChannel takes a Publisher, transforms it to a Flux, configure a delay for each Measurement and return it to the Caller respective Car Instance.
+	 * The transport Methode configures the Protocol TCP, because it is a more stable than UDP.
+	 * The start Method returns a Mono &lt;Disposable&gt; of a successful established hosted Server in a blocking manner because we only have one Server.
+	 */
 	public void receive() {
 		channel = RSocketFactory.receive()
 				.acceptor((setupPayload, reactiveSocket) ->
@@ -39,6 +48,9 @@ public class CarServer implements IServer {
 				.block();
 	}
 
+	/**
+	 * Dispose from incoming Connections.
+	 */
 	public void close(){
 		channel.dispose();
 	}

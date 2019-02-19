@@ -1,9 +1,7 @@
 package prototype.routing;
 
-import prototype.model.Coordinate;
-import reactor.core.publisher.BufferOverflowStrategy;
+import prototype.model.Measurement;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.FluxSink;
 
 import java.time.Duration;
 import java.util.List;
@@ -13,16 +11,16 @@ public interface IRoute {
      * Blocking Variant of getRoute()
      * @return List of Coordinates
      */
-	List<Coordinate> getRouteAsList();
+	List<Measurement> getRouteAsList();
 
     /**
-     * A infinite Stream of 0,0 Coordinates
+     * A infinite Stream of empty Measurements
      * For experimental purpose
-     * @return Flux with Coordinates
+     * @return Flux with Measurement
      */
-    default Flux<Coordinate> getRoute() {
+    default Flux<Measurement> getRoute() {
         return Flux.interval(Duration.ZERO)
 				.onBackpressureDrop()
-		        .map(n -> new Coordinate(0,0));
+		        .map(n -> new Measurement(0,0));
     }
 }

@@ -44,7 +44,7 @@ public class Car {
 
 	/**
 	 * This Method connect to the reactive Server.
-	 * The keep-alive is set to 30 Minutes in case the Connection stays longer.
+	 * The keep-alive is set to 30 Minutes in case the Connection stays longer (Benchmark).
 	 * The transport protocol is TCP, the connection safety is guaranteed.
 	 * Because each connection is only once, the return value of start(...) can be get in a blocking manner.
 	 */
@@ -76,8 +76,8 @@ public class Car {
                 Flux.fromIterable(routingFactory.getRoutingType(carConfiguration.ROUTETYPE).getRouteAsList())
                         .repeat(100_000)
                         .delayElements(carConfiguration.DELAY)
-                        .doOnNext(coordinate -> coordinate.setSignalPower(((int) (Math.random() * 10))))
-                        .map(coordinate -> DefaultPayload.create(Serializer.serialize(coordinate)))
+                        .doOnNext(measurements -> measurements.setSignalPower(((int) (Math.random() * 10))))
+                        .map(measurements -> DefaultPayload.create(Serializer.serialize(measurements)))
                         .share()
         ).subscribe(payload -> ++flowrate);
     }

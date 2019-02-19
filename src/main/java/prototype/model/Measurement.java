@@ -2,12 +2,12 @@ package prototype.model;
 
 import java.io.Serializable;
 
-public final class Coordinate implements Serializable {
+public final class Measurement implements Serializable {
     private int _1;
     private int _2;
     private int signalPower;
 
-    public Coordinate(int _1, int _2) {
+    public Measurement(int _1, int _2) {
         this._1 = _1;
         this._2 = _2;
         this.signalPower = 0;
@@ -39,7 +39,7 @@ public final class Coordinate implements Serializable {
     }
 
 
-    public boolean equals(Coordinate obj) {
+    public boolean equals(Measurement obj) {
         return obj._1 == this._1 && obj._2 == this._2;
     }
 
