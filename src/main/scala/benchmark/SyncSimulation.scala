@@ -1,3 +1,14 @@
+package benchmark
+
+import java.net.InetSocketAddress
+import java.util.concurrent.Executors
+import com.typesafe.scalalogging.Logger
+import prototype.async.client.CarConfiguration
+import prototype.sync.client.Car
+
+import scala.concurrent.{ExecutionContext, ExecutionContextExecutor, Future}
+import ExecutionContext.Implicits.global
+
 class SyncSimulation(hostInfo: InetSocketAddress = new InetSocketAddress("127.0.0.1", 1337)) extends Simulation {
   val logger: Logger = Logger[SyncSimulation]
   val executors: ExecutionContextExecutor = ExecutionContext.fromExecutor(Executors.newFixedThreadPool(8))
@@ -23,7 +34,7 @@ class SyncSimulation(hostInfo: InetSocketAddress = new InetSocketAddress("127.0.
       car connect()
       car send()
     }(executors)
-    sleep(runtime)
+    Thread sleep runtime
     logger.info("Throughput: {} processed requests", car.getFlowrate)
     logger.info("END BENCHMARK")
     car.close()
@@ -37,5 +48,13 @@ class SyncSimulation(hostInfo: InetSocketAddress = new InetSocketAddress("127.0.
     car send 1500
     car close()
     logger.info("END WARMUP")
+  }
+}
+
+object SyncSimulation{
+  def main(args: Array[String]): Unit = {
+    val simulation = new SyncSimulation()
+    simulation.run()
+
   }
 }
