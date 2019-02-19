@@ -2,5 +2,6 @@
 <project version="4">
   <component name="ScalaCompilerConfiguration">
     <option name="postfixOps" value="true" />
+    <profile name="sbt 1" modules="stream-prototype_4715,stream-prototype" />
   </component>
 </project>
