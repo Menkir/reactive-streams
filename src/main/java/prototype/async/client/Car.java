@@ -76,7 +76,7 @@ public class Car {
                 Flux.fromIterable(routingFactory.getRoutingType(carConfiguration.ROUTETYPE).getRouteAsList())
                         .repeat(100_000)
                         .delayElements(carConfiguration.DELAY)
-                        .doOnNext(measurements -> measurements.setSignalPower(((int) (Math.random() * 10))))
+                        .doOnNext(measurements -> measurements.setSignalStrength(((int) (Math.random() * 10))))
                         .map(measurements -> DefaultPayload.create(Serializer.serialize(measurements)))
                         .share()
         ).subscribe(payload -> ++flowrate);

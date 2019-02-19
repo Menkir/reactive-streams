@@ -2,15 +2,18 @@ package prototype.model;
 
 import java.io.Serializable;
 
+/*
+A Class for storing current Position as Coordinate and Signal Strength to next Mast.
+ */
 public final class Measurement implements Serializable {
     private int _1;
     private int _2;
-    private int signalPower;
+    private int signalStrength;
 
     public Measurement(int _1, int _2) {
         this._1 = _1;
         this._2 = _2;
-        this.signalPower = 0;
+        this.signalStrength = 0;
     }
 
 
@@ -30,13 +33,6 @@ public final class Measurement implements Serializable {
         this._2 = _2;
     }
 
-    public int getSignalPower() {
-        return signalPower;
-    }
-
-    public void setSignalPower(final int signalPower) {
-        this.signalPower = signalPower;
-    }
 
 
     public boolean equals(Measurement obj) {
@@ -46,6 +42,14 @@ public final class Measurement implements Serializable {
     @Override
     public String toString() {
         return "(" + this._1 + "|" + this._2 + ") Signal ["
-                + signalPower + "/10]";
+                + signalStrength + "/10]";
     }
+
+	public int getSignalStrength() {
+		return signalStrength;
+	}
+
+	public void setSignalStrength(int signalStrength) {
+		this.signalStrength = signalStrength;
+	}
 }

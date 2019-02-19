@@ -82,12 +82,14 @@ public class Car {
     /**
      * Send 100.000.000 Measurements as Simulation of infinite Emission.
      * Each Emission is delayed by a function delay() and increment a counter which controls when the Emission is done.
+     * Each Measurement gets a random Singal Strength
      */
 	public void send() {
         int deliveredElements = 0;
         int MAXELEMENTS = 100_000_000;
         do{
             for (Measurement measurement : route) {
+	            measurement.setSignalStrength((int)(Math.random()*10));
                 sendData(measurement);
                 delay();
                 deliveredElements ++;
@@ -103,6 +105,7 @@ public class Car {
         int deliveredElements = 0;
         do{
             for (Measurement measurement : route) {
+	            measurement.setSignalStrength((int)(Math.random()*10));
                 sendData(measurement);
                 deliveredElements ++;
             }
@@ -126,7 +129,7 @@ public class Car {
 			ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(clientSocket.getInputStream()));
 			Measurement c = (Measurement) ois.readObject();
 
-			// increment flowrate for analysis
+			// increment flowrate
              ++flowrate;
 		} catch (IOException | ClassNotFoundException e) {
 		    e.printStackTrace();
