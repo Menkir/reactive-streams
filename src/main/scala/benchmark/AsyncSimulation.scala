@@ -22,10 +22,11 @@ class AsyncSimulation(hostInfo: InetSocketAddress = new InetSocketAddress("127.0
   val durationList: List[Int] = List range(0,10) map(n => Math.pow(2, n toDouble).toInt * 1000)
 
   /**
-    * This Method runs a Benchmark
-    * @param config
+    * This Method runs a Benchmark. First it starts a warmup to optimize methods from JIT.
+    * Then it starts in multithreaded manner the benchmarks by calling benchmark() with particular measuretime
+    * @param config Configuration for the Car (See Javadocs)
     */
-  def run(config: CarConfiguration = new CarConfiguration()): Unit = {
+  override def run(config: CarConfiguration = new CarConfiguration()): Unit = {
       logger info "START TEST"
       warmUp()
       Future sequence(durationList map(duration => Future((duration, benchmark(duration, config)))(executors))) onComplete(
@@ -40,17 +41,17 @@ class AsyncSimulation(hostInfo: InetSocketAddress = new InetSocketAddress("127.0
   /**
     * This method runs a benchmark by instantiating a Car Instance. Then it connects to the Server and starts sending Measurements asynchronously.
     * After a particular time: measuretime the benchmark stops and return the current Value of the flowrate in the Car.
-    * @param runtime
-    * @param config
+    * @param measuretime The time the benchmark claims
+    * @param config Configuration for the Car (See Javadocs)
     * @return
     */
-  def benchmark(runtime: Int, config: CarConfiguration): Int ={
+  override def benchmark(measuretime: Int, config: CarConfiguration): Int ={
     logger.info("START BENCHMARK")
     val car = new Car(hostInfo)
     car connect()
     car send()
-    Thread sleep runtime
-    logger info("Throughput: {} processed requests", car getFlowrate)
+    Thread sleep measuretime
+    logger.info("Throughput: {} processed Measures from Car", car getFlowrate)
     logger info "END BENCHMARK"
     car close()
     car getFlowrate
@@ -62,7 +63,7 @@ class AsyncSimulation(hostInfo: InetSocketAddress = new InetSocketAddress("127.0
     * Be aware that your results may differ when you let the Flags away because some methods are not JIT-compiled during the benchmark.
     * The default Threshhold for Compilation is 10.000 https://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html
     */
-  def warmUp(): Unit={
+  override def warmUp(): Unit={
     logger.info("WARMUP")
     val iterations = 1500
     val car = new Car(hostInfo)
