@@ -1,10 +1,13 @@
 package benchmark
 
 import java.net.InetSocketAddress
+import java.time.Duration
 import java.util.concurrent.Executors
 
 import com.typesafe.scalalogging.Logger
 import prototype.async.client.{Car, CarConfiguration}
+import prototype.routing.RoutingFactory.RouteType
+import prototype.routing.routeimpl.RectangleRoute
 
 import scala.concurrent.{ExecutionContext, ExecutionContextExecutor, Future}
 import ExecutionContext.Implicits.global
@@ -27,6 +30,7 @@ class AsyncSimulation(hostInfo: InetSocketAddress = new InetSocketAddress("127.0
     * @param config Configuration for the Car (See Javadocs)
     */
   override def run(config: CarConfiguration = new CarConfiguration()): Unit = {
+    println(config.DELAY)
       logger info "START TEST"
       warmUp()
       Future sequence(durationList map(duration => Future((duration, benchmark(duration, config)))(executors))) onComplete(
@@ -47,7 +51,7 @@ class AsyncSimulation(hostInfo: InetSocketAddress = new InetSocketAddress("127.0
     */
   override def benchmark(measuretime: Int, config: CarConfiguration): Int ={
     logger.info("START BENCHMARK")
-    val car = new Car(hostInfo)
+    val car = new Car(hostInfo, config)
     car connect()
     car send()
     Thread sleep measuretime
@@ -80,6 +84,6 @@ object AsyncSimulation{
   // Be sure you running this benchmark on -client JVM Argument otherwise no optimazation is guaranteed
   def main(args: Array[String]): Unit = {
     val simulation = new AsyncSimulation()
-    simulation.run()
+    simulation.run(new CarConfiguration(Duration.ofMillis(1000), RouteType.RECTANGLE))
   }
 }

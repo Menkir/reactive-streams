@@ -5,9 +5,12 @@ import io.rsocket.Payload;
 import io.rsocket.RSocketFactory;
 import io.rsocket.transport.netty.server.TcpServerTransport;
 import org.reactivestreams.Publisher;
+import prototype.async.view.Monitor;
 import reactor.core.Disposable;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+import reactor.core.publisher.WorkQueueProcessor;
+import rx.Subscription;
 
 import java.net.InetSocketAddress;
 import java.time.Duration;
@@ -16,6 +19,13 @@ import java.util.Scanner;
 public class CarServer {
 	private InetSocketAddress socketAddress;
 	private Disposable channel;
+
+	public WorkQueueProcessor<Flux<Payload>> getGuiProcessor() {
+		return guiProcessor;
+	}
+
+	private WorkQueueProcessor<Flux<Payload>> guiProcessor = WorkQueueProcessor.create();
+
 
 	/**
 	 * Inintialize Host Information like IP and Port.
@@ -38,9 +48,12 @@ public class CarServer {
 						Mono.just(new AbstractRSocket() {
 							@Override
 							public Flux<Payload> requestChannel(Publisher<Payload> payloads) {
-								return Flux.from(payloads)
+								Flux<Payload> clientFlux = Flux.from(payloads)
 										.flatMapSequential(
-												payload -> Flux.just(payload).delaySequence(Duration.ofMillis(10)));
+												payload -> Flux.just(payload).delaySequence(Duration.ofMillis(10)))
+										.publish().autoConnect();
+								guiProcessor.onNext(clientFlux);
+								return clientFlux;
 							}
 						}))
 				.transport(TcpServerTransport.create(socketAddress.getHostName(), socketAddress.getPort()))
@@ -58,13 +71,19 @@ public class CarServer {
 	public static void main(final String... args){
 		Scanner sc = new Scanner(System.in);
 		CarServer carServer = new CarServer(new InetSocketAddress("127.0.0.1", 1337));
-	    carServer.receive();
+		Monitor monitor = new Monitor(carServer);
+		carServer.receive();
+		monitor.start();
+		Subscription disposable = monitor.listeningOnIncomingCoordinates();
 
 		System.out.println("Type 'close' to terminate the CarServer:");
 		while(true){
 			String input = sc.nextLine();
 			switch(input){
 				case "close": carServer.close();
+					carServer.close();
+					disposable.unsubscribe();
+
 					return;
 				default:
 					System.err.println("Try again...");
