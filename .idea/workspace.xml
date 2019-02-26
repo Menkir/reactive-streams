@@ -1020,8 +1020,8 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550576206775" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs/scala" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551186739823" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -1055,7 +1055,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.AsyncSimulation">
+  <component name="RunManager" selected="Application.CarServer">
     <configuration name="AsyncSimulation" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="benchmark.AsyncSimulation" />
       <module name="de.ds.prototype_main" />
@@ -1139,8 +1139,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AsyncSimulation" />
         <item itemvalue="Application.CarServer" />
+        <item itemvalue="Application.AsyncSimulation" />
         <item itemvalue="Application.CarServer" />
         <item itemvalue="Gradle.stream-prototype [dependencies]" />
         <item itemvalue="Gradle.stream-prototype:src [tasks]" />
