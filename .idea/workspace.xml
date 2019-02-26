@@ -7,112 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d55754e9-5714-4e0b-ac0f-572fa2541047" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_library_2_12_7_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/stream-prototype-build.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/stream-prototype.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/misc/ex1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/misc/ex2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/de.ds.prototype_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/de.ds.prototype_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/scala_compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/allclasses-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/allclasses-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/allclasses-noframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/allclasses-noframe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/constant-values.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/deprecated-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/index-files/index-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/index-files/index-10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/index-files/index-11.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/index-files/index-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/index-files/index-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/index-files/index-4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/index-files/index-5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/index-files/index-6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/index-files/index-7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/index-files/index-8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/index-files/index-9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/overview-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/overview-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/overview-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/package-list" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/package-list" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/async/client/Car.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/async/client/Car.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/async/client/CarConfiguration.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/async/client/CarConfiguration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/async/client/class-use/Car.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/async/client/class-use/Car.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/async/client/class-use/CarConfiguration.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/async/client/class-use/CarConfiguration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/async/client/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/async/client/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/async/client/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/async/client/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/async/client/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/async/client/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/async/client/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/async/client/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/async/server/CarServer.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/async/server/CarServer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/async/server/class-use/CarServer.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/async/server/class-use/CarServer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/async/server/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/async/server/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/async/server/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/async/server/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/async/server/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/async/server/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/async/server/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/async/server/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/interfaces/ICar.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/interfaces/ICar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/interfaces/IServer.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/interfaces/IServer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/interfaces/class-use/ICar.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/interfaces/class-use/ICar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/interfaces/class-use/IServer.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/interfaces/class-use/IServer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/interfaces/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/interfaces/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/interfaces/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/interfaces/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/interfaces/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/interfaces/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/interfaces/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/interfaces/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/model/Measurement.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/model/Measurement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/model/class-use/Measurement.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/model/class-use/Measurement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/model/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/model/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/model/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/model/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/model/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/model/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/model/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/model/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/routing/IRoute.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/routing/IRoute.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/routing/RoutingFactory.RouteType.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/routing/RoutingFactory.RouteType.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/routing/RoutingFactory.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/routing/RoutingFactory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/routing/class-use/IRoute.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/routing/class-use/IRoute.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/routing/class-use/RoutingFactory.RouteType.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/routing/class-use/RoutingFactory.RouteType.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/routing/class-use/RoutingFactory.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/routing/class-use/RoutingFactory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/routing/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/routing/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/routing/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/routing/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/routing/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/routing/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/routing/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/routing/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/routing/routeimpl/CircleRoute.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/routing/routeimpl/CircleRoute.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/routing/routeimpl/RectangleRoute.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/routing/routeimpl/RectangleRoute.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/routing/routeimpl/TriangleRoute.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/routing/routeimpl/TriangleRoute.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/routing/routeimpl/class-use/CircleRoute.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/routing/routeimpl/class-use/CircleRoute.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/routing/routeimpl/class-use/RectangleRoute.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/routing/routeimpl/class-use/RectangleRoute.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/routing/routeimpl/class-use/TriangleRoute.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/routing/routeimpl/class-use/TriangleRoute.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/routing/routeimpl/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/routing/routeimpl/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/routing/routeimpl/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/routing/routeimpl/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/routing/routeimpl/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/routing/routeimpl/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/routing/routeimpl/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/routing/routeimpl/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/sync/client/Car.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/sync/client/Car.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/sync/client/class-use/Car.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/sync/client/class-use/Car.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/sync/client/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/sync/client/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/sync/client/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/sync/client/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/sync/client/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/sync/client/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/sync/client/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/sync/client/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/sync/server/CarServer.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/sync/server/CarServer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/sync/server/class-use/CarServer.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/sync/server/class-use/CarServer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/sync/server/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/sync/server/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/sync/server/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/sync/server/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/sync/server/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/sync/server/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/sync/server/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/sync/server/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/utility/Serializer.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/utility/Serializer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/utility/Tuple2.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/utility/Tuple2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/utility/class-use/Serializer.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/utility/class-use/Serializer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/utility/class-use/Tuple2.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/utility/class-use/Tuple2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/utility/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/utility/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/utility/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/utility/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/utility/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/utility/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/prototype/utility/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/prototype/utility/package-use.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/serialized-form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/java/stylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/prototype/benchmark/AsyncSimulation.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/prototype/benchmark/Simulation.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/prototype/benchmark/SyncSimulation.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/benchmark/SyncSimulation.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -285,27 +187,36 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-721499306">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="1" />
+          <entry key="Markdown" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Markdown" value="1510" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/benchmark/AsyncSimulation.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="69" column="14" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="14" />
-              <folding>
-                <element signature="e#19#52#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="204">
-                <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+              <first_editor relative-caret-position="323">
+                <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
               </first_editor>
               <second_editor />
             </state>
@@ -605,7 +516,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="6202176566039" />
+        <entry key="$PROJECT_DIR$" value="6204747435618" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/build.gradle" value="1150585168" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="1156869677" />
@@ -898,18 +809,17 @@
           <expand>
             <path>
               <item name="de.ds.prototype" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stream-prototype" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="reactive-streams" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="de.ds.prototype" type="b2602c69:ProjectViewProjectNode" />
-              <item name="stream-prototype" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
+              <item name="reactive-streams" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="misc" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -1014,13 +924,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551186739823" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551188469228" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -1174,6 +1085,7 @@
     </option>
     <option name="modificationStamps">
       <map>
+        <entry key="$PROJECT_DIR$" value="0" />
         <entry key="$PROJECT_DIR$/project/build.properties" value="2567920773" />
       </map>
     </option>
@@ -1200,11 +1112,13 @@
       <workItem from="1550484295583" duration="6916000" />
       <workItem from="1550560743560" duration="1675000" />
       <workItem from="1550575832759" duration="370000" />
+      <workItem from="1551186582805" duration="335000" />
+      <workItem from="1551186956274" duration="1511000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="300546000" />
+    <option name="totallyTimeSpent" value="302392000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1219,7 +1133,7 @@
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49857143" visible="true" weight="0.31716418" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49857143" visible="true" weight="0.14712153" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1229,7 +1143,7 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32981783" />
-      <window_info anchor="bottom" auto_hide="true" id="Run" order="2" sideWeight="0.50159913" side_tool="true" weight="0.32981783" />
+      <window_info anchor="bottom" auto_hide="true" id="Run" order="2" sideWeight="0.5026652" side_tool="true" weight="0.3279003" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39980826" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1237,7 +1151,7 @@
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49840087" weight="0.32981783" />
       <window_info anchor="bottom" id="sbt-shell-toolwindow" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49938875" weight="0.32885906" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5026652" side_tool="true" weight="0.3279003" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49733475" weight="0.3279003" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" />
@@ -1435,9 +1349,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="59" column="7" lean-forward="true" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1457,13 +1368,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/prototype/async/server/CarServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-reflect/srcs/scala-reflect-2.12.8-sources.jar!/scala/reflect/internal/Mirrors.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
@@ -1471,28 +1375,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/index.html" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/benchmark/AsyncSimulation.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
           <caret line="69" column="14" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="14" />
-          <folding>
-            <element signature="e#19#52#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/prototype/async/server/CarServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="204">
-            <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <first_editor relative-caret-position="323">
+            <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
           </first_editor>
           <second_editor />
         </state>

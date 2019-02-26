@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/de.ds.prototype.iml" filepath="$PROJECT_DIR$/.idea/modules/de.ds.prototype.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/de.ds.prototype_main.iml" filepath="$PROJECT_DIR$/.idea/modules/de.ds.prototype_main.iml" group="de.ds.prototype" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/de.ds.prototype_test.iml" filepath="$PROJECT_DIR$/.idea/modules/de.ds.prototype_test.iml" group="de.ds.prototype" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/src/src.iml" filepath="$PROJECT_DIR$/.idea/modules/src/src.iml" group="src" />
